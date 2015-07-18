@@ -2,6 +2,7 @@ package org.nelson.system.core.api.context;
 
 import javax.sql.DataSource;
 
+import org.nelson.system.core.api.spring.jdbc.template.JodaTimeJdbcTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,7 +17,7 @@ public class CoreApiContext {
 	private DataSource dataSource;
 	
 	@Bean
-	public JdbcTemplate jdbcTemplate() {
-		return new JdbcTemplate(dataSource);
+	public JdbcTemplate customJdbcTemplate() {
+		return new JodaTimeJdbcTemplate(dataSource);
 	}
 }
