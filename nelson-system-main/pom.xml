@@ -25,8 +25,8 @@
 		<mybatis.version>3.3.0</mybatis.version>
 		<mybatis-spring.version>1.2.3</mybatis-spring.version>
 		
-		<dbunit.version>2.5.0</dbunit.version>
-		<spring-test-dbunit.version>1.1.0</spring-test-dbunit.version>
+		<dbunit.version>2.5.1</dbunit.version>
+		<spring-test-dbunit.version>1.2.1</spring-test-dbunit.version>
 	</properties>
 	
 	<dependencyManagement>
