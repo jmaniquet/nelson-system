@@ -13,21 +13,25 @@
 	<h:body>
 		<p:layout fullPage="true" id="default-layout">
 			<p:layoutUnit position="north" size="100" resizable="true">
-				<h:form id="north-form">
-					<ui:include src="/common/header.xhtml" />
-				</h:form>
+				<ui:include src="/common/header.xhtml" />
 			</p:layoutUnit>
 	
 			<p:layoutUnit position="west" size="200" resizable="true">
-				<h:form id="west-form">
-					<ui:include src="/common/menu.xhtml" />
-				</h:form>
+				<ui:include src="/common/menu.xhtml" />
 			</p:layoutUnit>
 	
 			<p:layoutUnit position="center" resizable="true">
-				<h:form id="center-form">
-					<ui:insert name="center-content" />
-				</h:form>
+				<ui:insert name="center-content">
+					<f:facet name="header">
+						<ui:insert name="main-form-header-facet">
+							<h:outputText value="Main title" />
+						</ui:insert>
+					</f:facet>
+				
+					<h:form id="main-form">
+						<ui:insert name="main-form-content" />
+					</h:form>
+				</ui:insert>
 			</p:layoutUnit>
 	
 			<p:layoutUnit position="south" size="100" resizable="true">
