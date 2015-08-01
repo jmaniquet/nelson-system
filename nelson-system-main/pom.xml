@@ -48,6 +48,11 @@
 				<artifactId>nelson-tools-test-core</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.nelson.system.tools</groupId>
+				<artifactId>nelson-tools-test-web</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			
 			<dependency>
 				<groupId>org.nelson.system.core</groupId>
