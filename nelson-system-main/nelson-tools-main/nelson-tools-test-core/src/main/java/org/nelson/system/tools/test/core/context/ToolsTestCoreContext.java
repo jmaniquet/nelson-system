@@ -1,30 +1,25 @@
 package org.nelson.system.tools.test.core.context;
 
-import static org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType.HSQL;
-
 import javax.sql.DataSource;
 
+import org.nelson.system.infrastructure.environment.context.InfrastructureEnvironmentContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
 @Configuration
+@Import(InfrastructureEnvironmentContext.class)
 @ComponentScan("org.nelson.system.tools.test.core")
 public class ToolsTestCoreContext {
 	
-	@Bean
-	public DataSource dataSource() {
-		EmbeddedDatabaseBuilder dsb = new EmbeddedDatabaseBuilder()
-				.setType(HSQL)
-				.addScript("classpath:schema/nelson-schema.sql")
-				.setSeparator("/;");
-		return dsb.build();
-	}
+	@Autowired
+	private DataSource dataSource;
 	
 	@Bean
 	public JdbcTemplate jdbcTemplate() {
-		return new JdbcTemplate(dataSource());
+		return new JdbcTemplate(dataSource);
 	}
 }
