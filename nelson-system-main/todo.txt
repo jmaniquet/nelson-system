@@ -1,0 +1,7 @@
+Rename ToolsTestContext into ToolsTestCoreContext
+Renaming packages of nelson-core-web into org.nelson.system.core.web
+Make webapp startable with embedded database
+Feature : Switchable primefaces theme
+Feature : custom component for outputmessage with backing MessageSource
+Feature : customized mybatis generator
+Feature : create personne
