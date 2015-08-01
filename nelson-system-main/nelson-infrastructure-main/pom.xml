@@ -17,5 +17,6 @@
 	<modules>
 		<module>nelson-infrastructure-dependencies</module>
 		<module>nelson-infrastructure-schema</module>
+		<module>nelson-infrastructure-environment</module>
 	</modules>
 </project>
