@@ -35,6 +35,8 @@ public class WebappInitializer extends AbstractAnnotationConfigDispatcherServlet
 		servletContext.setInitParameter("javax.faces.DEFAULT_SUFFIX", ".xhtml");
 		servletContext.setInitParameter("javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL", "true");
 
+		servletContext.setInitParameter("primefaces.THEME", "#{userPreferences.theme.themeName}");
+		
 		// Let the DispatcherServlet be registered
 		super.onStartup(servletContext);
 	}

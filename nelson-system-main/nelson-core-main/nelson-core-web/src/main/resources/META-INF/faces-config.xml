@@ -15,4 +15,8 @@
 	<application>
 		<resource-handler>org.nelson.system.core.web.resource.handler.MetaInfCustomDirResourceHandler</resource-handler>
 	</application>
+	<converter>
+		<converter-id>themeConverter</converter-id>
+		<converter-class>org.nelson.system.core.web.theme.ThemeConverter</converter-class>
+	</converter>
 </faces-config>

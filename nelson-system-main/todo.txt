@@ -1,4 +1,4 @@
-Feature : Switchable primefaces theme
+Test coverage for switchable primefaces theme
 Feature : custom component for outputmessage with backing MessageSource
 Feature : customized mybatis generator
 Feature : create personne

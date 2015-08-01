@@ -12,8 +12,24 @@
 	</f:facet>
 	
 	<h:form id="header-form">
-		<p:panelGrid columns="1">
-			<h:outputText value="Header content" />
-		</p:panelGrid>
+		<p:themeSwitcher
+			id="basic-advanced"
+			style="width:165px"
+			effect="fade"
+			var="t"
+			value="#{userPreferences.theme}"
+			converter="themeConverter">
+			<f:selectItem itemLabel="Choose Theme" itemValue="#{null}" noSelectionOption="true" />
+			<f:selectItems value="#{themeSwitcherController.themes}" var="theme" itemValue="#{theme}" itemLabel="#{theme.displayName}" />
+			
+			<p:column>
+				<h:outputText styleClass="ui-theme ui-theme-#{t.themeName}" style="display-block" />
+			</p:column>
+			<p:column>
+				<h:outputText value="#{t.displayName}" />
+			</p:column>
+			
+			<p:ajax listener="#{themeSwitcherController.saveTheme}" />
+		</p:themeSwitcher>
 	</h:form>
 </ui:composition>
