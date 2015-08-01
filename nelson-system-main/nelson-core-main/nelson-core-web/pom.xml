@@ -11,4 +11,12 @@
 	<artifactId>nelson-core-web</artifactId>
 	
 	<name>nelson-core-web</name>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.nelson.system.tools</groupId>
+			<artifactId>nelson-tools-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>
