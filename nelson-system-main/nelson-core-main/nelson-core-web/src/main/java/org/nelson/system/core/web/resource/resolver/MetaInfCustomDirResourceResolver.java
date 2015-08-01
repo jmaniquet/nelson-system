@@ -9,8 +9,6 @@ public class MetaInfCustomDirResourceResolver extends ResourceResolver {
 	private ResourceResolver parent;
 	private String viewsBasePath;
 	
-	private long creationTime;
-	
 	public MetaInfCustomDirResourceResolver(ResourceResolver parent) {
 		this.parent = parent;
 		this.viewsBasePath = "/META-INF/views"; // TODO: Make configureable?
