@@ -4,6 +4,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
 import org.nelson.system.core.api.context.CoreApiContext;
+import org.nelson.system.core.web.context.CoreWebContext;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebappInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -11,6 +12,7 @@ public class WebappInitializer extends AbstractAnnotationConfigDispatcherServlet
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		return new Class<?>[] { CoreApiContext.class,
+								CoreWebContext.class,
 								WebappContext.class };
 	}
 
