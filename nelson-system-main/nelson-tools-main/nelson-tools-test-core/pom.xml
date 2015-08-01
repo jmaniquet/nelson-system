@@ -14,6 +14,11 @@
 	
 	<dependencies>
 		<dependency>
+			<groupId>org.nelson.system.infrastructure</groupId>
+			<artifactId>nelson-infrastructure-schema</artifactId>
+		</dependency>
+	
+		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 		</dependency>
