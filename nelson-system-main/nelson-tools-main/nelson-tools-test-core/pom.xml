@@ -15,11 +15,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.nelson.system.infrastructure</groupId>
-			<artifactId>nelson-infrastructure-schema</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.nelson.system.infrastructure</groupId>
-			<artifactId>nelson-infrastructure-dependencies</artifactId>
+			<artifactId>nelson-infrastructure-environment</artifactId>
 		</dependency>
 	
 		<dependency>
