@@ -1,4 +1,3 @@
-Rename ToolsTestContext into ToolsTestCoreContext
 Make webapp startable with embedded database
 Feature : Switchable primefaces theme
 Feature : custom component for outputmessage with backing MessageSource

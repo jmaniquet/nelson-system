@@ -4,7 +4,7 @@ import org.joda.time.DateTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nelson.system.core.api.context.CoreApiContext;
-import org.nelson.system.tools.test.core.context.ToolsTestContext;
+import org.nelson.system.tools.test.core.context.ToolsTestCoreContext;
 import org.nelson.system.tools.test.core.random.RandomUtils;
 import org.nelson.system.tools.test.core.user.User;
 import org.nelson.system.tools.test.core.user.UserBuilder;
@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {
-		ToolsTestContext.class,
+		ToolsTestCoreContext.class,
 		CoreApiContext.class}
 )
 public class JodaTimeHandlerInsertTest extends AbstractTransactionalJUnit4SpringContextTests {

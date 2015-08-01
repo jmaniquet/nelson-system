@@ -16,7 +16,7 @@ import org.springframework.transaction.support.ResourceTransactionManager;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan("org.nelson.system.tools.test.core")
-public class ToolsTestContext {
+public class ToolsTestCoreContext {
 	
 	@Bean
 	public DataSource dataSource() {

@@ -21,12 +21,12 @@ import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 
-import org.nelson.system.tools.test.core.context.ToolsTestContext;
+import org.nelson.system.tools.test.core.context.ToolsTestCoreContext;
 import org.nelson.system.tools.test.core.user.User;
 import org.nelson.system.tools.test.core.user.UserUtils;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = ToolsTestContext.class)
+@ContextConfiguration(classes = ToolsTestCoreContext.class)
 @TestExecutionListeners(listeners = DbUnitTestExecutionListener.class)
 @DbUnitConfiguration(databaseConnection = "dataSource")
 @DatabaseSetup("classpath:/test-dataset.xml")
