@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:nelson="http://java.sun.com/jsf/composite/nelson">
+	
+	<f:facet name="header">
+		<nelson:outputMessage key="footer.title" />
+	</f:facet>
+	
+	<p:panelGrid columns="1">
+		<nelson:outputMessage key="footer.testparams" param3="#{fakeController.param3}">
+			<f:attribute name="param1" value="#{fakeController.param1}" />
+			<f:attribute name="param2" value="02/03/2015">
+				<f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
+			</f:attribute>
+		</nelson:outputMessage>
+		<nelson:outputMessage key="footer.sun-jsf.version" />
+		<nelson:outputMessage key="footer.primefaces.version" />
+		<nelson:outputMessage key="footer.spring.core.version" />
+		<nelson:outputMessage key="footer.spring.webflow.version" />
+		<nelson:outputMessage key="footer.mybatis.version" />
+		<nelson:outputMessage key="footer.jodatime.version" />
+	</p:panelGrid>
+</ui:composition>
