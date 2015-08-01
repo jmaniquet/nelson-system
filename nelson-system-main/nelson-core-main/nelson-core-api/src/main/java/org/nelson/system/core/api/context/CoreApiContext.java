@@ -12,8 +12,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.support.ResourceTransactionManager;
 
 @Configuration
+@EnableTransactionManagement
 @MapperScan(
 		basePackages = {"org.nelson.system"},
 		markerInterface=CoreMapper.class,
@@ -38,5 +42,10 @@ public class CoreApiContext {
 		 /*Resource[] resources = new PathMatchingResourcePatternResolver().getResources("classpath*:org/nelson/system/*Mapper.xml");
 		 sqlSessionFactoryBean.setMapperLocations(resources);*/
 		return sqlSessionFactoryBean.getObject();
+	}
+	
+	@Bean
+	public ResourceTransactionManager transactionManager() {
+		return new DataSourceTransactionManager(dataSource);
 	}
 }
