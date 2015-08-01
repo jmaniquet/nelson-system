@@ -14,6 +14,15 @@
 	<packaging>pom</packaging>
 
 	<name>nelson-system-main</name>
+	
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,6 +33,9 @@
 		
 		<mybatis.version>3.3.0</mybatis.version>
 		<mybatis-spring.version>1.2.3</mybatis-spring.version>
+		
+		<primefaces.version>5.2</primefaces.version>
+		<primefaces-all-themes.version>1.0.10</primefaces-all-themes.version>
 		
 		<dbunit.version>2.5.1</dbunit.version>
 		<spring-test-dbunit.version>1.2.1</spring-test-dbunit.version>
@@ -63,6 +75,17 @@
 				<groupId>org.mybatis</groupId>
 				<artifactId>mybatis-spring</artifactId>
 				<version>${mybatis-spring.version}</version>
+			</dependency>
+		
+			<dependency>
+				<groupId>org.primefaces</groupId>
+				<artifactId>primefaces</artifactId>
+				<version>${primefaces.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.primefaces.themes</groupId>
+				<artifactId>all-themes</artifactId>
+				<version>${primefaces-all-themes.version}</version>
 			</dependency>
 		
 			<dependency>
