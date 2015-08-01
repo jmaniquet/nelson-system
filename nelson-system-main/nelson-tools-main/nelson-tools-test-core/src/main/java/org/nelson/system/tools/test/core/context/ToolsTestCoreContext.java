@@ -22,7 +22,7 @@ public class ToolsTestCoreContext {
 	public DataSource dataSource() {
 		EmbeddedDatabaseBuilder dsb = new EmbeddedDatabaseBuilder()
 				.setType(HSQL)
-				.addScript("classpath:test-schema.sql")
+				.addScript("classpath:schema/nelson-schema.sql")
 				.setSeparator("/;");
 		return dsb.build();
 	}
