@@ -45,6 +45,11 @@
 		<dependencies>
 			<dependency>
 				<groupId>org.nelson.system.infrastructure</groupId>
+				<artifactId>nelson-infrastructure-dependencies</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.nelson.system.infrastructure</groupId>
 				<artifactId>nelson-infrastructure-schema</artifactId>
 				<version>${project.version}</version>
 			</dependency>

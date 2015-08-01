@@ -17,32 +17,14 @@
 			<groupId>org.nelson.system.infrastructure</groupId>
 			<artifactId>nelson-infrastructure-schema</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.nelson.system.infrastructure</groupId>
+			<artifactId>nelson-infrastructure-dependencies</artifactId>
+		</dependency>
 	
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
-		</dependency>
-	
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
 		</dependency>
 		
 		<dependency>
