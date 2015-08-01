@@ -14,6 +14,6 @@
 	<name>nelson-tools-main</name>
 	
 	<modules>
-		<module>nelson-tools-test</module>
+		<module>nelson-tools-test-core</module>
 	</modules>
 </project>

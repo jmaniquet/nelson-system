@@ -7,9 +7,9 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	
-	<artifactId>nelson-tools-test</artifactId>
+	<artifactId>nelson-tools-test-core</artifactId>
 	
-	<name>nelson-tools-test</name>
+	<name>nelson-tools-test-core</name>
 	
 	<dependencies>
 		<dependency>

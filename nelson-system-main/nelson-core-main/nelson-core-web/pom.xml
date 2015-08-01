@@ -36,7 +36,7 @@
 	
 		<dependency>
 			<groupId>org.nelson.system.tools</groupId>
-			<artifactId>nelson-tools-test</artifactId>
+			<artifactId>nelson-tools-test-core</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
