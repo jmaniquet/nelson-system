@@ -1,4 +1,4 @@
-package org.nelson.core.web.resource.handler;
+package org.nelson.system.core.web.resource.handler;
 
 import java.net.URL;
 

@@ -13,6 +13,6 @@
 	<name>nelson</name>
 	
 	<application>
-		<resource-handler>org.nelson.core.web.resource.handler.MetaInfCustomDirResourceHandler</resource-handler>
+		<resource-handler>org.nelson.system.core.web.resource.handler.MetaInfCustomDirResourceHandler</resource-handler>
 	</application>
 </faces-config>

@@ -1,4 +1,4 @@
-package org.nelson.core.web.resource.resolver;
+package org.nelson.system.core.web.resource.resolver;
 
 import java.net.URL;
 

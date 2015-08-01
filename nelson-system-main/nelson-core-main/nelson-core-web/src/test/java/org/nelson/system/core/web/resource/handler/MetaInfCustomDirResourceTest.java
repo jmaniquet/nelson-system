@@ -1,12 +1,12 @@
-package org.nelson.core.web.resource.handler;
+package org.nelson.system.core.web.resource.handler;
 
 import java.net.URL;
 
 import javax.faces.application.ViewResource;
 
 import org.junit.Assert;
-import org.nelson.core.web.resource.AbstractMetaInfCustomDirResourceTest;
-import org.nelson.core.web.resource.handler.MetaInfCustomDirResource;
+import org.nelson.system.core.web.resource.AbstractMetaInfCustomDirResourceTest;
+import org.nelson.system.core.web.resource.handler.MetaInfCustomDirResource;
 
 public class MetaInfCustomDirResourceTest extends AbstractMetaInfCustomDirResourceTest {
 

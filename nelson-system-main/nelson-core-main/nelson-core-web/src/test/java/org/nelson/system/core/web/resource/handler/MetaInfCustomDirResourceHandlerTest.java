@@ -1,4 +1,4 @@
-package org.nelson.core.web.resource.handler;
+package org.nelson.system.core.web.resource.handler;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -13,8 +13,8 @@ import javax.faces.context.FacesContext;
 import org.junit.Assert;
 import org.junit.Before;
 import org.mockito.Mock;
-import org.nelson.core.web.resource.AbstractMetaInfCustomDirResourceTest;
-import org.nelson.core.web.resource.handler.MetaInfCustomDirResourceHandler;
+import org.nelson.system.core.web.resource.AbstractMetaInfCustomDirResourceTest;
+import org.nelson.system.core.web.resource.handler.MetaInfCustomDirResourceHandler;
 
 public class MetaInfCustomDirResourceHandlerTest extends AbstractMetaInfCustomDirResourceTest {
 
