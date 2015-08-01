@@ -13,7 +13,26 @@
 
 	<name>nelson-webapp</name>
 
+	<profiles>
+		<!-- Activate this profile when in eclipse so the webapp cab use an embedded HSQLDB -->
+		<profile>
+			<id>dev</id>
+			<dependencies>
+				<dependency>
+					<groupId>org.hsqldb</groupId>
+					<artifactId>hsqldb</artifactId>
+					<scope>compile</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
+
 	<dependencies>
+		<dependency>
+			<groupId>org.nelson.system.infrastructure</groupId>
+			<artifactId>nelson-infrastructure-environment</artifactId>
+		</dependency>
+	
 		<dependency>
 			<groupId>org.nelson.system.core</groupId>
 			<artifactId>nelson-core-web</artifactId>
