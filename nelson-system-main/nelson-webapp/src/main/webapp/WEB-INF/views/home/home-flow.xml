@@ -1,0 +1,13 @@
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+						http://www.springframework.org/schema/webflow/spring-webflow.xsd">
+
+	<view-state id="home" view="home.xhtml">
+		<transition on="menu-personne-recherche" to="menu-personne-recherche" />
+		<transition on="menu-personne-creation" to="menu-personne-creation" />
+	</view-state>
+
+	<end-state id="menu-personne-recherche" view="externalRedirect:/personne/recherche" />
+	<end-state id="menu-personne-creation" view="externalRedirect:/personne/creation" />
+</flow>
