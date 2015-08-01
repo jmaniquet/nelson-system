@@ -13,4 +13,8 @@
 	<packaging>pom</packaging>
 	
 	<name>nelson-infrastructure-main</name>
+	
+	<modules>
+		<module>nelson-infrastructure-schema</module>
+	</modules>
 </project>
