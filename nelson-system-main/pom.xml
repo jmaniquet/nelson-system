@@ -127,6 +127,7 @@
 	</dependencyManagement>
 
 	<modules>
+		<module>nelson-infrastructure-main</module>
 		<module>nelson-tools-main</module>
 		<module>nelson-core-main</module>
 		<module>nelson-webapp</module>

@@ -8,14 +8,9 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	
-	<groupId>org.nelson.system.tools</groupId>
-	<artifactId>nelson-tools-main</artifactId>
+	<groupId>org.nelson.system.infrastructure</groupId>
+	<artifactId>nelson-infrastructure-main</artifactId>
 	<packaging>pom</packaging>
 	
-	<name>nelson-tools-main</name>
-	
-	<modules>
-		<module>nelson-tools-test-core</module>
-		<module>nelson-tools-test-web</module>
-	</modules>
+	<name>nelson-infrastructure-main</name>
 </project>
