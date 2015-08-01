@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nelson.system.core.api.context.CoreApiContext;
 import org.nelson.system.core.api.spring.jdbc.BeanConstants;
-import org.nelson.system.tools.test.context.ToolsTestContext;
+import org.nelson.system.tools.test.core.context.ToolsTestContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;

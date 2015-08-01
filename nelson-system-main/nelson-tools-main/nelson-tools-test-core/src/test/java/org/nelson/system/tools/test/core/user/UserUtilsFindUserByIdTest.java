@@ -1,12 +1,12 @@
-package org.nelson.system.tools.test.user;
+package org.nelson.system.tools.test.core.user;
 
-import static org.nelson.system.tools.test.constants.TestDataConstants.USER1_BIRTHDATE;
-import static org.nelson.system.tools.test.constants.TestDataConstants.USER1_GIVENNAME;
-import static org.nelson.system.tools.test.constants.TestDataConstants.USER1_ID;
-import static org.nelson.system.tools.test.constants.TestDataConstants.USER1_NAME;
-import static org.nelson.system.tools.test.constants.TestDataConstants.USER2_GIVENNAME;
-import static org.nelson.system.tools.test.constants.TestDataConstants.USER2_ID;
-import static org.nelson.system.tools.test.constants.TestDataConstants.USER2_NAME;
+import static org.nelson.system.tools.test.core.constants.TestDataConstants.USER1_BIRTHDATE;
+import static org.nelson.system.tools.test.core.constants.TestDataConstants.USER1_GIVENNAME;
+import static org.nelson.system.tools.test.core.constants.TestDataConstants.USER1_ID;
+import static org.nelson.system.tools.test.core.constants.TestDataConstants.USER1_NAME;
+import static org.nelson.system.tools.test.core.constants.TestDataConstants.USER2_GIVENNAME;
+import static org.nelson.system.tools.test.core.constants.TestDataConstants.USER2_ID;
+import static org.nelson.system.tools.test.core.constants.TestDataConstants.USER2_NAME;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -21,9 +21,9 @@ import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 
-import org.nelson.system.tools.test.context.ToolsTestContext;
-import org.nelson.system.tools.test.user.User;
-import org.nelson.system.tools.test.user.UserUtils;
+import org.nelson.system.tools.test.core.context.ToolsTestContext;
+import org.nelson.system.tools.test.core.user.User;
+import org.nelson.system.tools.test.core.user.UserUtils;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ToolsTestContext.class)

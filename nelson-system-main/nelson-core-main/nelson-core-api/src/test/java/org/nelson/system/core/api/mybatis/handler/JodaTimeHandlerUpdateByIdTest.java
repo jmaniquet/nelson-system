@@ -1,18 +1,18 @@
 package org.nelson.system.core.api.mybatis.handler;
 
-import static org.nelson.system.tools.test.constants.TestDataConstants.USER1_BIRTHDATE;
-import static org.nelson.system.tools.test.constants.TestDataConstants.USER1_ID;
-import static org.nelson.system.tools.test.constants.TestDataConstants.USER2_ID;
+import static org.nelson.system.tools.test.core.constants.TestDataConstants.USER1_BIRTHDATE;
+import static org.nelson.system.tools.test.core.constants.TestDataConstants.USER1_ID;
+import static org.nelson.system.tools.test.core.constants.TestDataConstants.USER2_ID;
 
 import org.joda.time.DateTime;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nelson.system.core.api.context.CoreApiContext;
-import org.nelson.system.tools.test.context.ToolsTestContext;
-import org.nelson.system.tools.test.random.RandomUtils;
-import org.nelson.system.tools.test.user.User;
-import org.nelson.system.tools.test.user.UserUtils;
+import org.nelson.system.tools.test.core.context.ToolsTestContext;
+import org.nelson.system.tools.test.core.random.RandomUtils;
+import org.nelson.system.tools.test.core.user.User;
+import org.nelson.system.tools.test.core.user.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;

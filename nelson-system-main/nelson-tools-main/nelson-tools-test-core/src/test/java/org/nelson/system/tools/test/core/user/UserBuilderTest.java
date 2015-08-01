@@ -1,9 +1,11 @@
-package org.nelson.system.tools.test.user;
+package org.nelson.system.tools.test.core.user;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeConstants;
 import org.junit.Assert;
 import org.junit.Test;
+import org.nelson.system.tools.test.core.user.User;
+import org.nelson.system.tools.test.core.user.UserBuilder;
 
 public class UserBuilderTest {
 

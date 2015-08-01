@@ -1,4 +1,4 @@
-package org.nelson.system.tools.test.constants;
+package org.nelson.system.tools.test.core.constants;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeConstants;

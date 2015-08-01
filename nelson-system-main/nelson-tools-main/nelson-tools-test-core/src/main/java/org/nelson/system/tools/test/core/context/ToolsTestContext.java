@@ -1,4 +1,4 @@
-package org.nelson.system.tools.test.context;
+package org.nelson.system.tools.test.core.context;
 
 import static org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType.HSQL;
 
@@ -15,7 +15,7 @@ import org.springframework.transaction.support.ResourceTransactionManager;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("org.nelson.system.tools.test")
+@ComponentScan("org.nelson.system.tools.test.core")
 public class ToolsTestContext {
 	
 	@Bean

@@ -1,4 +1,4 @@
-package org.nelson.system.tools.test.random;
+package org.nelson.system.tools.test.core.random;
 
 import java.util.Random;
 

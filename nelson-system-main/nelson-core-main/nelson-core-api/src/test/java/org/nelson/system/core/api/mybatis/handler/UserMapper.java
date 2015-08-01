@@ -3,7 +3,7 @@ package org.nelson.system.core.api.mybatis.handler;
 import org.apache.ibatis.annotations.Param;
 import org.joda.time.DateTime;
 import org.nelson.system.core.api.mybatis.mapper.CoreMapper;
-import org.nelson.system.tools.test.user.User;
+import org.nelson.system.tools.test.core.user.User;
 
 public interface UserMapper extends CoreMapper {	
 	

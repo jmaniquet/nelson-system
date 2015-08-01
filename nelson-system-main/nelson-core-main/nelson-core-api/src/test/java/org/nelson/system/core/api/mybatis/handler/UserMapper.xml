@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.nelson.system.core.api.mybatis.handler.UserMapper">
 
-	<resultMap  id="userMap" type="org.nelson.system.tools.test.user.User">
+	<resultMap  id="userMap" type="org.nelson.system.tools.test.core.user.User">
 		<result column="ID" property="id" />
 		<result column="NAME" property="name" />
 		<result column="GIVEN_NAME" property="givenName" />

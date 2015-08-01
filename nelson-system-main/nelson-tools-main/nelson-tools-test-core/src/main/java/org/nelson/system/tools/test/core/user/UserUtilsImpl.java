@@ -1,4 +1,4 @@
-package org.nelson.system.tools.test.user;
+package org.nelson.system.tools.test.core.user;
 
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
