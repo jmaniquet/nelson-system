@@ -10,10 +10,8 @@ import javax.faces.view.facelets.ResourceResolver;
 
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;
 import org.mockito.Mock;
 import org.nelson.system.core.web.resource.AbstractMetaInfCustomDirResourceTest;
-import org.nelson.system.core.web.resource.resolver.MetaInfCustomDirResourceResolver;
 
 public class MetaInfCustomDirResourceResolverTest extends AbstractMetaInfCustomDirResourceTest {
 
