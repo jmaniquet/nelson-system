@@ -49,6 +49,7 @@
 					<dbScripts>
 						<value>schema/nelson-schema.sql</value>
 					</dbScripts>
+					<overwrite>true</overwrite>
 					<verbose>true</verbose>
 				</configuration>
 				<executions>
