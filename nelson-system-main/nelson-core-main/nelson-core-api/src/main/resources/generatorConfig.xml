@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="personne" targetRuntime="MyBatis3Simple">
+	
+		<jdbcConnection driverClass="org.hsqldb.jdbcDriver"
+			connectionURL="jdbc:hsqldb:mem:testdb"
+			userId="sa"
+			password="">
+		</jdbcConnection>
+
+		<javaModelGenerator targetPackage="org.nelson.system.core.api.personne.domain"
+			targetProject="MAVEN">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="false" />
+		</javaModelGenerator>
+
+		<!-- 
+		<sqlMapGenerator targetPackage="org.nelson.system.core.api.personne.domain"
+			targetProject="MAVEN">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		-->
+
+		<javaClientGenerator type="ANNOTATEDMAPPER"
+			targetPackage="org.nelson.system.core.api.personne.mapper"
+			targetProject="MAVEN">
+			<property name="enableSubPackages" value="true" />
+			<property name="rootInterface" value="org.nelson.system.core.api.mybatis.mapper.CoreMapper" />
+		</javaClientGenerator>
+
+		<table tableName="USERS" domainObjectName="Personne" >
+			<generatedKey column="ID" sqlStatement="HSQLDB" identity="true" />
+			<columnOverride column="BIRTH_DATE" typeHandler="org.nelson.system.core.api.mybatis.handler.JodaTimeTypeHandler" javaType="org.joda.time.DateTime" />
+		</table>
+	</context>
+</generatorConfiguration>
