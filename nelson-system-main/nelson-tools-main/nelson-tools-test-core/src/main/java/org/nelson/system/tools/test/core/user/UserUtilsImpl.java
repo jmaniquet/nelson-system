@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 class UserUtilsImpl implements UserUtils {
 	
-	static final String SQL_SELECT_USER_BY_ID = "SELECT U.* FROM USERS U WHERE ID = ?";
+	static final String SQL_SELECT_USER_BY_ID = "SELECT P.* FROM PERSON P WHERE ID = ?";
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

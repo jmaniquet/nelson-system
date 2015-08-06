@@ -13,25 +13,25 @@
 
 	<!-- TODO : faire marcher l'automapping - pour le moment les underscore posent problème
 	<select id="findById" resultType="fr.jmaniquet.poc.tools.user.User">
-		SELECT U.ID, U.NAME, U.GIVEN_NAME, U.BIRTH_DATE
-		FROM USERS U
+		SELECT P.ID, P.NAME, P.GIVEN_NAME, P.BIRTH_DATE
+		FROM PERSON P
 		WHERE ID = #{id}
 	</select>
 	-->
 	
 	<select id="findById" resultMap="userMap">
-		SELECT U.ID, U.NAME, U.GIVEN_NAME, U.BIRTH_DATE
-		FROM USERS U
-		WHERE ID = #{id}
+		SELECT P.ID, P.NAME, P.GIVEN_NAME, P.BIRTH_DATE
+		FROM PERSON P
+		WHERE P.ID = #{id}
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO USERS (ID, NAME, GIVEN_NAME, BIRTH_DATE)
+		INSERT INTO PERSON (ID, NAME, GIVEN_NAME, BIRTH_DATE)
 		VALUES (#{user.id}, #{user.name} , #{user.givenName}, #{user.birthDate})
 	</insert>
 	
 	<insert id="updateBirthDate">
-		UPDATE USERS
+		UPDATE PERSON
 		SET BIRTH_DATE = #{birthDate}
 		WHERE ID = #{id}
 	</insert>

@@ -46,10 +46,10 @@ import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 @DatabaseSetup("classpath:/test-dataset.xml")
 public class JodaTimeJdbcTemplateSelectTest extends AbstractTransactionalJUnit4SpringContextTests {
 	
-	private static final String SQL_SELECT_BIRTHDATE = "SELECT U.BIRTH_DATE FROM USERS U WHERE ID = ?";
-	private static final String SQL_SELECT_ENTRY = "SELECT U.* FROM USERS U WHERE ID = ?";
-	private static final String SQL_SELECT_ALL_ENTRIES = "SELECT U.* FROM USERS U ORDER BY ID ASC";
-	private static final String SQL_SELECT_ALL_DATES = "SELECT U.BIRTH_DATE FROM USERS U ORDER BY ID ASC";
+	private static final String SQL_SELECT_BIRTHDATE = "SELECT P.BIRTH_DATE FROM PERSON P WHERE ID = ?";
+	private static final String SQL_SELECT_ENTRY = "SELECT P.* FROM PERSON P WHERE ID = ?";
+	private static final String SQL_SELECT_ALL_ENTRIES = "SELECT P.* FROM PERSON P ORDER BY ID ASC";
+	private static final String SQL_SELECT_ALL_DATES = "SELECT P.BIRTH_DATE FROM PERSON P ORDER BY ID ASC";
 	
 	@Autowired
 	@Qualifier(BeanConstants.CUSTOM_JDBCTEMPLATE)
