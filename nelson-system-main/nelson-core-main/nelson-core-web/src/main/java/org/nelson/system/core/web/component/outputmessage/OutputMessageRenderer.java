@@ -1,4 +1,4 @@
-package fr.si2m.tooling.core.web.component.outputmessage;
+package org.nelson.system.core.web.component.outputmessage;
 
 import java.util.ArrayList;
 import java.util.List;

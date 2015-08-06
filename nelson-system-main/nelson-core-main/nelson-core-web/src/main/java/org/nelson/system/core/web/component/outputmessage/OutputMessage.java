@@ -1,4 +1,4 @@
-package fr.si2m.tooling.core.web.component.outputmessage;
+package org.nelson.system.core.web.component.outputmessage;
 
 import javax.faces.component.FacesComponent;
 import javax.faces.component.UIOutput;
