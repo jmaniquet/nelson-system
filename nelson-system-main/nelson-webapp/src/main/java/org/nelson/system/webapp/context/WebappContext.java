@@ -1,7 +1,14 @@
 package org.nelson.system.webapp.context;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.nelson.system.core.api.basenames.MessageLocationProvider;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.faces.config.AbstractFacesFlowConfiguration;
 import org.springframework.faces.webflow.FlowFacesContextLifecycleListener;
 import org.springframework.faces.webflow.JsfFlowHandlerAdapter;
@@ -69,5 +76,23 @@ public class WebappContext extends AbstractFacesFlowConfiguration {
 		JsfFlowHandlerAdapter a = new JsfFlowHandlerAdapter();
 		a.setFlowExecutor(flowExecutor());
 		return a;
+	}
+	
+	@Bean
+	@Autowired
+	public MessageSource messageSource(List<MessageLocationProvider> messageLocationProviders) {
+		List<String> baseNamesList = new ArrayList<>();
+		for (MessageLocationProvider messageSourceProvider : messageLocationProviders) {
+			String [] baseNamesTab = messageSourceProvider.getBaseNames();
+			for (String baseName : baseNamesTab) {
+				baseNamesList.add(baseName);
+			}
+		}
+		
+		String [] finalTab = baseNamesList.toArray(new String[baseNamesList.size()]);
+		
+		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+		messageSource.setBasenames(finalTab);
+		return messageSource;
 	}
 }
