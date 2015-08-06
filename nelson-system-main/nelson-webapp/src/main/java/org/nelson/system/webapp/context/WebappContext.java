@@ -84,7 +84,7 @@ public class WebappContext extends AbstractFacesFlowConfiguration {
 		return new MessageLocationProviderDefaultImpl("classpath:messages/home");
 	}
 	
-	@Bean
+	@Bean(name = "msgSrc")
 	@Autowired
 	public MessageSource messageSource(List<MessageLocationProvider> messageLocationProviders) {
 		List<String> baseNamesList = new ArrayList<>();

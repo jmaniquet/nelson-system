@@ -6,7 +6,7 @@ import javax.faces.component.UIOutput;
 @FacesComponent("nelson.faces.OutputMessage")
 public class OutputMessage extends UIOutput {
 	
-	private static final String MESSAGE_SOURCE_DEFAULT_VALUE = "messageSource";
+	private static final String MESSAGE_SOURCE_DEFAULT_VALUE = "msgSrc";
 	
 	public OutputMessage() {
 		super();
