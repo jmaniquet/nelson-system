@@ -5,20 +5,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
 
-	<h:form id="menu-form">
-		<p:panelMenu>
-			<p:submenu label="Personne">
-				<p:menuitem value="Recherche" action="menu-personne-recherche"></p:menuitem>
-				<p:menuitem value="Creation" action="menu-personne-creation"></p:menuitem>
-			</p:submenu>
-	
-			<p:submenu label="Menu 2">
-				<p:menuitem value="Sous-menu 1"></p:menuitem>
-				<p:menuitem value="Sous-menu 2"></p:menuitem>
-				<p:menuitem value="Sous-menu 3"></p:menuitem>
-			</p:submenu>
-		</p:panelMenu>
-	</h:form>
+	<p:clock pattern="dd/MM/yyyy HH:mm:ss" mode="server" autoSync="true" />
+	<pe:analogClock mode="server" />
 </ui:composition>

@@ -11,20 +11,10 @@ import org.springframework.context.annotation.Configuration;
 public class CoreWebContext {
 	
 	@Bean
-	public MessageLocationProvider messageLocationProvider() {
+	public MessageLocationProvider coreWebMessageLocationProvider() {
 		return new MessageLocationProviderDefaultImpl(
 				"classpath:messages/template/default-layout",
 				"classpath:messages/template/header",
 				"classpath:messages/template/footer");
 	}
-	
-	/*@Bean
-	public MessageSource messageSource() {
-		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-		messageSource.setBasenames(
-				"classpath:messages/template/default-layout",
-				"classpath:messages/template/header",
-				"classpath:messages/template/footer");
-		return messageSource;
-	}*/
 }
