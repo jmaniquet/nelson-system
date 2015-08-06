@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.nelson.system.core.api.basenames.MessageLocationProvider;
+import org.nelson.system.core.api.basenames.MessageLocationProviderDefaultImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -76,6 +77,11 @@ public class WebappContext extends AbstractFacesFlowConfiguration {
 		JsfFlowHandlerAdapter a = new JsfFlowHandlerAdapter();
 		a.setFlowExecutor(flowExecutor());
 		return a;
+	}
+	
+	@Bean
+	public MessageLocationProvider webappMessageLocationProvider() {
+		return new MessageLocationProviderDefaultImpl("classpath:messages/home");
 	}
 	
 	@Bean

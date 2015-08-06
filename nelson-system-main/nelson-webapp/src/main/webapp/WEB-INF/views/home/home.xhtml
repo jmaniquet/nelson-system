@@ -6,9 +6,24 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
+	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
 	template="/common/default-layout.xhtml">
 
+	<ui:define name="main-form-header-facet">
+		<nelson:outputMessage key="home.title" />
+	</ui:define>
+
 	<ui:define name="main-form-content">
-		Home templaté
+		<h:panelGrid columns="3" style="width: 100%;">
+			<p:button
+				value="#{messageSource['home.person.label']}"
+				href="/app/home"
+				target="_blank"
+				style="width: 100%; height: 50px;" />
+			<p:button value="Domaine 2" style="width: 100%; height: 50px;" />
+			<p:button value="Domaine 3" style="width: 100%; height: 50px;" />
+			<p:button value="Domaine 4" style="width: 100%; height: 50px;" />
+			<p:button value="Domaine 5" style="width: 100%; height: 50px;" />
+		</h:panelGrid>
 	</ui:define>
 </ui:composition>
