@@ -9,10 +9,15 @@
 	xmlns:nelson="http://java.sun.com/jsf/composite/nelson">
 	
 	<f:facet name="header">
-		<h:outputText value="Footer title" />
+		<nelson:outputMessage key="footer.title" />
 	</f:facet>
 	
 	<p:panelGrid columns="1">
-		<h:outputText value="Footer content" />
+		<nelson:outputMessage key="footer.sun-jsf.version" />
+		<nelson:outputMessage key="footer.primefaces.version" />
+		<nelson:outputMessage key="footer.spring.core.version" />
+		<nelson:outputMessage key="footer.spring.webflow.version" />
+		<nelson:outputMessage key="footer.mybatis.version" />
+		<nelson:outputMessage key="footer.jodatime.version" />
 	</p:panelGrid>
 </ui:composition>
