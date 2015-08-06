@@ -17,11 +17,6 @@
 			<groupId>org.nelson.system.infrastructure</groupId>
 			<artifactId>nelson-infrastructure-dependencies</artifactId>
 		</dependency>
-	
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-		</dependency>
 		
 		<dependency>
 			<groupId>junit</groupId>
