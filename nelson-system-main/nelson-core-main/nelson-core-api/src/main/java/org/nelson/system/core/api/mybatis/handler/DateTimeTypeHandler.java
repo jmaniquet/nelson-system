@@ -13,7 +13,7 @@ import org.apache.ibatis.type.TypeHandler;
 import org.joda.time.DateTime;
 
 @MappedTypes(value = DateTime.class)
-public class JodaTimeTypeHandler implements TypeHandler<DateTime> {
+public class DateTimeTypeHandler implements TypeHandler<DateTime> {
 
 	@Override
 	public void setParameter(PreparedStatement ps, int i, DateTime parameter, JdbcType jdbcType) throws SQLException {

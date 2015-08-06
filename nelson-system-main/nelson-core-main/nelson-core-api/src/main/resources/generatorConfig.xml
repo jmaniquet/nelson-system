@@ -33,7 +33,7 @@
 
 		<table tableName="USERS" domainObjectName="Personne" >
 			<generatedKey column="ID" sqlStatement="HSQLDB" identity="true" />
-			<columnOverride column="BIRTH_DATE" typeHandler="org.nelson.system.core.api.mybatis.handler.JodaTimeTypeHandler" javaType="org.joda.time.DateTime" />
+			<columnOverride column="BIRTH_DATE" typeHandler="org.nelson.system.core.api.mybatis.handler.DateTimeTypeHandler" javaType="org.joda.time.DateTime" />
 		</table>
 	</context>
 </generatorConfiguration>
