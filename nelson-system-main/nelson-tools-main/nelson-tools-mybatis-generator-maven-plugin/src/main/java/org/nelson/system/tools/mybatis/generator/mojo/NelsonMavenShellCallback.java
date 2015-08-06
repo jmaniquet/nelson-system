@@ -1,0 +1,71 @@
+package org.nelson.system.tools.mybatis.generator.mojo;
+
+import java.io.File;
+import java.util.StringTokenizer;
+
+import org.mybatis.generator.exception.ShellException;
+import org.mybatis.generator.internal.DefaultShellCallback;
+import org.mybatis.generator.internal.util.messages.Messages;
+
+/**
+ * Mainly copypasted from MavenShellCallback because it's not really designed for extension.
+ * @author jonathan
+ *
+ */
+public class NelsonMavenShellCallback extends DefaultShellCallback {
+
+	private EmbeddedMybatisGeneratorMojo mybatisGeneratorMojo;
+
+	/**
+	 * @param overwrite
+	 */
+	public NelsonMavenShellCallback(EmbeddedMybatisGeneratorMojo mybatisGeneratorMojo, boolean overwrite) {
+		super(overwrite);
+		this.mybatisGeneratorMojo = mybatisGeneratorMojo;
+	}
+	
+	@Override
+	public File getDirectory(String targetProject, String targetPackage)
+			throws ShellException {
+		System.out.println("YO MAN 1");
+		if (!"MAVEN".equals(targetProject)) {
+			return super.getDirectory(targetProject, targetPackage);
+		}
+
+		// targetProject is the output directory from the MyBatis generator
+		// Mojo. It will be created if necessary
+		//
+		// targetPackage is interpreted as a sub directory, but in package
+		// format (with dots instead of slashes).  The sub directory will be created
+		// if it does not already exist
+		System.out.println("YO MAN 2");
+		File project = mybatisGeneratorMojo.getOutputDirectory();
+		if (!project.exists()) {
+			System.out.println("YO MAN 3");
+			project.mkdirs();
+		}
+
+		if (!project.isDirectory()) {
+			throw new ShellException(Messages.getString("Warning.9", //$NON-NLS-1$
+					project.getAbsolutePath()));
+		}
+
+		StringBuilder sb = new StringBuilder();
+		StringTokenizer st = new StringTokenizer(targetPackage, "."); //$NON-NLS-1$
+		while (st.hasMoreTokens()) {
+			sb.append(st.nextToken());
+			sb.append(File.separatorChar);
+		}
+
+		File directory = new File(project, sb.toString());
+		if (!directory.isDirectory()) {
+			boolean rc = directory.mkdirs();
+			if (!rc) {
+				throw new ShellException(Messages.getString("Warning.10", //$NON-NLS-1$
+						directory.getAbsolutePath()));
+			}
+		}
+
+		return directory;
+	}
+}
