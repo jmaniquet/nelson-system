@@ -33,7 +33,7 @@ import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 @TestExecutionListeners(listeners = DbUnitTestExecutionListener.class)
 @DbUnitConfiguration(databaseConnection = "dataSource")
 @DatabaseSetup("classpath:/test-dataset.xml")
-public class JodaTimeHandlerFindByIdTest extends AbstractTransactionalJUnit4SpringContextTests {
+public class DateTimeTimeHandlerFindByIdTest extends AbstractTransactionalJUnit4SpringContextTests {
 	
 	@Autowired
 	private UserUtils userUtils;

@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 		ToolsTestCoreContext.class,
 		CoreApiContext.class}
 )
-public class JodaTimeHandlerInsertTest extends AbstractTransactionalJUnit4SpringContextTests {
+public class DateTimeHandlerInsertTest extends AbstractTransactionalJUnit4SpringContextTests {
 	
 	@Autowired
 	private UserUtils userUtils;
