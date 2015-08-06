@@ -13,7 +13,10 @@ public class CoreWebContext {
 	@Bean
 	public MessageSource messageSource() {
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-		messageSource.setBasenames("classpath:default-layout", "classpath:header", "classpath:footer");
+		messageSource.setBasenames(
+				"classpath:messages/template/default-layout",
+				"classpath:messages/template/header",
+				"classpath:messages/template/footer");
 		return messageSource;
 	}
 }
