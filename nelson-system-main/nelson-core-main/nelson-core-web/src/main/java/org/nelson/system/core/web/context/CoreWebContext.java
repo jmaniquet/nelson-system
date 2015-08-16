@@ -2,12 +2,13 @@ package org.nelson.system.core.web.context;
 
 import org.nelson.system.core.api.basenames.MessageLocationProvider;
 import org.nelson.system.core.api.basenames.MessageLocationProviderDefaultImpl;
+import org.nelson.system.core.web.CoreWebScannable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "org.nelson.system.core.web")
+@ComponentScan(basePackageClasses = CoreWebScannable.class)
 public class CoreWebContext {
 	
 	@Bean

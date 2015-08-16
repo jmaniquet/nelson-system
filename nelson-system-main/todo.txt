@@ -1,5 +1,4 @@
 Refactoring : renaming Person into Personne
-Improvement : make componentScan type-safe
 Improvement : code completion for facelets in jar
 Improvement : fixing "main title" label in main form
 Feature : "close" view

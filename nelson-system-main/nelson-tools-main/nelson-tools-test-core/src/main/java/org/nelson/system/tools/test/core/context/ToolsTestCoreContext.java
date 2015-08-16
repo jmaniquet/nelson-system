@@ -3,6 +3,7 @@ package org.nelson.system.tools.test.core.context;
 import javax.sql.DataSource;
 
 import org.nelson.system.infrastructure.environment.context.InfrastructureEnvironmentContext;
+import org.nelson.system.tools.test.core.ToolsTestCoreScannable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,7 +13,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 @Configuration
 @Import(InfrastructureEnvironmentContext.class)
-@ComponentScan("org.nelson.system.tools.test.core")
+@ComponentScan(basePackageClasses = ToolsTestCoreScannable.class)
 public class ToolsTestCoreContext {
 	
 	@Autowired

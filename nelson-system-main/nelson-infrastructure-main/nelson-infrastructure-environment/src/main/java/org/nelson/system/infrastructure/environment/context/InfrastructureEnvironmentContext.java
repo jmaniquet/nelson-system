@@ -4,6 +4,7 @@ import static org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType.
 
 import javax.sql.DataSource;
 
+import org.nelson.system.infrastructure.environment.InfrastructureEnvironnementScannable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +12,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
 @Configuration
-@ComponentScan("org.nelson.system.infrastructure.environment")
+@ComponentScan(basePackageClasses = InfrastructureEnvironnementScannable.class)
 public class InfrastructureEnvironmentContext {
 	
 	@Bean

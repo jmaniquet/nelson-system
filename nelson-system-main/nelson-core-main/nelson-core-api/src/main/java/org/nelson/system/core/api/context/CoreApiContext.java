@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
+import org.nelson.system.core.api.CoreApiScannable;
 import org.nelson.system.core.api.mybatis.mapper.CoreMapper;
 import org.nelson.system.core.api.spring.jdbc.template.JodaTimeJdbcTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ import org.springframework.transaction.support.ResourceTransactionManager;
 		basePackages = {"org.nelson.system"},
 		markerInterface=CoreMapper.class,
 		sqlSessionFactoryRef="sqlSessionFactory")
-@ComponentScan(basePackages = "org.nelson.system.core.api")
+@ComponentScan(basePackageClasses = CoreApiScannable.class)
 public class CoreApiContext {
 
 	@Autowired
