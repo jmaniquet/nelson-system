@@ -93,6 +93,12 @@
 			</dependency>
 			
 			<dependency>
+				<groupId>org.nelson.system.person</groupId>
+				<artifactId>nelson-person-web</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<dependency>
 				<groupId>org.nelson.system</groupId>
 				<artifactId>nelson-webapp</artifactId>
 				<version>${project.version}</version>
@@ -181,6 +187,7 @@
 		<module>nelson-tools-main</module>
 		<module>nelson-core-main</module>
 		<module>nelson-webapp</module>
+		<module>nelson-person-main</module>
 	</modules>
 
 	<build>

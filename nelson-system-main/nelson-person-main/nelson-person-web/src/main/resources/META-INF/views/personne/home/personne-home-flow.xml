@@ -1,0 +1,11 @@
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+						http://www.springframework.org/schema/webflow/spring-webflow.xsd">
+
+	<view-state id="personne-home" view="/personne/home/personne-home.xhtml">
+		<transition on="close" to="close" />
+	</view-state>
+
+	<end-state id="close" />
+</flow>
