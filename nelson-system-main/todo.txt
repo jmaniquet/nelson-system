@@ -1,4 +1,4 @@
-Improvement : make tools-test-core and tools-test-web scope test by default in main pom
+Improvement : code completion for facelets in jar
 Feature : default flow with global "close" transition/end-state
 Feature : outputmessage - allow use of parameters
 Feature : create personne

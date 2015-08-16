@@ -55,7 +55,6 @@
 		<dependency>
 			<groupId>org.nelson.system.tools</groupId>
 			<artifactId>nelson-tools-test-web</artifactId>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>

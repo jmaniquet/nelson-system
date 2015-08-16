@@ -74,11 +74,13 @@
 				<groupId>org.nelson.system.tools</groupId>
 				<artifactId>nelson-tools-test-core</artifactId>
 				<version>${project.version}</version>
+				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.nelson.system.tools</groupId>
 				<artifactId>nelson-tools-test-web</artifactId>
 				<version>${project.version}</version>
+				<scope>test</scope>
 			</dependency>
 			
 			<dependency>
