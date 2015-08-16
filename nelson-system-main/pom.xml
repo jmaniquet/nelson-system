@@ -90,10 +90,20 @@
 			</dependency>
 			<dependency>
 				<groupId>org.nelson.system.core</groupId>
+				<artifactId>nelson-core-db</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.nelson.system.core</groupId>
 				<artifactId>nelson-core-web</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			
+			<dependency>
+				<groupId>org.nelson.system.person</groupId>
+				<artifactId>nelson-person-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.nelson.system.person</groupId>
 				<artifactId>nelson-person-web</artifactId>

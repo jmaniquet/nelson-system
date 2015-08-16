@@ -32,36 +32,4 @@
 			<artifactId>nelson-tools-test-core</artifactId>
 		</dependency>
 	</dependencies>
-	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.nelson.system.tools</groupId>
-				<artifactId>nelson-tools-mybatis-generator-maven-plugin</artifactId>
-				<configuration>
-					<dbType>HSQL</dbType>
-					<dbScripts>
-						<value>schema/nelson-schema.sql</value>
-					</dbScripts>
-					<overwrite>true</overwrite>
-					<verbose>true</verbose>
-				</configuration>
-				<executions>
-					<execution>
-						<id>Generate MyBatis Artifacts</id>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-					</execution>
-				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>org.nelson.system.infrastructure</groupId>
-						<artifactId>nelson-infrastructure-schema</artifactId>
-						<version>${project.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-		</plugins>
-	</build>
 </project>

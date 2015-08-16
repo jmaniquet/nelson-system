@@ -15,6 +15,7 @@
 	<name>nelson-person-main</name>
 
 	<modules>
+		<module>nelson-person-api</module>
 		<module>nelson-person-web</module>
 	</modules>
 </project>

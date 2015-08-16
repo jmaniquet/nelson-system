@@ -11,27 +11,28 @@
 			password="">
 		</jdbcConnection>
 
-		<javaModelGenerator targetPackage="org.nelson.system.core.api.personne.domain"
+		<javaModelGenerator targetPackage="org.nelson.system.core.db.personne.domain"
 			targetProject="MAVEN">
+			<property name="rootClass" value="org.nelson.system.core.api.mybatis.mapper.CoreObject" />
 			<property name="enableSubPackages" value="false" />
 			<property name="trimStrings" value="false" />
 		</javaModelGenerator>
 
 		<!-- 
-		<sqlMapGenerator targetPackage="org.nelson.system.core.api.personne.domain"
+		<sqlMapGenerator targetPackage="org.nelson.system.core.db.personne.domain"
 			targetProject="MAVEN">
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
 		-->
 
 		<javaClientGenerator type="ANNOTATEDMAPPER"
-			targetPackage="org.nelson.system.core.api.personne.mapper"
+			targetPackage="org.nelson.system.core.db.personne.mapper"
 			targetProject="MAVEN">
 			<property name="enableSubPackages" value="true" />
 			<property name="rootInterface" value="org.nelson.system.core.api.mybatis.mapper.CoreMapper" />
 		</javaClientGenerator>
 
-		<table tableName="PERSON" domainObjectName="Person" >
+		<table tableName="PERSON" domainObjectName="Person">
 			<generatedKey column="ID" sqlStatement="HSQLDB" identity="true" />
 			<columnOverride column="BIRTH_DATE" typeHandler="org.nelson.system.core.api.mybatis.handler.DateTimeTypeHandler" javaType="org.joda.time.DateTime" />
 		</table>
