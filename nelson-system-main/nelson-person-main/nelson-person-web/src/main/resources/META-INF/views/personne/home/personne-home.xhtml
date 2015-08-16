@@ -16,7 +16,15 @@
 	</ui:define>
 
 	<ui:define name="main-form-content">
-		<nelson:outputMessage key="person.home.title" />
-		<p:commandButton value="#{msgSrc['person.close.label']}" action="close" />
+		<h:panelGrid columns="1">
+			<nelson:outputMessage key="person.home.title" />
+			<p:button
+				value="#{msgSrc['person.home.creation.label']}"
+				href="/app/personne/creation"
+				target="_blank" />
+			<p:commandButton
+				value="#{msgSrc['person.home.close.label']}"
+				action="close" />
+		</h:panelGrid>
 	</ui:define>
 </ui:composition>

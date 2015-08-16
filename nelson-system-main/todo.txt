@@ -1,6 +1,9 @@
 Refactoring : renaming Person into Personne
 Improvement : make componentScan type-safe
 Improvement : code completion for facelets in jar
-Feature : default flow with global "close" transition/end-state
+Improvement : fixing "main title" label in main form
+Feature : "close" view
+Feature : default flow with global "close" transition/end-state and a "close"
 Feature : outputmessage - allow use of parameters
-Feature : create personne
+Fix : problème d'encoding sur les accents
+Task : linking end-states to a real target
