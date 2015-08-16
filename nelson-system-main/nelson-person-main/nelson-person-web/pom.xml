@@ -15,7 +15,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.nelson.system.core</groupId>
-			<artifactId>nelson-core-api</artifactId>
+			<artifactId>nelson-core-db</artifactId>
 		</dependency>
 	
 		<dependency>

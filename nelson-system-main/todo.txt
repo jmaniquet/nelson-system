@@ -1,3 +1,4 @@
+Improvement : make componentScan type-safe
 Improvement : code completion for facelets in jar
 Feature : default flow with global "close" transition/end-state
 Feature : outputmessage - allow use of parameters

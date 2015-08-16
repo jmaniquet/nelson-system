@@ -11,21 +11,21 @@
 			password="">
 		</jdbcConnection>
 
-		<javaModelGenerator targetPackage="org.nelson.system.core.api.personne.domain"
+		<javaModelGenerator targetPackage="org.nelson.system.core.db.personne.domain"
 			targetProject="MAVEN">
 			<property name="enableSubPackages" value="false" />
 			<property name="trimStrings" value="false" />
 		</javaModelGenerator>
 
 		<!-- 
-		<sqlMapGenerator targetPackage="org.nelson.system.core.api.personne.domain"
+		<sqlMapGenerator targetPackage="org.nelson.system.core.db.personne.domain"
 			targetProject="MAVEN">
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
 		-->
 
 		<javaClientGenerator type="ANNOTATEDMAPPER"
-			targetPackage="org.nelson.system.core.api.personne.mapper"
+			targetPackage="org.nelson.system.core.db.personne.mapper"
 			targetProject="MAVEN">
 			<property name="enableSubPackages" value="true" />
 			<property name="rootInterface" value="org.nelson.system.core.api.mybatis.mapper.CoreMapper" />
