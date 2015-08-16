@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import org.nelson.system.core.api.context.CoreApiContext;
 import org.nelson.system.core.web.context.CoreWebContext;
 import org.nelson.system.infrastructure.environment.context.InfrastructureEnvironmentContext;
+import org.nelson.system.personne.web.context.PersonneWebContext;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebappInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -15,6 +16,7 @@ public class WebappInitializer extends AbstractAnnotationConfigDispatcherServlet
 		return new Class<?>[] { InfrastructureEnvironmentContext.class,
 								CoreApiContext.class,
 								CoreWebContext.class,
+								PersonneWebContext.class,
 								WebappContext.class };
 	}
 

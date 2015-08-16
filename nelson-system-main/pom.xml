@@ -74,11 +74,13 @@
 				<groupId>org.nelson.system.tools</groupId>
 				<artifactId>nelson-tools-test-core</artifactId>
 				<version>${project.version}</version>
+				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.nelson.system.tools</groupId>
 				<artifactId>nelson-tools-test-web</artifactId>
 				<version>${project.version}</version>
+				<scope>test</scope>
 			</dependency>
 			
 			<dependency>
@@ -89,6 +91,12 @@
 			<dependency>
 				<groupId>org.nelson.system.core</groupId>
 				<artifactId>nelson-core-web</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.nelson.system.person</groupId>
+				<artifactId>nelson-person-web</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			
@@ -181,6 +189,7 @@
 		<module>nelson-tools-main</module>
 		<module>nelson-core-main</module>
 		<module>nelson-webapp</module>
+		<module>nelson-person-main</module>
 	</modules>
 
 	<build>
