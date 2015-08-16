@@ -14,7 +14,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.mockito.Mock;
 import org.nelson.system.core.web.resource.AbstractMetaInfCustomDirResourceTest;
-import org.nelson.system.core.web.resource.handler.MetaInfCustomDirResourceHandler;
 
 public class MetaInfCustomDirResourceHandlerTest extends AbstractMetaInfCustomDirResourceTest {
 
@@ -23,9 +22,6 @@ public class MetaInfCustomDirResourceHandlerTest extends AbstractMetaInfCustomDi
 	
 	@Mock
 	private FacesContext facesContext;
-	
-	@Mock
-	private ViewResource viewResourceMocked; 
 	
 	private MetaInfCustomDirResourceHandler underTest;
 	
