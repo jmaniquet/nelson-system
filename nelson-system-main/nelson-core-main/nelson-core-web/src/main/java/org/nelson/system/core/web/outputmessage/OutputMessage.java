@@ -1,4 +1,4 @@
-package org.nelson.system.core.web.component.outputmessage;
+package org.nelson.system.core.web.outputmessage;
 
 import javax.faces.component.FacesComponent;
 import javax.faces.component.UIOutput;
