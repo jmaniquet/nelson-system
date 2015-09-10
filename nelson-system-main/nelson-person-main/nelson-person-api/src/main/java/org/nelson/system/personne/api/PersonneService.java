@@ -1,8 +1,8 @@
 package org.nelson.system.personne.api;
 
-import org.nelson.system.core.db.personne.domain.Person;
+import org.nelson.system.core.db.personne.domain.Personne;
 
 public interface PersonneService {
 
-	void create(Person personne);
+	void create(Personne personne);
 }

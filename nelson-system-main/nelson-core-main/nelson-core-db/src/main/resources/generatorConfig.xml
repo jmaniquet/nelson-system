@@ -32,7 +32,7 @@
 			<property name="rootInterface" value="org.nelson.system.core.api.mybatis.mapper.CoreMapper" />
 		</javaClientGenerator>
 
-		<table tableName="PERSON" domainObjectName="Person">
+		<table tableName="PERSONNE">
 			<generatedKey column="ID" sqlStatement="HSQLDB" identity="true" />
 			<columnOverride column="BIRTH_DATE" typeHandler="org.nelson.system.core.api.mybatis.handler.DateTimeTypeHandler" javaType="org.joda.time.DateTime" />
 		</table>

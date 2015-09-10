@@ -2,7 +2,7 @@ package org.nelson.system.personne.web.creation;
 
 import java.io.Serializable;
 
-import org.nelson.system.core.db.personne.domain.Person;
+import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.personne.api.PersonneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -16,14 +16,14 @@ public class PersonneCreationControllerImpl implements Serializable, PersonneCre
 	@Autowired
 	private transient PersonneService personneService;
 	
-	private Person personne;
+	private Personne personne;
 
 	/* (non-Javadoc)
 	 * @see fr.si2m.tooling.personne.creation.PersonneCreationController#init()
 	 */
 	@Override
 	public void init() {
-		personne = new Person();
+		personne = new Personne();
 	}
 	
 	/* (non-Javadoc)
@@ -34,14 +34,14 @@ public class PersonneCreationControllerImpl implements Serializable, PersonneCre
 		personneService.create(personne);
 	}
 	
-	public Person getPersonne() {
+	public Personne getPersonne() {
 		return personne;
 	}
 	/**
 	 * For testing purposes only, hence the package visibility
 	 * @param personne
 	 */
-	void setPersonne(Person personne) {
+	void setPersonne(Personne personne) {
 		this.personne = personne;
 	}
 }

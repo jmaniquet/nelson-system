@@ -36,7 +36,7 @@ import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 @DatabaseSetup("classpath:/test-dataset.xml")
 public class JodaTimeJdbcTemplateUpdateTest extends AbstractTransactionalJUnit4SpringContextTests {
 	
-	private static final String SQL_UPDATE_BIRTHDATE_BY_ID = "UPDATE PERSON SET BIRTH_DATE = ? WHERE ID = ?";
+	private static final String SQL_UPDATE_BIRTHDATE_BY_ID = "UPDATE PERSONNE SET BIRTH_DATE = ? WHERE ID = ?";
 	
 	@Autowired
 	@Qualifier(BeanConstants.CUSTOM_JDBCTEMPLATE)
