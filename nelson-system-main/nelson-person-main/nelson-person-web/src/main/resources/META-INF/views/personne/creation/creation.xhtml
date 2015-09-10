@@ -18,7 +18,7 @@
 			<p:inputText value="#{personneCreationController.personne.givenName}" />
 			
 			<nelson:outputMessage key="person.creation.birthDate.label" />
-			<p:calendar value="#{personneCreationController.personne.birthDate}" showOn="button" />
+			<p:calendar value="#{personneCreationController.personne.birthDate}" showOn="button" converter="dateTimeConverter" />
 			
 			<f:facet name="footer">
 				<p:commandButton
