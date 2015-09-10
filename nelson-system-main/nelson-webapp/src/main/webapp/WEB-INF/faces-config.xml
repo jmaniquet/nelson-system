@@ -2,5 +2,21 @@
 <faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
-	version="2.2">
+	version="2.2">	
+	
+	<!--
+		Work around for primefaces not correctly using a converter registered with a "forClass" attribute on the Calendar component.
+		The problem lies in the CalendarUtils class : the method getValueAsString checks for a specific converter on the component,
+		but if not found defaults on a java.util.Date conversion with SimpleDateFormat.
+		Converters registered with "forClass" are thus ignored.
+		More details at :
+		http://stackoverflow.com/questions/31598697/facesconverterforclass-clazz-class-and-pcalendar
+		
+		Furthermore, for whatever reason i did not manage to get this configuration working in the face-config.xml of my jar.
+		I had to declare it at the webapp level, i have no idea why.
+	-->
+	<component>
+		<component-type>org.primefaces.component.Calendar</component-type>
+		<component-class>org.nelson.system.core.web.calendar.DateTimeCalendar</component-class>
+	</component>
 </faces-config>

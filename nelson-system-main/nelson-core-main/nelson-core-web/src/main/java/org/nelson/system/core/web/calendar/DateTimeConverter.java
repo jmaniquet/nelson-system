@@ -13,7 +13,7 @@ import org.joda.time.format.DateTimeFormatter;
 import org.primefaces.component.calendar.Calendar;
 import org.springframework.util.StringUtils;
 
-@FacesConverter("dateTimeConverter")
+@FacesConverter(forClass = DateTime.class)
 public class DateTimeConverter implements Converter {
 
 	@Override
