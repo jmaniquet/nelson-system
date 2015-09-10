@@ -139,10 +139,11 @@ public class EmbeddedMybatisGeneratorMojo extends AbstractMojo {
 				.setSeparator("/;")
 				.build();
 		
-		this.copyPasteFromMyBatisGeneratorMojo();
-		
-		db.shutdown();
-		
+		try {
+			this.copyPasteFromMyBatisGeneratorMojo();
+		} finally {
+			db.shutdown();	
+		}
 	}
 	
 	private void copyPasteFromMyBatisGeneratorMojo() throws MojoExecutionException {
