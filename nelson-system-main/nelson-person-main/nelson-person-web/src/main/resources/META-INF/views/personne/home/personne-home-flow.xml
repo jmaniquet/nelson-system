@@ -7,5 +7,5 @@
 		<transition on="close" to="close" />
 	</view-state>
 
-	<end-state id="close" />
+	<end-state id="close" view="externalRedirect:contextRelative:/close.html" />
 </flow>
