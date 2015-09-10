@@ -14,6 +14,13 @@ import org.springframework.webflow.test.execution.AbstractXmlFlowExecutionTests;
 
 public abstract class AbstractNelsonXmlFlowExecutionTests extends AbstractXmlFlowExecutionTests {
 
+	@Override
+	protected FlowDefinitionResource[] getModelResources(FlowDefinitionResourceFactory resourceFactory) {
+		return new FlowDefinitionResource[] {
+				resourceFactory.createResource("/META-INF/views/default/default-flow.xml", null, "default")
+		};
+	}
+	
 	protected void assertCurrentStateEquals(PossibleState state) {
 		super.assertCurrentStateEquals(state.getStateId());
 	}

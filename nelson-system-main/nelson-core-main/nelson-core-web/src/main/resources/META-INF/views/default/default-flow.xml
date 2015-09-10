@@ -2,8 +2,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
 						http://www.springframework.org/schema/webflow/spring-webflow.xsd"
-						parent="default">
+	abstract="true">
 
-	<view-state id="personne-home" view="/personne/home/personne-home.xhtml">
-	</view-state>
+	<end-state id="close" commit="false" view="externalRedirect:contextRelative:/close.html" />
+
+	<global-transitions>
+		<transition on="cancel" to="close" />
+		<transition on="close" to="close" />
+	</global-transitions>
 </flow>

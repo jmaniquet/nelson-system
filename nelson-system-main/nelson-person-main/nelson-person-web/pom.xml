@@ -17,6 +17,11 @@
 			<groupId>org.nelson.system.person</groupId>
 			<artifactId>nelson-person-api</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.nelson.system.core</groupId>
+			<artifactId>nelson-core-web</artifactId>
+		</dependency>
 	
 		<dependency>
 			<groupId>org.nelson.system.tools</groupId>
