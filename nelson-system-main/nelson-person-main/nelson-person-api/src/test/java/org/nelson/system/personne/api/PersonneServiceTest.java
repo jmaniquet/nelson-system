@@ -18,6 +18,9 @@ public class PersonneServiceTest {
 	@Mock
 	private PersonneMapper personneMapper;
 	
+	@Mock
+	private PersonneDao personneDao;
+	
 	@Before
 	public void setUp() {
 		underTest = new PersonneServiceImpl();
@@ -29,5 +32,12 @@ public class PersonneServiceTest {
 		Personne fakeParam = new Personne();
 		underTest.create(fakeParam);
 		Mockito.verify(personneMapper).insert(fakeParam);
+	}
+	
+	@Test
+	public void testFindByCriteria() {
+		PersonneRechercheCriteria fakeParam = new PersonneRechercheCriteria();
+		underTest.findByCriteria(fakeParam);
+		Mockito.verify(personneDao).findByCriteria(fakeParam);
 	}
 }

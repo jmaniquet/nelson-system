@@ -217,6 +217,12 @@
 					<exclude>**/*.properties</exclude>
 				</excludes>
 			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*Dao.xml</include>
+				</includes>
+			</resource>
 		</resources>
 		<testResources>
 			<testResource>

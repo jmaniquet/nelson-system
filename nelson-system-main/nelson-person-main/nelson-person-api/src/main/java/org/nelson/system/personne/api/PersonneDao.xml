@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.nelson.system.personne.api.PersonneDao">
+
+	<resultMap  id="personneMap" type="org.nelson.system.core.db.personne.domain.Personne">
+		<result column="ID" property="id" />
+		<result column="NAME" property="name" />
+		<result column="GIVEN_NAME" property="givenName" />
+		<result column="BIRTH_DATE" property="birthDate" />
+	</resultMap>
+	
+	<select id="findByCriteria" resultMap="personneMap">
+		SELECT P.ID, P.NAME, P.GIVEN_NAME, P.BIRTH_DATE
+		FROM PERSONNE P
+		<where>
+			<if test="criteria.name != null">
+				<bind name="nameLikeClause" value="criteria.getName() + '%'" />
+				UPPER(P.NAME) LIKE UPPER(#{nameLikeClause}) 
+			</if>
+			
+			<if test="criteria.givenName != null">
+				<bind name="givenNameLikeClause" value="criteria.getGivenName() + '%'" />
+				AND UPPER(P.GIVEN_NAME) LIKE UPPER(#{givenNameLikeClause}) 
+			</if>
+			
+			<if test="criteria.birthDateStart != null">
+				AND P.BIRTH_DATE >= #{criteria.birthDateStart} 
+			</if>
+			
+			<if test="criteria.birthDateEnd != null">
+				<![CDATA[
+				AND P.BIRTH_DATE < #{criteria.birthDateEnd}
+				]]> 
+			</if>
+		</where>
+	</select>
+</mapper>
