@@ -2,6 +2,7 @@ package org.nelson.system.core.web.calendar;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
+import javax.faces.component.html.HtmlOutputText;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
@@ -16,14 +17,15 @@ import org.springframework.util.StringUtils;
 @FacesConverter(forClass = DateTime.class)
 public class DateTimeConverter implements Converter {
 
+	private static final String STD_DATE_PATTERN = "dd/MM/yyyy";
+	
 	@Override
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {
 		if (!StringUtils.hasText(value)) {
 			return null;
 		}
-		Calendar cal = castToCalendar(component);
-		DateTimeFormatter dtf = calculateDateTimeFormatter(cal);
 		
+		DateTimeFormatter dtf = calculateDateTimeFormatter(component);
 		return DateTime.parse(value, dtf);
 	}
 
@@ -33,8 +35,7 @@ public class DateTimeConverter implements Converter {
 			return "";
 		}
 		
-		Calendar cal = castToCalendar(component);
-		DateTimeFormatter dtf = calculateDateTimeFormatter(cal);
+		DateTimeFormatter dtf = calculateDateTimeFormatter(component);
 		
 		DateTime date = (DateTime) value;
 		String result = date.toString(dtf);
@@ -42,18 +43,48 @@ public class DateTimeConverter implements Converter {
 		return result;
 	}
 	
+	private DateTimeFormatter calculateDateTimeFormatter(UIComponent component) {
+		if (isInstanceOfCalendar(component)) {
+			Calendar casted = castToCalendar(component);
+			return calculateDateTimeFormatter(casted);
+		}
+		
+		if (isInstanceOfOutputText(component)) {
+			HtmlOutputText casted = castToOutputText(component);
+			return calculateDateTimeFormatter(casted);
+		}
+		
+		throw new ConverterException(new FacesMessage("Le dateTimeConverter ne fonctionne que pour les primefaces Calendar et les jsf OutputText"));
+	}
+	
 	private DateTimeFormatter calculateDateTimeFormatter(Calendar cal) {
 		String pattern = cal.calculatePattern();
 		DateTimeFormatter dtf = DateTimeFormat.forPattern(pattern);
 		return dtf;
 	}
+	
+	private DateTimeFormatter calculateDateTimeFormatter(HtmlOutputText txt) {
+		String pattern = (String) txt.getAttributes().get("pattern");
+		pattern = StringUtils.hasText(pattern) ? pattern : STD_DATE_PATTERN;
+		DateTimeFormatter dtf = DateTimeFormat.forPattern(pattern);
+		return dtf;
+	}
 
-	private Calendar castToCalendar(UIComponent component) {
-		if (!(component instanceof Calendar)) {
-			throw new ConverterException(new FacesMessage("Le dateTimeConverter ne fonctionne que pour les primefaces Calendar"));
-		}
-		
-		Calendar cal = (Calendar) component;
-		return cal;
+	private Calendar castToCalendar(UIComponent component) {		
+		Calendar casted = (Calendar) component;
+		return casted;
+	}
+	
+	private HtmlOutputText castToOutputText(UIComponent component) {
+		HtmlOutputText casted = (HtmlOutputText) component;
+		return casted;
+	}
+
+	private boolean isInstanceOfCalendar(UIComponent component) {
+		return component instanceof Calendar;
+	}
+	
+	private boolean isInstanceOfOutputText(UIComponent component) {
+		return component instanceof HtmlOutputText;	
 	}
 }
