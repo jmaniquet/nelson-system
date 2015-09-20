@@ -17,6 +17,6 @@
 	-->
 	<component>
 		<component-type>org.primefaces.component.Calendar</component-type>
-		<component-class>org.nelson.system.core.web.calendar.DateTimeCalendar</component-class>
+		<component-class>org.nelson.system.core.web.datetime.DateTimeCalendar</component-class>
 	</component>
 </faces-config>
