@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
+	template="/common/default-layout.xhtml">
+
+	<ui:define name="main-form-content">
+		<h:panelGrid id="criteria-panel" columns="2">
+			<nelson:outputMessage key="person.recherche.name.label" />
+			<p:inputText value="#{personneRechercheController.criteria.name}" />
+			
+			<nelson:outputMessage key="person.recherche.givenname.label" />
+			<p:inputText value="#{personneRechercheController.criteria.givenName}" />
+			
+			<nelson:outputMessage key="person.recherche.birthperiod.label" />
+			<h:panelGroup>
+				<p:calendar value="#{personneRechercheController.criteria.birthDateStart}" showOn="button" />
+				<p:calendar value="#{personneRechercheController.criteria.birthDateEnd}" showOn="button" />
+			</h:panelGroup>
+			
+			<f:facet name="footer">
+				<p:commandButton
+					value="#{msgSrc['person.recherche.search.label']}"
+					actionListener="#{personneRechercheController.find}"
+					process="@this criteria-panel"
+					update="@this resultTable" />
+			</f:facet>
+		</h:panelGrid>
+		
+		<p:dataTable
+			id="resultTable"
+			value="#{personneRechercheController.results}"
+			var="p">
+			
+			<p:column headerText="#{msgSrc['person.recherche.result.name.header']}">
+				<h:outputText value="#{p.name}" />
+			</p:column>
+			
+			<p:column headerText="#{msgSrc['person.recherche.result.givenname.header']}">
+				<h:outputText value="#{p.givenName}" />
+			</p:column>
+			
+			<p:column headerText="#{msgSrc['person.recherche.result.birthdate.header']}">
+				<h:outputText value="#{p.birthDate}" />
+			</p:column>
+			
+		</p:dataTable>
+		
+		<p:commandButton
+			value="#{msgSrc['person.recherche.close.label']}"
+			action="close" ajax="false" />
+	</ui:define>
+</ui:composition>
