@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<PERSONNE ID="1" NAME="userNameAbla" GIVEN_NAME="userGivenNameAtata" />
+	<PERSONNE ID="2" NAME="userNameAbli" GIVEN_NAME="userGivenNameBtiti" />
+	<PERSONNE ID="3" NAME="userNameBblo" GIVEN_NAME="userGivenNameBtoto" />
+	
+	<PERSONNE ID="4" NAME="userNameCbla" GIVEN_NAME="userGivenNameCtata" BIRTH_DATE="1982-10-03 15:14:37.000" />
+	<PERSONNE ID="5" NAME="userNameCbli" GIVEN_NAME="userGivenNameCtiti" BIRTH_DATE="1982-10-03 23:59:59.999" />
+	
+	<PERSONNE ID="6" NAME="userNameCblo" GIVEN_NAME="userGivenNameCtoto" BIRTH_DATE="1982-10-04 00:00:00.000" />
+	<PERSONNE ID="7" NAME="userNameCble" GIVEN_NAME="userGivenNameCtete" BIRTH_DATE="1982-10-04 13:47:33.000" />
+	<PERSONNE ID="8" NAME="userNameCblu" GIVEN_NAME="userGivenNameCtutu" BIRTH_DATE="1982-10-05 14:39:52.000" />
+	
+	<PERSONNE ID="9" NAME="userNameDbla" GIVEN_NAME="userGivenNameDtata" BIRTH_DATE="1992-10-04 00:00:00.000" />
+	<PERSONNE ID="10" NAME="userNameDbli" GIVEN_NAME="userGivenNameDtiti" BIRTH_DATE="1992-10-04 13:45:22.000" />
+	<PERSONNE ID="11" NAME="userNameDblo" GIVEN_NAME="userGivenNameDtutu" BIRTH_DATE="1992-10-05 08:49:14.000" />
+</dataset>

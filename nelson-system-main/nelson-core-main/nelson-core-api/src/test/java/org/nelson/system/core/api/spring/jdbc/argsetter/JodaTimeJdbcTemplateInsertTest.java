@@ -25,8 +25,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 )
 public class JodaTimeJdbcTemplateInsertTest extends AbstractTransactionalJUnit4SpringContextTests {
 	
-	private static final String SQL_INSERT_ALL_FIELDS = "INSERT INTO PERSON (ID, NAME, GIVEN_NAME, BIRTH_DATE) VALUES (?, ?, ?, ?)";
-	private static final String SQL_INSERT_WITH_DEFAULT_BIRTHDATE = "INSERT INTO PERSON (ID, NAME, GIVEN_NAME) VALUES (?, ?, ?)";
+	private static final String SQL_INSERT_ALL_FIELDS = "INSERT INTO PERSONNE (ID, NAME, GIVEN_NAME, BIRTH_DATE) VALUES (?, ?, ?, ?)";
+	private static final String SQL_INSERT_WITH_DEFAULT_BIRTHDATE = "INSERT INTO PERSONNE (ID, NAME, GIVEN_NAME) VALUES (?, ?, ?)";
 	
 	@Autowired
 	@Qualifier(BeanConstants.CUSTOM_JDBCTEMPLATE)

@@ -7,8 +7,8 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.nelson.system.core.db.personne.domain.Person;
-import org.nelson.system.core.db.personne.mapper.PersonMapper;
+import org.nelson.system.core.db.personne.domain.Personne;
+import org.nelson.system.core.db.personne.mapper.PersonneMapper;
 
 public class PersonneServiceTest {
 
@@ -16,7 +16,10 @@ public class PersonneServiceTest {
 	private PersonneService underTest;
 	
 	@Mock
-	private PersonMapper personneMapper;
+	private PersonneMapper personneMapper;
+	
+	@Mock
+	private PersonneDao personneDao;
 	
 	@Before
 	public void setUp() {
@@ -26,8 +29,15 @@ public class PersonneServiceTest {
 	
 	@Test
 	public void testCreate() {
-		Person fakeParam = new Person();
+		Personne fakeParam = new Personne();
 		underTest.create(fakeParam);
 		Mockito.verify(personneMapper).insert(fakeParam);
+	}
+	
+	@Test
+	public void testFindByCriteria() {
+		PersonneRechercheCriteria fakeParam = new PersonneRechercheCriteria();
+		underTest.findByCriteria(fakeParam);
+		Mockito.verify(personneDao).findByCriteria(fakeParam);
 	}
 }

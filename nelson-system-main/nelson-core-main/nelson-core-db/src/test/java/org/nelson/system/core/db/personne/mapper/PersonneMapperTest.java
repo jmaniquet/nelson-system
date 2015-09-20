@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nelson.system.core.db.context.CoreDbContext;
-import org.nelson.system.core.db.personne.domain.Person;
+import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.tools.test.core.context.ToolsTestCoreContext;
 import org.nelson.system.tools.test.core.random.RandomUtils;
 import org.nelson.system.tools.test.core.user.User;
@@ -20,13 +20,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 		ToolsTestCoreContext.class,
 		CoreDbContext.class}
 )
-public class PersonMapperTest extends AbstractTransactionalJUnit4SpringContextTests {
+public class PersonneMapperTest extends AbstractTransactionalJUnit4SpringContextTests {
 	
 	@Autowired
 	private UserUtils userUtils;
 	
 	@Autowired
-	private PersonMapper underTest;
+	private PersonneMapper underTest;
 	
 	@Test
 	public void testInsertWithBirthDateNotNull() {
@@ -34,7 +34,7 @@ public class PersonMapperTest extends AbstractTransactionalJUnit4SpringContextTe
 		String givenName = "blu";
 		DateTime birthDate = RandomUtils.randomDate();
 		
-		Person personne = new Person();
+		Personne personne = new Personne();
 		personne.setName(name);
 		personne.setGivenName(givenName);
 		personne.setBirthDate(birthDate);
