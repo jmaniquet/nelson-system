@@ -4,7 +4,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
 import org.nelson.system.core.db.CoreDbConfig;
-import org.nelson.system.core.web.context.CoreWebContext;
+import org.nelson.system.core.web.CoreWebConfig;
 import org.nelson.system.infrastructure.environment.InfrastructureEnvironmentConfig;
 import org.nelson.system.personne.web.context.PersonneWebContext;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -15,7 +15,7 @@ public class WebappInitializer extends AbstractAnnotationConfigDispatcherServlet
 	protected Class<?>[] getRootConfigClasses() {
 		return new Class<?>[] { InfrastructureEnvironmentConfig.class,
 								CoreDbConfig.class,
-								CoreWebContext.class,
+								CoreWebConfig.class,
 								PersonneWebContext.class,
 								WebappContext.class };
 	}
