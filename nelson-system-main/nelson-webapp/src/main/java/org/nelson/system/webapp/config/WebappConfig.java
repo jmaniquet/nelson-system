@@ -1,10 +1,11 @@
-package org.nelson.system.webapp.context;
+package org.nelson.system.webapp.config;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.nelson.system.core.api.basenames.MessageLocationProvider;
 import org.nelson.system.core.api.basenames.MessageLocationProviderDefaultImpl;
+import org.nelson.system.webapp.jira.swf1224.AutowiringTransientPropertiesFlowExecutionListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;

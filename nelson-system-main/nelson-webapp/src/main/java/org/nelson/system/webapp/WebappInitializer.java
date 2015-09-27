@@ -1,4 +1,4 @@
-package org.nelson.system.webapp.context;
+package org.nelson.system.webapp;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -7,6 +7,7 @@ import org.nelson.system.core.db.CoreDbConfig;
 import org.nelson.system.core.web.CoreWebConfig;
 import org.nelson.system.infrastructure.environment.InfrastructureEnvironmentConfig;
 import org.nelson.system.personne.web.PersonneWebConfig;
+import org.nelson.system.webapp.config.WebappConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebappInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {

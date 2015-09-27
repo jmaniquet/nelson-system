@@ -1,4 +1,4 @@
-package org.nelson.system.webapp.context;
+package org.nelson.system.webapp.jira.swf1224;
 
 
 import org.springframework.beans.BeansException;
