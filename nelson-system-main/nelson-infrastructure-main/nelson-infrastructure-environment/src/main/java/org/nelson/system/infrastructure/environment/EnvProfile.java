@@ -1,4 +1,4 @@
-package org.nelson.system.infrastructure.environment.context;
+package org.nelson.system.infrastructure.environment;
 
 public class EnvProfile {
 

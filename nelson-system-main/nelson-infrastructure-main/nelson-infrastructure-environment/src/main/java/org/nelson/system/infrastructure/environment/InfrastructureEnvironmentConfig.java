@@ -1,10 +1,9 @@
-package org.nelson.system.infrastructure.environment.context;
+package org.nelson.system.infrastructure.environment;
 
 import static org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType.HSQL;
 
 import javax.sql.DataSource;
 
-import org.nelson.system.infrastructure.environment.InfrastructureEnvironnementScannable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,8 +11,8 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
 @Configuration
-@ComponentScan(basePackageClasses = InfrastructureEnvironnementScannable.class)
-public class InfrastructureEnvironmentContext {
+@ComponentScan(basePackageClasses = InfrastructureEnvironmentScannable.class)
+public class InfrastructureEnvironmentConfig {
 	
 	@Bean
 	@Profile({EnvProfile.DEV, EnvProfile.TEST})

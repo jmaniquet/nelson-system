@@ -1,18 +1,17 @@
-package org.nelson.system.personne.web.context;
+package org.nelson.system.personne.web;
 
 import org.nelson.system.core.api.basenames.MessageLocationProvider;
 import org.nelson.system.core.api.basenames.MessageLocationProviderDefaultImpl;
-import org.nelson.system.personne.api.context.PersonneApiContext;
-import org.nelson.system.personne.web.PersonneWebScannable;
+import org.nelson.system.personne.api.PersonneApiConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import(PersonneApiContext.class)
+@Import(PersonneApiConfig.class)
 @ComponentScan(basePackageClasses = PersonneWebScannable.class)
-public class PersonneWebContext {
+public class PersonneWebConfig {
 	
 	@Bean
 	public MessageLocationProvider personneWebMessageLocationProvider() {

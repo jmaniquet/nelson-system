@@ -11,10 +11,9 @@ import org.joda.time.DateTime;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.nelson.system.core.db.context.CoreDbContext;
+import org.nelson.system.core.db.CoreDbConfig;
 import org.nelson.system.core.db.personne.domain.Personne;
-import org.nelson.system.personne.api.context.PersonneApiContext;
-import org.nelson.system.tools.test.core.context.ToolsTestCoreContext;
+import org.nelson.system.tools.test.core.ToolsTestCoreConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +28,9 @@ import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {
-		ToolsTestCoreContext.class,
-		CoreDbContext.class,
-		PersonneApiContext.class}
+		ToolsTestCoreConfig.class,
+		CoreDbConfig.class,
+		PersonneApiConfig.class}
 )
 @TestExecutionListeners(listeners = DbUnitTestExecutionListener.class)
 @DbUnitConfiguration(databaseConnection = "dataSource")

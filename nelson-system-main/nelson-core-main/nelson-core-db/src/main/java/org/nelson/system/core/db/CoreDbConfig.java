@@ -1,13 +1,12 @@
-package org.nelson.system.core.db.context;
+package org.nelson.system.core.db;
 
-import org.nelson.system.core.api.context.CoreApiContext;
-import org.nelson.system.core.db.CoreDbScannable;
+import org.nelson.system.core.api.CoreApiConfig;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import(CoreApiContext.class)
+@Import(CoreApiConfig.class)
 @ComponentScan(basePackageClasses = CoreDbScannable.class)
-public class CoreDbContext {
+public class CoreDbConfig {
 }

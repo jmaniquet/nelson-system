@@ -1,9 +1,8 @@
-package org.nelson.system.tools.test.core.context;
+package org.nelson.system.tools.test.core;
 
 import javax.sql.DataSource;
 
-import org.nelson.system.infrastructure.environment.context.InfrastructureEnvironmentContext;
-import org.nelson.system.tools.test.core.ToolsTestCoreScannable;
+import org.nelson.system.infrastructure.environment.InfrastructureEnvironmentConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,9 +11,9 @@ import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @Configuration
-@Import(InfrastructureEnvironmentContext.class)
+@Import(InfrastructureEnvironmentConfig.class)
 @ComponentScan(basePackageClasses = ToolsTestCoreScannable.class)
-public class ToolsTestCoreContext {
+public class ToolsTestCoreConfig {
 	
 	@Autowired
 	private DataSource dataSource;

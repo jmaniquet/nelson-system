@@ -3,21 +3,21 @@ package org.nelson.system.webapp.context;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
-import org.nelson.system.core.db.context.CoreDbContext;
-import org.nelson.system.core.web.context.CoreWebContext;
-import org.nelson.system.infrastructure.environment.context.InfrastructureEnvironmentContext;
-import org.nelson.system.personne.web.context.PersonneWebContext;
+import org.nelson.system.core.db.CoreDbConfig;
+import org.nelson.system.core.web.CoreWebConfig;
+import org.nelson.system.infrastructure.environment.InfrastructureEnvironmentConfig;
+import org.nelson.system.personne.web.PersonneWebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebappInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 	
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class<?>[] { InfrastructureEnvironmentContext.class,
-								CoreDbContext.class,
-								CoreWebContext.class,
-								PersonneWebContext.class,
-								WebappContext.class };
+		return new Class<?>[] { InfrastructureEnvironmentConfig.class,
+								CoreDbConfig.class,
+								CoreWebConfig.class,
+								PersonneWebConfig.class,
+								WebappConfig.class };
 	}
 
 	@Override

@@ -23,7 +23,7 @@ import org.springframework.webflow.mvc.servlet.FlowHandlerMapping;
 import org.springframework.webflow.scope.ScopeRegistrar;
 
 @Configuration
-public class WebappContext extends AbstractFacesFlowConfiguration {
+public class WebappConfig extends AbstractFacesFlowConfiguration {
 	
 	@Bean
 	public ScopeRegistrar scopeRegistrar() {

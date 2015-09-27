@@ -4,9 +4,9 @@ import org.joda.time.DateTime;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.nelson.system.core.db.context.CoreDbContext;
+import org.nelson.system.core.db.CoreDbConfig;
 import org.nelson.system.core.db.personne.domain.Personne;
-import org.nelson.system.tools.test.core.context.ToolsTestCoreContext;
+import org.nelson.system.tools.test.core.ToolsTestCoreConfig;
 import org.nelson.system.tools.test.core.random.RandomUtils;
 import org.nelson.system.tools.test.core.user.User;
 import org.nelson.system.tools.test.core.user.UserUtils;
@@ -17,8 +17,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {
-		ToolsTestCoreContext.class,
-		CoreDbContext.class}
+		ToolsTestCoreConfig.class,
+		CoreDbConfig.class}
 )
 public class PersonneMapperTest extends AbstractTransactionalJUnit4SpringContextTests {
 	
