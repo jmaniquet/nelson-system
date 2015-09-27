@@ -17,7 +17,7 @@ public class WebappInitializer extends AbstractAnnotationConfigDispatcherServlet
 								CoreDbConfig.class,
 								CoreWebConfig.class,
 								PersonneWebConfig.class,
-								WebappContext.class };
+								WebappConfig.class };
 	}
 
 	@Override
