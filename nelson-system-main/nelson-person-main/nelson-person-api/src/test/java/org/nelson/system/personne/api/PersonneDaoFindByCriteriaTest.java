@@ -13,7 +13,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nelson.system.core.db.CoreDbConfig;
 import org.nelson.system.core.db.personne.domain.Personne;
-import org.nelson.system.personne.api.context.PersonneApiContext;
 import org.nelson.system.tools.test.core.ToolsTestCoreConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +30,7 @@ import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 @ContextConfiguration(classes = {
 		ToolsTestCoreConfig.class,
 		CoreDbConfig.class,
-		PersonneApiContext.class}
+		PersonneApiConfig.class}
 )
 @TestExecutionListeners(listeners = DbUnitTestExecutionListener.class)
 @DbUnitConfiguration(databaseConnection = "dataSource")
