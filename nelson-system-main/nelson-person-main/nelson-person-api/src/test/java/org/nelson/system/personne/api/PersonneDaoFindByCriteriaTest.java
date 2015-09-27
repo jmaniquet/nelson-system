@@ -11,7 +11,7 @@ import org.joda.time.DateTime;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.nelson.system.core.db.context.CoreDbContext;
+import org.nelson.system.core.db.CoreDbConfig;
 import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.personne.api.context.PersonneApiContext;
 import org.nelson.system.tools.test.core.ToolsTestCoreConfig;
@@ -30,7 +30,7 @@ import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {
 		ToolsTestCoreConfig.class,
-		CoreDbContext.class,
+		CoreDbConfig.class,
 		PersonneApiContext.class}
 )
 @TestExecutionListeners(listeners = DbUnitTestExecutionListener.class)

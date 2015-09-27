@@ -3,7 +3,7 @@ package org.nelson.system.webapp.context;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
-import org.nelson.system.core.db.context.CoreDbContext;
+import org.nelson.system.core.db.CoreDbConfig;
 import org.nelson.system.core.web.context.CoreWebContext;
 import org.nelson.system.infrastructure.environment.InfrastructureEnvironmentConfig;
 import org.nelson.system.personne.web.context.PersonneWebContext;
@@ -14,7 +14,7 @@ public class WebappInitializer extends AbstractAnnotationConfigDispatcherServlet
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		return new Class<?>[] { InfrastructureEnvironmentConfig.class,
-								CoreDbContext.class,
+								CoreDbConfig.class,
 								CoreWebContext.class,
 								PersonneWebContext.class,
 								WebappContext.class };
