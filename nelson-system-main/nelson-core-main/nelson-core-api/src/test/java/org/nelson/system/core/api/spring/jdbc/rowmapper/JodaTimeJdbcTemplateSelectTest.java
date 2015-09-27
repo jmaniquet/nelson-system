@@ -21,7 +21,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nelson.system.core.api.context.CoreApiContext;
 import org.nelson.system.core.api.spring.jdbc.BeanConstants;
-import org.nelson.system.tools.test.core.context.ToolsTestCoreContext;
+import org.nelson.system.tools.test.core.ToolsTestCoreConfig;
 import org.nelson.system.tools.test.core.user.User;
 import org.nelson.system.tools.test.core.user.UserBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {
-		ToolsTestCoreContext.class,
+		ToolsTestCoreConfig.class,
 		CoreApiContext.class}
 )
 @TestExecutionListeners(listeners = DbUnitTestExecutionListener.class)
