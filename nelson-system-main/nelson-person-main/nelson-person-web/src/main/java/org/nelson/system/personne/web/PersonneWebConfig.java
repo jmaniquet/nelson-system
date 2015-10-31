@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import(PersonneApiConfig.class)
-@ComponentScan(basePackageClasses = PersonneWebScannable.class)
+@ComponentScan
 public class PersonneWebConfig {
 	
 	@Bean

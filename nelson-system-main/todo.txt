@@ -1,4 +1,3 @@
-Improvement : lighter component scan by using default behavior
 Improvement : refactoring boiler plate annotation config into meta-annotations when applicable (see : tests)
 Improvement : code completion for facelets in jar
 Improvement : fixing "main title" label in main form

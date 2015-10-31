@@ -7,6 +7,6 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import(CoreApiConfig.class)
-@ComponentScan(basePackageClasses = CoreDbScannable.class)
+@ComponentScan
 public class CoreDbConfig {
 }

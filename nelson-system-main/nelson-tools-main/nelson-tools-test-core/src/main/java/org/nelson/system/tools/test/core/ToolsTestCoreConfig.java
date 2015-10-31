@@ -12,7 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 @Configuration
 @Import(InfrastructureEnvironmentConfig.class)
-@ComponentScan(basePackageClasses = ToolsTestCoreScannable.class)
+@ComponentScan
 public class ToolsTestCoreConfig {
 	
 	@Autowired

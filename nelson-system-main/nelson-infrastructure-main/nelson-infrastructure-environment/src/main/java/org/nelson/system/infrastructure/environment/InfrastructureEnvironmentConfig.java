@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
 @Configuration
-@ComponentScan(basePackageClasses = InfrastructureEnvironmentScannable.class)
+@ComponentScan
 public class InfrastructureEnvironmentConfig {
 	
 	@Bean

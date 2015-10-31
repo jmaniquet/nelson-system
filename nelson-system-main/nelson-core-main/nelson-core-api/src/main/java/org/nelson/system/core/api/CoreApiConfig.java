@@ -22,7 +22,7 @@ import org.springframework.transaction.support.ResourceTransactionManager;
 		basePackages = {"org.nelson.system"},
 		markerInterface=CoreMapper.class,
 		sqlSessionFactoryRef="sqlSessionFactory")
-@ComponentScan(basePackageClasses = CoreApiScannable.class)
+@ComponentScan
 public class CoreApiConfig {
 
 	@Autowired
