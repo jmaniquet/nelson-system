@@ -22,7 +22,7 @@ public class DateTimeConverter implements Converter {
 	
 	private List<JsfDateTimeFormatterProvider<? extends UIComponent>> dtfProviders;
 	
-	public DateTimeConverter() {		
+	public DateTimeConverter() {
 		dtfProviders = new ArrayList<>();
 		dtfProviders.add(new CalendarDateTimeFormatterProvider());
 		dtfProviders.add(new HtmlOutputTextDateTimeFormatterProvider());
@@ -52,7 +52,7 @@ public class DateTimeConverter implements Converter {
 		return result;
 	}
 	
-	private DateTimeFormatter calculateDateTimeFormatter(UIComponent component) {		
+	private DateTimeFormatter calculateDateTimeFormatter(UIComponent component) {
 		for (JsfDateTimeFormatterProvider<? extends UIComponent> dtfProvider : dtfProviders) {
 			if (dtfProvider.canHandle(component)) {
 				return dtfProvider.calculateDateTimeFormatter(component);
