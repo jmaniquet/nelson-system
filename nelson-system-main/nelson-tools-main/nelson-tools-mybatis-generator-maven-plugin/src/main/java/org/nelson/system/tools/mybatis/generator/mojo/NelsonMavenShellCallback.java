@@ -27,7 +27,6 @@ public class NelsonMavenShellCallback extends DefaultShellCallback {
 	@Override
 	public File getDirectory(String targetProject, String targetPackage)
 			throws ShellException {
-		System.out.println("YO MAN 1");
 		if (!"MAVEN".equals(targetProject)) {
 			return super.getDirectory(targetProject, targetPackage);
 		}
@@ -38,10 +37,8 @@ public class NelsonMavenShellCallback extends DefaultShellCallback {
 		// targetPackage is interpreted as a sub directory, but in package
 		// format (with dots instead of slashes).  The sub directory will be created
 		// if it does not already exist
-		System.out.println("YO MAN 2");
 		File project = mybatisGeneratorMojo.getOutputDirectory();
 		if (!project.exists()) {
-			System.out.println("YO MAN 3");
 			project.mkdirs();
 		}
 
