@@ -27,4 +27,9 @@ class PersonneServiceImpl implements PersonneService {
 	public List<Personne> findByCriteria(PersonneRechercheCriteria criteria) {
 		return personneDao.findByCriteria(criteria);
 	}
+
+	@Override
+	public Personne findById(Long id) {
+		return personneMapper.selectByPrimaryKey(id);
+	}
 }

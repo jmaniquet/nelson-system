@@ -44,7 +44,6 @@ public class PersonneServiceTest {
 	public void testFindByCriteria() {
 		PersonneRechercheCriteria fakeParam = new PersonneRechercheCriteria();
 		List<Personne> l = new ArrayList<>();
-		
 		Mockito.when(personneDao.findByCriteria(fakeParam)).thenReturn(l);
 		
 		List<Personne> result = underTest.findByCriteria(fakeParam);
@@ -53,5 +52,26 @@ public class PersonneServiceTest {
 		Assert.assertSame(l, result);
 	}
 	
+	@Test
+	public void testFindByIdWhenExists() {
+		Long fakeId = 1L;
+		Personne expected = new Personne();
+		Mockito.when(personneMapper.selectByPrimaryKey(fakeId)).thenReturn(expected);
+		
+		Personne actual = underTest.findById(fakeId);
+		
+		Mockito.verify(personneMapper).selectByPrimaryKey(fakeId);
+		Assert.assertSame(expected, actual);
+	}
 	
+	@Test
+	public void testFindByIdWhenNotExists() {
+		Long fakeId = 1L;
+		Mockito.when(personneMapper.selectByPrimaryKey(fakeId)).thenReturn(null);
+		
+		Personne actual = underTest.findById(fakeId);
+		
+		Mockito.verify(personneMapper).selectByPrimaryKey(fakeId);
+		Assert.assertNull(actual);
+	}
 }

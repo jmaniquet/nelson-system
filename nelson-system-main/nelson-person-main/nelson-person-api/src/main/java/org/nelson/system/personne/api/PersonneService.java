@@ -9,4 +9,6 @@ public interface PersonneService {
 	void create(Personne personne);
 	
 	List<Personne> findByCriteria(PersonneRechercheCriteria criteria);
+	
+	Personne findById(Long id);
 }
