@@ -3,3 +3,9 @@ Improvement : code completion for facelets in jar
 Improvement : fixing "main title" label in main form
 Feature : outputmessage - allow use of parameters
 Fix : problème d'encoding sur les accents
+Refactoring outillage test de flow
+	- Créer une méthode raccourci "registerAnnotatedConfig"
+	- Renommer les states pour mieux les différencier des transitions (ex : close -> closed)
+	- Créer une enum pour les states récurrents - (ex : cancel, close, finish)
+	- Créer une enum pour les events récurrents - (ex : cancel, close, finish)
+	- Déplacer les states dans main/java pour mutualiser les libellés

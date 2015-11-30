@@ -1,0 +1,21 @@
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+						http://www.springframework.org/schema/webflow/spring-webflow.xsd"
+						parent="default">
+
+	<input name="id" />
+
+	<on-start>
+		<evaluate expression="personneConsultationController.init(id)">
+		</evaluate>
+	</on-start>
+
+	<view-state id="consultation" view="/personne/consultation/consultation.xhtml">
+	</view-state>
+	
+	<view-state id="error" view="/personne/consultation/error.xhtml">
+	</view-state>
+	
+	<exception-handler bean="personneExceptionHandler" />
+</flow>
