@@ -88,7 +88,7 @@ public class PersonneConsultationFlowTest extends AbstractNelsonXmlFlowExecution
 		MutableAttributeMap<Long> input = new LocalAttributeMap<Long>();
 		input.put("id", fakeId);
 		
-		Mockito.doThrow(new UnknownPersonneException()).when(personneConsultationController).init(fakeId);
+		Mockito.doThrow(new UnknownPersonneException(fakeId)).when(personneConsultationController).init(fakeId);
 		
 		startFlow(input);
 		assertCurrentStateEquals(PersonneConsultationStates.error);

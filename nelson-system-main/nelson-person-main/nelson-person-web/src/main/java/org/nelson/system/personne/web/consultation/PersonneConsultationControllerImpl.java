@@ -28,7 +28,7 @@ public class PersonneConsultationControllerImpl implements Serializable,  Person
 		personne = personneService.findById(id);
 		
 		if (personne == null) {
-			throw new UnknownPersonneException();
+			throw new UnknownPersonneException(id);
 		}
 		
 	}

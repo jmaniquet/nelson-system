@@ -47,6 +47,7 @@ public class PersonneConsultationControllerTest {
 			Assert.fail("L'absence de l'entité devrait produire une erreur");
 		} catch (UnknownPersonneException e) {
 			Mockito.verify(personneService).findById(fakeId);
+			Assert.assertEquals(fakeId, e.getId());
 		}
 	}
 	
