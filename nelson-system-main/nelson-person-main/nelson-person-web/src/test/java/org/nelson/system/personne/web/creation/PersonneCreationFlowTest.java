@@ -5,6 +5,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.personne.web.creation.states.PersonneCreationStates;
 import org.nelson.system.tools.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
 import org.nelson.system.tools.test.web.flow.MockExtCtxBuilder;
@@ -42,6 +43,12 @@ public class PersonneCreationFlowTest extends AbstractNelsonXmlFlowExecutionTest
 	
 	@Test
 	public void testFinish() {
+		Long fakeId = 243L;
+		Personne fakePersonne = new Personne();
+		fakePersonne.setId(fakeId);
+		
+		Mockito.when(personneCreationController.getPersonne()).thenReturn(fakePersonne);
+		
 		setCurrentState(PersonneCreationStates.creation);
 		MockExternalContext context = MockExtCtxBuilder
 				.builder()

@@ -49,6 +49,9 @@
 				<h:outputText value="#{p.birthDate}" />
 			</p:column>
 			
+			<p:column>
+				<p:link href="consultation?id=#{p.id}" target="_blank" styleClass="ui-icon ui-icon-search" />
+			</p:column>
 		</p:dataTable>
 		
 		<p:commandButton

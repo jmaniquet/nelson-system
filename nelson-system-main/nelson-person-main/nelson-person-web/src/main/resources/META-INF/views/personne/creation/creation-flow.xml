@@ -15,6 +15,6 @@
 		<transition on="cancel" to="cancel" />
 	</view-state>
 	
-	<end-state id="finish" view="externalRedirect:contextRelative:/close.html" />
+	<end-state id="finish" view="externalRedirect:contextRelative:/app/personne/consultation?id=#{personneCreationController.personne.id}" />
 	<end-state id="cancel" view="externalRedirect:contextRelative:/close.html" />
 </flow>

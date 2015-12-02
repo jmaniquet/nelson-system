@@ -35,6 +35,7 @@ public class PersonneCreationControllerImpl implements Serializable, PersonneCre
 		personneService.create(personne);
 	}
 	
+	@Override
 	public Personne getPersonne() {
 		return personne;
 	}
