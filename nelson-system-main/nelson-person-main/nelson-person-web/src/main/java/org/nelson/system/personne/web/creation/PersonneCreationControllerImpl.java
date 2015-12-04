@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 @Controller("personneCreationController")
 @Scope("flow")
 public class PersonneCreationControllerImpl implements Serializable, PersonneCreationController {
+	
 	private static final long serialVersionUID = 2928207986702787757L;
 	
 	@Autowired
@@ -34,6 +35,7 @@ public class PersonneCreationControllerImpl implements Serializable, PersonneCre
 		personneService.create(personne);
 	}
 	
+	@Override
 	public Personne getPersonne() {
 		return personne;
 	}
