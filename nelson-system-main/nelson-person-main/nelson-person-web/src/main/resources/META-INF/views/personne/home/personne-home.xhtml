@@ -10,14 +10,11 @@
 	template="/common/default-layout.xhtml">
 
 	<ui:define name="main-form-header-facet">
-		<ui:remove>
-		<nelson:outputMessage key="home.title" />
-		</ui:remove>
+		<nelson:outputMessage key="person.home.title" />
 	</ui:define>
 
 	<ui:define name="main-form-content">
 		<h:panelGrid columns="1">
-			<nelson:outputMessage key="person.home.title" />
 			<p:button
 				value="#{msgSrc['person.home.creation.label']}"
 				href="/app/personne/creation"

@@ -9,6 +9,10 @@
 	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
 	template="/common/default-layout.xhtml">
 
+	<ui:define name="main-form-header-facet">
+		<nelson:outputMessage key="person.creation.title" />
+	</ui:define>
+
 	<ui:define name="main-form-content">
 		<h:panelGrid columns="2">
 			<nelson:outputMessage key="person.creation.name.label" />
