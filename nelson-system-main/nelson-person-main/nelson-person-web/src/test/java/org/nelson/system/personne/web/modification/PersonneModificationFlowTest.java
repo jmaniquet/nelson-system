@@ -10,7 +10,6 @@ import org.nelson.system.personne.web.consultation.states.PersonneConsultationSt
 import org.nelson.system.personne.web.modification.states.PersonneModificationStates;
 import org.nelson.system.tools.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
 import org.nelson.system.tools.test.web.flow.MockExtCtxBuilder;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.webflow.config.FlowDefinitionResource;
 import org.springframework.webflow.config.FlowDefinitionResourceFactory;
 import org.springframework.webflow.core.collection.LocalAttributeMap;
@@ -35,7 +34,7 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 	
 	@Override
 	protected void configureFlowBuilderContext(MockFlowBuilderContext builderContext) {
-		builderContext.getFlowBuilderServices().setApplicationContext(new AnnotationConfigApplicationContext(PersonneModificationConfig.class));
+		registerAnnotatedConfig(builderContext, PersonneModificationConfig.class);
 		registerBean(builderContext, personneModificationController);
 	}
 	

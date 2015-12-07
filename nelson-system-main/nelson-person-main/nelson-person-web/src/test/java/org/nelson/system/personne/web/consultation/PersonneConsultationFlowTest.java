@@ -8,7 +8,6 @@ import org.mockito.Mockito;
 import org.nelson.system.personne.web.consultation.states.PersonneConsultationStates;
 import org.nelson.system.tools.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
 import org.nelson.system.tools.test.web.flow.MockExtCtxBuilder;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.webflow.config.FlowDefinitionResource;
 import org.springframework.webflow.config.FlowDefinitionResourceFactory;
 import org.springframework.webflow.core.collection.LocalAttributeMap;
@@ -33,7 +32,7 @@ public class PersonneConsultationFlowTest extends AbstractNelsonXmlFlowExecution
 	
 	@Override
 	protected void configureFlowBuilderContext(MockFlowBuilderContext builderContext) {
-		builderContext.getFlowBuilderServices().setApplicationContext(new AnnotationConfigApplicationContext(PersonneConsultationConfig.class));
+		registerAnnotatedConfig(builderContext, PersonneConsultationConfig.class);
 		registerBean(builderContext, personneConsultationController);
 	}
 	

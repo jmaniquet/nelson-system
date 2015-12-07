@@ -5,7 +5,6 @@ Feature : outputmessage - allow use of parameters
 Fix : problème d'encoding sur les accents
 Fix : Dans recherche de personne, syntaxe du "p:link" - lien vers consultation
 Refactoring outillage test de flow
-	- Créer une méthode raccourci "registerAnnotatedConfig"
 	- Renommer les states pour mieux les différencier des transitions (ex : close -> closed)
 	- Créer une enum pour les states récurrents - (ex : cancel, close, finish)
 	- Créer une enum pour les events récurrents - (ex : cancel, close, finish)
