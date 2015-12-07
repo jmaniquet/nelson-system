@@ -11,4 +11,6 @@ public interface PersonneService {
 	List<Personne> findByCriteria(PersonneRechercheCriteria criteria);
 	
 	Personne findById(Long id);
+
+	void update(Personne fakeParam);
 }

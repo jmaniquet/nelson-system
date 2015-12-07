@@ -14,8 +14,6 @@ import org.mockito.Mockito;
 import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.core.db.personne.mapper.PersonneMapper;
 
-
-
 public class PersonneServiceTest {
 
 	@InjectMocks
@@ -73,5 +71,12 @@ public class PersonneServiceTest {
 		
 		Mockito.verify(personneMapper).selectByPrimaryKey(fakeId);
 		Assert.assertNull(actual);
+	}
+	
+	@Test
+	public void testUpdate() {
+		Personne fakeParam = new Personne();
+		underTest.update(fakeParam);
+		Mockito.verify(personneMapper).updateByPrimaryKey(fakeParam);
 	}
 }

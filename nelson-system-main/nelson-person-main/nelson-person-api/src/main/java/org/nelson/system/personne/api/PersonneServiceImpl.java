@@ -32,4 +32,10 @@ class PersonneServiceImpl implements PersonneService {
 	public Personne findById(Long id) {
 		return personneMapper.selectByPrimaryKey(id);
 	}
+
+	@Override
+	@Transactional
+	public void update(Personne personne) {
+		personneMapper.updateByPrimaryKey(personne);
+	}
 }

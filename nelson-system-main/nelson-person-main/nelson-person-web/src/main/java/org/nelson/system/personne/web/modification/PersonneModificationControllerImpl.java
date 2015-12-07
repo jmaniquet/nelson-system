@@ -1,4 +1,4 @@
-package org.nelson.system.personne.web.creation;
+package org.nelson.system.personne.web.modification;
 
 import java.io.Serializable;
 
@@ -8,38 +8,40 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-@Controller("personneCreationController")
+@Controller("personneModificationController")
 @Scope("flow")
-public class PersonneCreationControllerImpl implements Serializable, PersonneCreationController {
+public class PersonneModificationControllerImpl implements Serializable, PersonneModificationController {
 	
-	private static final long serialVersionUID = 2928207986702787757L;
+	private static final long serialVersionUID = -8794397470513468981L;
 	
 	@Autowired
 	private transient PersonneService personneService;
 	
 	private Personne personne;
 
-	/* (non-Javadoc)
-	 * @see fr.si2m.tooling.personne.creation.PersonneCreationController#init()
-	 */
 	@Override
-	public void init() {
-		personne = new Personne();
+	public void init(Long id) {
+		if (id == null) {
+			throw new MissingIdException();
+		}
+		
+		personne = personneService.findById(id);
+		
+		if (personne == null) {
+			throw new UnknownPersonneException(id);
+		}
 	}
-	
-	/* (non-Javadoc)
-	 * @see fr.si2m.tooling.personne.creation.PersonneCreationController#create()
-	 */
+
 	@Override
-	public void create() {
-		personneService.create(personne);
+	public void update() {
+		personneService.update(personne);
 	}
-	
+
 	@Override
 	public Personne getPersonne() {
 		return personne;
 	}
-	
+
 	/**
 	 * For testing purposes only, hence the package visibility
 	 * @param personne

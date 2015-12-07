@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
+	template="/common/default-layout.xhtml">
+
+	<ui:define name="main-form-content">
+		<h:panelGrid columns="1">
+			<h:outputText value="Une erreur est survenue" />
+			<h:outputText value="#{rootCauseException.message}" />
+						
+			<f:facet name="footer">
+				<p:commandButton
+					value="#{msgSrc['person.modification.close.label']}"
+					action="close" />
+			</f:facet>
+		</h:panelGrid>
+	</ui:define>
+</ui:composition>

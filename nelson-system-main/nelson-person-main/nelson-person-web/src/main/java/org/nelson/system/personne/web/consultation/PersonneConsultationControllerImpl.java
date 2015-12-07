@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 
 @Controller("personneConsultationController")
 @Scope("flow")
-public class PersonneConsultationControllerImpl implements Serializable,  PersonneConsultationController {
+public class PersonneConsultationControllerImpl implements Serializable, PersonneConsultationController {
 	
 	private static final long serialVersionUID = 4806022820603783553L;
 	
@@ -30,12 +30,10 @@ public class PersonneConsultationControllerImpl implements Serializable,  Person
 		if (personne == null) {
 			throw new UnknownPersonneException(id);
 		}
-		
 	}
 
 	@Override
 	public Personne getPersonne() {
 		return personne;
 	}
-
 }

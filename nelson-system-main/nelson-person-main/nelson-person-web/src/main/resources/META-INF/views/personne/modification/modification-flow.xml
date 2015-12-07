@@ -1,0 +1,28 @@
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+						http://www.springframework.org/schema/webflow/spring-webflow.xsd"
+						parent="default">
+
+	<input name="id" />
+
+	<on-start>
+		<evaluate expression="personneModificationController.init(id)" />
+	</on-start>
+
+	<view-state id="modification" view="/personne/modification/modification.xhtml">
+		<transition on="finish" to="finish">
+			<evaluate expression="personneModificationController.update()" />
+		</transition>
+		<transition on="cancel" to="cancel" />
+	</view-state>
+	
+	<view-state id="error" view="/personne/modification/error.xhtml">
+		<transition on="close" to="cancel"></transition>
+	</view-state>
+	
+	<end-state id="finish" view="externalRedirect:contextRelative:/app/personne/consultation?id=#{personneModificationController.personne.id}" />
+	<end-state id="cancel" view="externalRedirect:contextRelative:/close.html" />
+	
+	<exception-handler bean="personneModificationExceptionHandler" />
+</flow>

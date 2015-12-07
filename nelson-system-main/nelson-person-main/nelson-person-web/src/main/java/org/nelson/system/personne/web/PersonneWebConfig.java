@@ -19,6 +19,7 @@ public class PersonneWebConfig {
 				"classpath:messages/personne-home",
 				"classpath:messages/personne-consultation",
 				"classpath:messages/personne-creation",
+				"classpath:messages/personne-modification",
 				"classpath:messages/personne-recherche");
 	}
 }
