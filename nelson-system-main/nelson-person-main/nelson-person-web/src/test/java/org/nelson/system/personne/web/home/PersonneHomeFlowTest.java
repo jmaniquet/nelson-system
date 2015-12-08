@@ -38,6 +38,6 @@ public class PersonneHomeFlowTest extends AbstractNelsonXmlFlowExecutionTests {
 		
 		resumeFlow(context);
 		
-		assertFlowExecutionEndedWithOutcome(PersonneHomeStates.close);
+		assertFlowExecutionEndedWithOutcome(PersonneHomeStates.closed);
 	}
 }

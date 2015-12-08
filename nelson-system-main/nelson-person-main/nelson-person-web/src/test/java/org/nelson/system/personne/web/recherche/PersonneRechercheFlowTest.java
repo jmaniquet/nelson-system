@@ -49,6 +49,6 @@ public class PersonneRechercheFlowTest extends AbstractNelsonXmlFlowExecutionTes
 		
 		resumeFlow(context);
 		
-		assertFlowExecutionEndedWithOutcome(PersonneRechercheStates.close);
+		assertFlowExecutionEndedWithOutcome(PersonneRechercheStates.closed);
 	}
 }

@@ -53,7 +53,7 @@ public class PersonneConsultationFlowTest extends AbstractNelsonXmlFlowExecution
 		
 		verifyZeroInteractions(personneConsultationController);
 		
-		assertFlowExecutionEndedWithOutcome(PersonneConsultationStates.close);
+		assertFlowExecutionEndedWithOutcome(PersonneConsultationStates.closed);
 	}
 	
 	@Test
@@ -68,7 +68,7 @@ public class PersonneConsultationFlowTest extends AbstractNelsonXmlFlowExecution
 		
 		verifyZeroInteractions(personneConsultationController);
 		
-		assertFlowExecutionEndedWithOutcome(PersonneConsultationStates.close);
+		assertFlowExecutionEndedWithOutcome(PersonneConsultationStates.closed);
 	}
 	
 	@Test

@@ -1,11 +1,11 @@
 package org.nelson.system.personne.web.home.states;
 
-import org.nelson.system.tools.test.web.flow.states.CloseState;
+import org.nelson.system.tools.test.web.flow.states.ClosedState;
 
 public class PersonneHomeStates {
 
 	private PersonneHomeStates() {}
 	
 	public static final PersonneHomeState home = new PersonneHomeState();
-	public static final CloseState close = new CloseState();
+	public static final ClosedState closed = new ClosedState();
 }

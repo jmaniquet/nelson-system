@@ -4,10 +4,10 @@
 						http://www.springframework.org/schema/webflow/spring-webflow.xsd"
 	abstract="true">
 
-	<end-state id="close" commit="false" view="externalRedirect:contextRelative:/close.html" />
+	<end-state id="closed" commit="false" view="externalRedirect:contextRelative:/close.html" />
 
 	<global-transitions>
-		<transition on="cancel" to="close" />
-		<transition on="close" to="close" />
+		<transition on="cancel" to="closed" />
+		<transition on="close" to="closed" />
 	</global-transitions>
 </flow>
