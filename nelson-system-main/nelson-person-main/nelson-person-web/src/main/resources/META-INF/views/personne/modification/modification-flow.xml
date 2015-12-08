@@ -17,12 +17,12 @@
 		<transition on="cancel" to="cancel" />
 	</view-state>
 	
-	<view-state id="error" view="/personne/modification/error.xhtml">
+	<view-state id="error" view="/personne/error/error.xhtml">
 		<transition on="close" to="cancel"></transition>
 	</view-state>
 	
 	<end-state id="finish" view="externalRedirect:contextRelative:/app/personne/consultation?id=#{personneModificationController.personne.id}" />
 	<end-state id="cancel" view="externalRedirect:contextRelative:/close.html" />
 	
-	<exception-handler bean="personneModificationExceptionHandler" />
+	<exception-handler bean="personneExceptionHandler" />
 </flow>

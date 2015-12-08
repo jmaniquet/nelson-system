@@ -14,7 +14,7 @@
 	<view-state id="consultation" view="/personne/consultation/consultation.xhtml">
 	</view-state>
 	
-	<view-state id="error" view="/personne/consultation/error.xhtml">
+	<view-state id="error" view="/personne/error/error.xhtml">
 	</view-state>
 	
 	<exception-handler bean="personneExceptionHandler" />

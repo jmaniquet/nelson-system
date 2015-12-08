@@ -5,7 +5,10 @@ import static org.mockito.MockitoAnnotations.initMocks;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.nelson.system.personne.web.PersonneExceptionConfig;
 import org.nelson.system.personne.web.consultation.states.PersonneConsultationStates;
+import org.nelson.system.personne.web.exception.MissingIdException;
+import org.nelson.system.personne.web.exception.UnknownPersonneException;
 import org.nelson.system.tools.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
 import org.nelson.system.tools.test.web.flow.MockExtCtxBuilder;
 import org.springframework.webflow.config.FlowDefinitionResource;
@@ -32,7 +35,7 @@ public class PersonneConsultationFlowTest extends AbstractNelsonXmlFlowExecution
 	
 	@Override
 	protected void configureFlowBuilderContext(MockFlowBuilderContext builderContext) {
-		registerAnnotatedConfig(builderContext, PersonneConsultationConfig.class);
+		registerAnnotatedConfig(builderContext, PersonneExceptionConfig.class);
 		registerBean(builderContext, personneConsultationController);
 	}
 	

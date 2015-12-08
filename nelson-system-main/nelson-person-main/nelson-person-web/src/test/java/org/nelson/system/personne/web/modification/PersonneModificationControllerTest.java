@@ -10,6 +10,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.personne.api.PersonneService;
+import org.nelson.system.personne.web.exception.MissingIdException;
+import org.nelson.system.personne.web.exception.UnknownPersonneException;
 
 public class PersonneModificationControllerTest {
 
