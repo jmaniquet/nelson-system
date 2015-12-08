@@ -1,10 +1,12 @@
 package org.nelson.system.personne.web.consultation;
 
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import org.junit.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.nelson.system.personne.web.PersonneExceptionConfig;
 import org.nelson.system.personne.web.consultation.states.PersonneConsultationStates;
 import org.nelson.system.personne.web.exception.MissingIdException;
@@ -49,7 +51,7 @@ public class PersonneConsultationFlowTest extends AbstractNelsonXmlFlowExecution
 		
 		resumeFlow(context);
 		
-		Mockito.verifyZeroInteractions(personneConsultationController);
+		verifyZeroInteractions(personneConsultationController);
 		
 		assertFlowExecutionEndedWithOutcome(PersonneConsultationStates.close);
 	}
@@ -64,7 +66,7 @@ public class PersonneConsultationFlowTest extends AbstractNelsonXmlFlowExecution
 		
 		resumeFlow(context);
 		
-		Mockito.verifyZeroInteractions(personneConsultationController);
+		verifyZeroInteractions(personneConsultationController);
 		
 		assertFlowExecutionEndedWithOutcome(PersonneConsultationStates.close);
 	}
@@ -76,11 +78,11 @@ public class PersonneConsultationFlowTest extends AbstractNelsonXmlFlowExecution
 		MutableAttributeMap<Long> input = new LocalAttributeMap<Long>();
 		input.put("id", fakeId);
 		
-		Mockito.doThrow(new MissingIdException()).when(personneConsultationController).init(null);
+		doThrow(new MissingIdException()).when(personneConsultationController).init(null);
 		
 		startFlow(input);
 		assertCurrentStateEquals(PersonneConsultationStates.error);
-		Mockito.verify(personneConsultationController).init(null);
+		verify(personneConsultationController).init(null);
 	}
 	
 	@Test
@@ -90,11 +92,11 @@ public class PersonneConsultationFlowTest extends AbstractNelsonXmlFlowExecution
 		MutableAttributeMap<Long> input = new LocalAttributeMap<Long>();
 		input.put("id", fakeId);
 		
-		Mockito.doThrow(new UnknownPersonneException(fakeId)).when(personneConsultationController).init(fakeId);
+		doThrow(new UnknownPersonneException(fakeId)).when(personneConsultationController).init(fakeId);
 		
 		startFlow(input);
 		assertCurrentStateEquals(PersonneConsultationStates.error);
-		Mockito.verify(personneConsultationController).init(fakeId);
+		verify(personneConsultationController).init(fakeId);
 	}
 	
 	@Test
@@ -106,6 +108,6 @@ public class PersonneConsultationFlowTest extends AbstractNelsonXmlFlowExecution
 		
 		startFlow(input);
 		assertCurrentStateEquals(PersonneConsultationStates.consultation);
-		Mockito.verify(personneConsultationController).init(fakeId);
+		verify(personneConsultationController).init(fakeId);
 	}
 }

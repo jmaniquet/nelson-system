@@ -1,10 +1,12 @@
 package org.nelson.system.personne.web.creation;
 
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyZeroInteractions;
+import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import org.junit.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.personne.web.creation.states.PersonneCreationStates;
 import org.nelson.system.tools.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
@@ -38,7 +40,7 @@ public class PersonneCreationFlowTest extends AbstractNelsonXmlFlowExecutionTest
 	public void testStartFlow() {
 		startFlow();
 		assertCurrentStateEquals(PersonneCreationStates.creation);
-		Mockito.verify(personneCreationController).init();
+		verify(personneCreationController).init();
 	}
 	
 	@Test
@@ -47,7 +49,7 @@ public class PersonneCreationFlowTest extends AbstractNelsonXmlFlowExecutionTest
 		Personne fakePersonne = new Personne();
 		fakePersonne.setId(fakeId);
 		
-		Mockito.when(personneCreationController.getPersonne()).thenReturn(fakePersonne);
+		when(personneCreationController.getPersonne()).thenReturn(fakePersonne);
 		
 		setCurrentState(PersonneCreationStates.creation);
 		MockExternalContext context = MockExtCtxBuilder
@@ -59,7 +61,7 @@ public class PersonneCreationFlowTest extends AbstractNelsonXmlFlowExecutionTest
 		
 		assertFlowExecutionEndedWithOutcome(PersonneCreationStates.finish);
 		
-		Mockito.verify(personneCreationController).create();
+		verify(personneCreationController).create();
 	}
 	
 	@Test
@@ -72,7 +74,7 @@ public class PersonneCreationFlowTest extends AbstractNelsonXmlFlowExecutionTest
 		
 		resumeFlow(context);
 		
-		Mockito.verifyZeroInteractions(personneCreationController);
+		verifyZeroInteractions(personneCreationController);
 		
 		assertFlowExecutionEndedWithOutcome(PersonneCreationStates.cancel);
 	}

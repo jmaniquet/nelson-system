@@ -1,5 +1,8 @@
 package org.nelson.system.personne.web.consultation;
 
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyZeroInteractions;
+import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import org.junit.Assert;
@@ -7,7 +10,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.personne.api.PersonneService;
 import org.nelson.system.personne.web.exception.MissingIdException;
@@ -31,10 +33,10 @@ public class PersonneConsultationControllerTest {
 	public void testInit() {
 		Long fakeId = 1L;
 		Personne expected = new Personne();
-		Mockito.when(personneService.findById(fakeId)).thenReturn(expected);
+		when(personneService.findById(fakeId)).thenReturn(expected);
 		
 		underTest.init(fakeId);
-		Mockito.verify(personneService).findById(fakeId);
+		verify(personneService).findById(fakeId);
 		Personne actual = underTest.getPersonne();
 		Assert.assertSame(expected, actual);
 	}
@@ -42,13 +44,13 @@ public class PersonneConsultationControllerTest {
 	@Test
 	public void testInitWhenIdNotExists() {
 		Long fakeId = 1L;
-		Mockito.when(personneService.findById(fakeId)).thenReturn(null);
+		when(personneService.findById(fakeId)).thenReturn(null);
 		
 		try {
 			underTest.init(fakeId);
 			Assert.fail("L'absence de l'entité devrait produire une erreur");
 		} catch (UnknownPersonneException e) {
-			Mockito.verify(personneService).findById(fakeId);
+			verify(personneService).findById(fakeId);
 			Assert.assertEquals(fakeId, e.getId());
 		}
 	}
@@ -59,7 +61,7 @@ public class PersonneConsultationControllerTest {
 			underTest.init(null);
 			Assert.fail("L'absence d'id devrait produire une erreur");
 		} catch (MissingIdException e) {
-			Mockito.verifyZeroInteractions(personneService);
+			verifyZeroInteractions(personneService);
 		}
 	}
 }

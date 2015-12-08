@@ -1,10 +1,10 @@
 package org.nelson.system.personne.web.recherche;
 
+import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import org.junit.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.nelson.system.personne.web.recherche.states.PersonneRechercheStates;
 import org.nelson.system.tools.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
 import org.nelson.system.tools.test.web.flow.MockExtCtxBuilder;
@@ -37,7 +37,7 @@ public class PersonneRechercheFlowTest extends AbstractNelsonXmlFlowExecutionTes
 	public void testStartFlow() {
 		startFlow();
 		assertCurrentStateEquals(PersonneRechercheStates.recherche);
-		Mockito.verify(personneRechercheController).init();
+		verify(personneRechercheController).init();
 	}
 	
 	public void testClose() {

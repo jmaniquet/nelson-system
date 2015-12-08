@@ -1,5 +1,7 @@
 package org.nelson.system.personne.web.recherche;
 
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import java.util.ArrayList;
@@ -10,7 +12,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.personne.api.PersonneRechercheCriteria;
 import org.nelson.system.personne.api.PersonneService;
@@ -50,10 +51,10 @@ public class PersonneRechercheControllerTest {
 		mockedResults.add(new Personne());
 		
 		underTest.setCriteria(fakeParam);
-		Mockito.when(personneService.findByCriteria(fakeParam)).thenReturn(mockedResults);
+		when(personneService.findByCriteria(fakeParam)).thenReturn(mockedResults);
 		
 		underTest.find();
-		Mockito.verify(personneService).findByCriteria(fakeParam);
+		verify(personneService).findByCriteria(fakeParam);
 		List<Personne> results = underTest.getResults();
 		Assert.assertSame(mockedResults, results);
 	}
