@@ -59,7 +59,7 @@ public class PersonneCreationFlowTest extends AbstractNelsonXmlFlowExecutionTest
 		
 		resumeFlow(context);
 		
-		assertFlowExecutionEndedWithOutcome(PersonneCreationStates.finish);
+		assertFlowExecutionEndedWithOutcome(PersonneCreationStates.finished);
 		
 		verify(personneCreationController).create();
 	}

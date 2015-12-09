@@ -11,7 +11,7 @@
 	</on-start>
 
 	<view-state id="modification" view="/personne/modification/modification.xhtml">
-		<transition on="finish" to="finish">
+		<transition on="finish" to="finished">
 			<evaluate expression="personneModificationController.update()" />
 		</transition>
 		<transition on="cancel" to="cancel" />
@@ -21,7 +21,7 @@
 		<transition on="close" to="cancel"></transition>
 	</view-state>
 	
-	<end-state id="finish" view="externalRedirect:contextRelative:/app/personne/consultation?id=#{personneModificationController.personne.id}" />
+	<end-state id="finished" view="externalRedirect:contextRelative:/app/personne/consultation?id=#{personneModificationController.personne.id}" />
 	<end-state id="cancel" view="externalRedirect:contextRelative:/close.html" />
 	
 	<exception-handler bean="personneExceptionHandler" />

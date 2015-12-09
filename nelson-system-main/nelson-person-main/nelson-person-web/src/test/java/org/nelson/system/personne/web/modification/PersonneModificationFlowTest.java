@@ -130,7 +130,7 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 		
 		resumeFlow(context);
 		
-		assertFlowExecutionEndedWithOutcome(PersonneModificationStates.finish);
+		assertFlowExecutionEndedWithOutcome(PersonneModificationStates.finished);
 		
 		verify(personneModificationController).update();
 	}
