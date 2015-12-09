@@ -96,7 +96,7 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 		
 		verifyZeroInteractions(personneModificationController);
 		
-		assertFlowExecutionEndedWithOutcome(PersonneModificationStates.cancel);
+		assertFlowExecutionEndedWithOutcome(PersonneModificationStates.canceled);
 	}
 	
 	@Test
@@ -111,7 +111,7 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 		
 		verifyZeroInteractions(personneModificationController);
 		
-		assertFlowExecutionEndedWithOutcome(PersonneModificationStates.cancel);
+		assertFlowExecutionEndedWithOutcome(PersonneModificationStates.canceled);
 	}
 	
 	@Test

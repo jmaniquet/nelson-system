@@ -12,9 +12,9 @@
 		<transition on="finish" to="finished">
 			<evaluate expression="personneCreationController.create()" />
 		</transition>
-		<transition on="cancel" to="cancel" />
+		<transition on="cancel" to="canceled" />
 	</view-state>
 	
 	<end-state id="finished" view="externalRedirect:contextRelative:/app/personne/consultation?id=#{personneCreationController.personne.id}" />
-	<end-state id="cancel" view="externalRedirect:contextRelative:/close.html" />
+	<end-state id="canceled" view="externalRedirect:contextRelative:/close.html" />
 </flow>

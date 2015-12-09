@@ -76,6 +76,6 @@ public class PersonneCreationFlowTest extends AbstractNelsonXmlFlowExecutionTest
 		
 		verifyZeroInteractions(personneCreationController);
 		
-		assertFlowExecutionEndedWithOutcome(PersonneCreationStates.cancel);
+		assertFlowExecutionEndedWithOutcome(PersonneCreationStates.canceled);
 	}
 }
