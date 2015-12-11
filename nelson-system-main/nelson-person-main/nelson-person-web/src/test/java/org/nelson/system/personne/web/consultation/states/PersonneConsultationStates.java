@@ -2,6 +2,7 @@ package org.nelson.system.personne.web.consultation.states;
 
 import org.nelson.system.tools.test.web.flow.states.ClosedState;
 import org.nelson.system.tools.test.web.flow.states.ConsultationState;
+import org.nelson.system.tools.test.web.flow.states.ErrorState;
 
 public class PersonneConsultationStates {
 	

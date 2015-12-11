@@ -1,6 +1,7 @@
 package org.nelson.system.personne.web.modification.states;
 
 import org.nelson.system.tools.test.web.flow.states.CanceledState;
+import org.nelson.system.tools.test.web.flow.states.ErrorState;
 import org.nelson.system.tools.test.web.flow.states.FinishedState;
 
 public class PersonneModificationStates {
