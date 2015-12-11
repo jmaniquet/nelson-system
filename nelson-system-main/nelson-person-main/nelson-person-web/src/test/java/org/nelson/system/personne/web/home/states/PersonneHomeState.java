@@ -1,6 +1,7 @@
 package org.nelson.system.personne.web.home.states;
 
-import org.nelson.system.tools.test.web.flow.events.CloseEvent;
+import static org.nelson.system.tools.test.web.flow.events.CommonEvent.CLOSE;
+
 import org.nelson.system.tools.test.web.flow.events.PossibleEvent;
 import org.nelson.system.tools.test.web.flow.states.AbstractPossibleState;
 
@@ -11,6 +12,6 @@ public class PersonneHomeState extends AbstractPossibleState {
 	}
 	
 	public PossibleEvent close() {
-		return new CloseEvent();
+		return CLOSE;
 	}
 }

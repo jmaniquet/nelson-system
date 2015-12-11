@@ -1,6 +1,7 @@
 package org.nelson.system.tools.test.web.flow.states;
 
-import org.nelson.system.tools.test.web.flow.events.CloseEvent;
+import static org.nelson.system.tools.test.web.flow.events.CommonEvent.CLOSE;
+
 import org.nelson.system.tools.test.web.flow.events.PossibleEvent;
 
 public class ConsultationState extends AbstractPossibleState {
@@ -10,6 +11,6 @@ public class ConsultationState extends AbstractPossibleState {
 	}
 
 	public PossibleEvent close() {
-		return new CloseEvent();
+		return CLOSE;
 	}
 }

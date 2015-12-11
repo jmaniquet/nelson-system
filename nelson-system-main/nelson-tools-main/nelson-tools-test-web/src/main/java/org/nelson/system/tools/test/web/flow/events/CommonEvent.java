@@ -1,11 +1,13 @@
 package org.nelson.system.tools.test.web.flow.events;
 
-public class DefaultPossibleEvent implements PossibleEvent {
-
+public enum CommonEvent implements PossibleEvent {
+	CANCEL("cancel"),
+	CLOSE("close"),
+	FINISH("finish");
+	
 	private String eventId;
 	
-	public DefaultPossibleEvent(String eventId) {
-		super();
+	private CommonEvent(String eventId) {
 		this.eventId = eventId;
 	}
 
