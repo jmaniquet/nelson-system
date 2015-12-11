@@ -1,8 +1,8 @@
 package org.nelson.system.personne.web.home.states;
 
+import org.nelson.system.tools.test.web.flow.events.PossibleEvent;
+import org.nelson.system.tools.test.web.flow.events.PossibleEventImpl;
 import org.nelson.system.tools.test.web.flow.states.AbstractPossibleState;
-import org.nelson.system.tools.test.web.flow.states.PossibleEvent;
-import org.nelson.system.tools.test.web.flow.states.PossibleEventImpl;
 
 public class PersonneHomeState extends AbstractPossibleState {
 
