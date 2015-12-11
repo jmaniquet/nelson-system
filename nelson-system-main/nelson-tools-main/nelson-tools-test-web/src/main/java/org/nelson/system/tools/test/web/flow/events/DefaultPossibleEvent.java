@@ -1,10 +1,10 @@
 package org.nelson.system.tools.test.web.flow.events;
 
-public class PossibleEventImpl implements PossibleEvent {
+public class DefaultPossibleEvent implements PossibleEvent {
 
 	private String eventId;
 	
-	public PossibleEventImpl(String eventId) {
+	public DefaultPossibleEvent(String eventId) {
 		super();
 		this.eventId = eventId;
 	}
@@ -13,5 +13,4 @@ public class PossibleEventImpl implements PossibleEvent {
 	public String getEventId() {
 		return this.eventId;
 	}
-
 }
