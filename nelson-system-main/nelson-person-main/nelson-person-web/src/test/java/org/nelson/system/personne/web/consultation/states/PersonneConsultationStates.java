@@ -1,7 +1,8 @@
 package org.nelson.system.personne.web.consultation.states;
 
-import org.nelson.system.tools.test.web.flow.states.CloseState;
+import org.nelson.system.tools.test.web.flow.states.ClosedState;
 import org.nelson.system.tools.test.web.flow.states.ConsultationState;
+import org.nelson.system.tools.test.web.flow.states.ErrorState;
 
 public class PersonneConsultationStates {
 	
@@ -9,5 +10,5 @@ public class PersonneConsultationStates {
 	
 	public static final ConsultationState consultation = new ConsultationState();
 	public static final ErrorState error = new ErrorState();
-	public static final CloseState close = new CloseState();
+	public static final ClosedState closed = new ClosedState();
 }

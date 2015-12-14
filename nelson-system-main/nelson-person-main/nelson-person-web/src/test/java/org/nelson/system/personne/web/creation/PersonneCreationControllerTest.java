@@ -1,5 +1,6 @@
 package org.nelson.system.personne.web.creation;
 
+import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import org.junit.Assert;
@@ -7,7 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.personne.api.PersonneService;
 
@@ -42,6 +42,6 @@ public class PersonneCreationControllerTest {
 		underTest.setPersonne(fakeParam);
 		
 		underTest.create();
-		Mockito.verify(personneService).create(fakeParam);
+		verify(personneService).create(fakeParam);
 	}
 }

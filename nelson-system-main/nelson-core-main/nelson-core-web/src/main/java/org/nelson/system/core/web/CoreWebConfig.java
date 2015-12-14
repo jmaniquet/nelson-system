@@ -15,6 +15,8 @@ public class CoreWebConfig {
 		return new MessageLocationProviderDefaultImpl(
 				"classpath:messages/template/default-layout",
 				"classpath:messages/template/header",
-				"classpath:messages/template/footer");
+				"classpath:messages/template/footer",
+				"classpath:messages/template/save-layout",
+				"classpath:messages/template/consult-layout");
 	}
 }

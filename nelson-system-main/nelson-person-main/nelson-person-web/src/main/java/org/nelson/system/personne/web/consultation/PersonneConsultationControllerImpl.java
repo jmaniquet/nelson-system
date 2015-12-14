@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.personne.api.PersonneService;
+import org.nelson.system.personne.web.exception.MissingIdException;
+import org.nelson.system.personne.web.exception.UnknownPersonneException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;

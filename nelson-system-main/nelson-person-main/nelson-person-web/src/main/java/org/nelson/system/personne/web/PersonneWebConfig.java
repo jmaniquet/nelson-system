@@ -17,6 +17,7 @@ public class PersonneWebConfig {
 	public MessageLocationProvider personneWebMessageLocationProvider() {
 		return new MessageLocationProviderDefaultImpl(
 				"classpath:messages/personne-home",
+				"classpath:messages/personne-error",
 				"classpath:messages/personne-consultation",
 				"classpath:messages/personne-creation",
 				"classpath:messages/personne-modification",

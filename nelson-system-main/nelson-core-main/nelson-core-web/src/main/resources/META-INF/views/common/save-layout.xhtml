@@ -9,16 +9,21 @@
 	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
 	template="/common/default-layout.xhtml">
 
-	<ui:define name="main-form-content">
-		<h:panelGrid columns="1">
-			<h:outputText value="Une erreur est survenue" />
-			<h:outputText value="#{rootCauseException.message}" />
-						
-			<f:facet name="footer">
+	<ui:define name="center-content">
+		<f:facet name="header">
+			<ui:insert name="main-form-header-facet" />
+		</f:facet>
+		
+		<h:form id="main-form">
+			<ui:insert name="main-form-content" />
+			<ui:insert name="ok-cancel-footer">
 				<p:commandButton
-					value="#{msgSrc['person.consultation.close.label']}"
-					action="close" />
-			</f:facet>
-		</h:panelGrid>
+					value="#{msgSrc['save.finish.label']}"
+					action="finish" ajax="false" />
+				<p:commandButton
+					value="#{msgSrc['save.cancel.label']}"
+					action="cancel" ajax="false" />
+			</ui:insert>
+		</h:form>
 	</ui:define>
 </ui:composition>

@@ -1,5 +1,7 @@
 package org.nelson.system.personne.api;
 
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import java.util.ArrayList;
@@ -10,7 +12,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.core.db.personne.mapper.PersonneMapper;
 
@@ -35,18 +36,18 @@ public class PersonneServiceTest {
 	public void testCreate() {
 		Personne fakeParam = new Personne();
 		underTest.create(fakeParam);
-		Mockito.verify(personneMapper).insert(fakeParam);
+		verify(personneMapper).insert(fakeParam);
 	}
 	
 	@Test
 	public void testFindByCriteria() {
 		PersonneRechercheCriteria fakeParam = new PersonneRechercheCriteria();
 		List<Personne> l = new ArrayList<>();
-		Mockito.when(personneDao.findByCriteria(fakeParam)).thenReturn(l);
+		when(personneDao.findByCriteria(fakeParam)).thenReturn(l);
 		
 		List<Personne> result = underTest.findByCriteria(fakeParam);
 		
-		Mockito.verify(personneDao).findByCriteria(fakeParam);
+		verify(personneDao).findByCriteria(fakeParam);
 		Assert.assertSame(l, result);
 	}
 	
@@ -54,22 +55,22 @@ public class PersonneServiceTest {
 	public void testFindByIdWhenExists() {
 		Long fakeId = 1L;
 		Personne expected = new Personne();
-		Mockito.when(personneMapper.selectByPrimaryKey(fakeId)).thenReturn(expected);
+		when(personneMapper.selectByPrimaryKey(fakeId)).thenReturn(expected);
 		
 		Personne actual = underTest.findById(fakeId);
 		
-		Mockito.verify(personneMapper).selectByPrimaryKey(fakeId);
+		verify(personneMapper).selectByPrimaryKey(fakeId);
 		Assert.assertSame(expected, actual);
 	}
 	
 	@Test
 	public void testFindByIdWhenNotExists() {
 		Long fakeId = 1L;
-		Mockito.when(personneMapper.selectByPrimaryKey(fakeId)).thenReturn(null);
+		when(personneMapper.selectByPrimaryKey(fakeId)).thenReturn(null);
 		
 		Personne actual = underTest.findById(fakeId);
 		
-		Mockito.verify(personneMapper).selectByPrimaryKey(fakeId);
+		verify(personneMapper).selectByPrimaryKey(fakeId);
 		Assert.assertNull(actual);
 	}
 	
@@ -77,6 +78,6 @@ public class PersonneServiceTest {
 	public void testUpdate() {
 		Personne fakeParam = new Personne();
 		underTest.update(fakeParam);
-		Mockito.verify(personneMapper).updateByPrimaryKey(fakeParam);
+		verify(personneMapper).updateByPrimaryKey(fakeParam);
 	}
 }

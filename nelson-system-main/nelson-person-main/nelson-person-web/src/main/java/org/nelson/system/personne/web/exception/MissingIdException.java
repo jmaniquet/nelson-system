@@ -1,4 +1,4 @@
-package org.nelson.system.personne.web.consultation;
+package org.nelson.system.personne.web.exception;
 
 public class MissingIdException extends RuntimeException {
 	private static final long serialVersionUID = 5153959525584000846L;

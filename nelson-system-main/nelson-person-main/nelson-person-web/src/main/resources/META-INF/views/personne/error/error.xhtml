@@ -7,22 +7,18 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
-	template="/common/consult-layout.xhtml">
-
-	<ui:define name="main-form-header-facet">
-		<nelson:outputMessage key="person.home.title" />
-	</ui:define>
+	template="/common/default-layout.xhtml">
 
 	<ui:define name="main-form-content">
 		<h:panelGrid columns="1">
-			<p:button
-				value="#{msgSrc['person.home.creation.label']}"
-				href="/app/personne/creation"
-				target="_blank" />
-			<p:button
-				value="#{msgSrc['person.home.recherche.label']}"
-				href="/app/personne/recherche"
-				target="_blank" />
+			<h:outputText value="Une erreur est survenue" />
+			<h:outputText value="#{rootCauseException.message}" />
+						
+			<f:facet name="footer">
+				<p:commandButton
+					value="#{msgSrc['person.error.close.label']}"
+					action="close" />
+			</f:facet>
 		</h:panelGrid>
 	</ui:define>
 </ui:composition>

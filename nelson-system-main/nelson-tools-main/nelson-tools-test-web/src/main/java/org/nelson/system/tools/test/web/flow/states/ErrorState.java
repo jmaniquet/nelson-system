@@ -4,12 +4,12 @@ import static org.nelson.system.tools.test.web.flow.events.CommonEvent.CLOSE;
 
 import org.nelson.system.tools.test.web.flow.events.PossibleEvent;
 
-public class ConsultationState extends AbstractPossibleState {
+public class ErrorState extends AbstractPossibleState {
 
-	public ConsultationState() {
-		super("consultation");
+	public ErrorState() {
+		super("error");
 	}
-
+	
 	public PossibleEvent close() {
 		return CLOSE;
 	}

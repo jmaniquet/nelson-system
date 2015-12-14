@@ -11,18 +11,18 @@
 	</on-start>
 
 	<view-state id="modification" view="/personne/modification/modification.xhtml">
-		<transition on="finish" to="finish">
+		<transition on="finish" to="finished">
 			<evaluate expression="personneModificationController.update()" />
 		</transition>
-		<transition on="cancel" to="cancel" />
+		<transition on="cancel" to="canceled" />
 	</view-state>
 	
-	<view-state id="error" view="/personne/modification/error.xhtml">
-		<transition on="close" to="cancel"></transition>
+	<view-state id="error" view="/personne/error/error.xhtml">
+		<transition on="close" to="canceled"></transition>
 	</view-state>
 	
-	<end-state id="finish" view="externalRedirect:contextRelative:/app/personne/consultation?id=#{personneModificationController.personne.id}" />
-	<end-state id="cancel" view="externalRedirect:contextRelative:/close.html" />
+	<end-state id="finished" view="externalRedirect:contextRelative:/app/personne/consultation?id=#{personneModificationController.personne.id}" />
+	<end-state id="canceled" view="externalRedirect:contextRelative:/close.html" />
 	
-	<exception-handler bean="personneModificationExceptionHandler" />
+	<exception-handler bean="personneExceptionHandler" />
 </flow>

@@ -1,16 +1,21 @@
 package org.nelson.system.personne.web.modification;
 
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyZeroInteractions;
+import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import org.junit.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.nelson.system.core.db.personne.domain.Personne;
+import org.nelson.system.personne.web.PersonneExceptionConfig;
 import org.nelson.system.personne.web.consultation.states.PersonneConsultationStates;
+import org.nelson.system.personne.web.exception.MissingIdException;
+import org.nelson.system.personne.web.exception.UnknownPersonneException;
 import org.nelson.system.personne.web.modification.states.PersonneModificationStates;
 import org.nelson.system.tools.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
 import org.nelson.system.tools.test.web.flow.MockExtCtxBuilder;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.webflow.config.FlowDefinitionResource;
 import org.springframework.webflow.config.FlowDefinitionResourceFactory;
 import org.springframework.webflow.core.collection.LocalAttributeMap;
@@ -35,7 +40,7 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 	
 	@Override
 	protected void configureFlowBuilderContext(MockFlowBuilderContext builderContext) {
-		builderContext.getFlowBuilderServices().setApplicationContext(new AnnotationConfigApplicationContext(PersonneModificationConfig.class));
+		registerAnnotatedConfig(builderContext, PersonneExceptionConfig.class);
 		registerBean(builderContext, personneModificationController);
 	}
 	
@@ -46,11 +51,11 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 		MutableAttributeMap<Long> input = new LocalAttributeMap<Long>();
 		input.put("id", fakeId);
 		
-		Mockito.doThrow(new MissingIdException()).when(personneModificationController).init(null);
+		doThrow(new MissingIdException()).when(personneModificationController).init(null);
 		
 		startFlow(input);
 		assertCurrentStateEquals(PersonneModificationStates.error);
-		Mockito.verify(personneModificationController).init(null);
+		verify(personneModificationController).init(null);
 	}
 	
 	@Test
@@ -60,11 +65,11 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 		MutableAttributeMap<Long> input = new LocalAttributeMap<Long>();
 		input.put("id", fakeId);
 		
-		Mockito.doThrow(new UnknownPersonneException(fakeId)).when(personneModificationController).init(fakeId);
+		doThrow(new UnknownPersonneException(fakeId)).when(personneModificationController).init(fakeId);
 		
 		startFlow(input);
 		assertCurrentStateEquals(PersonneModificationStates.error);
-		Mockito.verify(personneModificationController).init(fakeId);
+		verify(personneModificationController).init(fakeId);
 	}
 	
 	@Test
@@ -76,7 +81,7 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 		
 		startFlow(input);
 		assertCurrentStateEquals(PersonneModificationStates.modification);
-		Mockito.verify(personneModificationController).init(fakeId);
+		verify(personneModificationController).init(fakeId);
 	}
 	
 	@Test
@@ -89,9 +94,9 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 		
 		resumeFlow(context);
 		
-		Mockito.verifyZeroInteractions(personneModificationController);
+		verifyZeroInteractions(personneModificationController);
 		
-		assertFlowExecutionEndedWithOutcome(PersonneModificationStates.cancel);
+		assertFlowExecutionEndedWithOutcome(PersonneModificationStates.canceled);
 	}
 	
 	@Test
@@ -104,9 +109,9 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 		
 		resumeFlow(context);
 		
-		Mockito.verifyZeroInteractions(personneModificationController);
+		verifyZeroInteractions(personneModificationController);
 		
-		assertFlowExecutionEndedWithOutcome(PersonneModificationStates.cancel);
+		assertFlowExecutionEndedWithOutcome(PersonneModificationStates.canceled);
 	}
 	
 	@Test
@@ -115,7 +120,7 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 		Personne fakePersonne = new Personne();
 		fakePersonne.setId(fakeId);
 		
-		Mockito.when(personneModificationController.getPersonne()).thenReturn(fakePersonne);
+		when(personneModificationController.getPersonne()).thenReturn(fakePersonne);
 		
 		setCurrentState(PersonneModificationStates.modification);
 		MockExternalContext context = MockExtCtxBuilder
@@ -125,8 +130,8 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 		
 		resumeFlow(context);
 		
-		assertFlowExecutionEndedWithOutcome(PersonneModificationStates.finish);
+		assertFlowExecutionEndedWithOutcome(PersonneModificationStates.finished);
 		
-		Mockito.verify(personneModificationController).update();;
+		verify(personneModificationController).update();
 	}
 }

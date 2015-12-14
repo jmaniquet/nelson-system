@@ -2,6 +2,7 @@ package org.nelson.system.webapp.config;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import org.nelson.system.core.api.basenames.MessageLocationProvider;
 import org.nelson.system.core.api.basenames.MessageLocationProviderDefaultImpl;
@@ -89,10 +90,13 @@ public class WebappConfig extends AbstractFacesFlowConfiguration {
 	@Autowired
 	public MessageSource messageSource(List<MessageLocationProvider> messageLocationProviders) {
 		List<String> baseNamesList = new ArrayList<>();
+		Properties fileEncodings = new Properties();
+		
 		for (MessageLocationProvider messageSourceProvider : messageLocationProviders) {
 			String [] baseNamesTab = messageSourceProvider.getBaseNames();
 			for (String baseName : baseNamesTab) {
 				baseNamesList.add(baseName);
+				fileEncodings.put(baseName, "UTF-8");
 			}
 		}
 		
@@ -100,6 +104,7 @@ public class WebappConfig extends AbstractFacesFlowConfiguration {
 		
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
 		messageSource.setBasenames(finalTab);
+		messageSource.setFileEncodings(fileEncodings);
 		return messageSource;
 	}
 }

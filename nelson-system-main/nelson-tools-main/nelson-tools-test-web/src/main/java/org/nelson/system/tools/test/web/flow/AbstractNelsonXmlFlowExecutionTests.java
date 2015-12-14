@@ -1,6 +1,7 @@
 package org.nelson.system.tools.test.web.flow;
 
 import org.nelson.system.tools.test.web.flow.states.PossibleState;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.webflow.config.FlowDefinitionResource;
@@ -40,6 +41,10 @@ public abstract class AbstractNelsonXmlFlowExecutionTests extends AbstractXmlFlo
 	
 	protected FlowDefinitionResource getWarResource(FlowDefinitionResourceFactory resourceFactory, String flowPath) {
 		return resourceFactory.createFileResource("src/main/webapp/WEB-INF/views" + flowPath);
+	}
+	
+	protected void registerAnnotatedConfig(MockFlowBuilderContext builderContext, Class<?>... annotatedClasses) {
+		builderContext.getFlowBuilderServices().setApplicationContext(new AnnotationConfigApplicationContext(annotatedClasses));
 	}
 	
 	protected <I> void registerBean(MockFlowBuilderContext builderContext, I interfacee) {
