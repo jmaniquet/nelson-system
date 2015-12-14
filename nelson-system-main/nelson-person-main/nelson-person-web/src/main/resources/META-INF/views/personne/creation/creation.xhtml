@@ -7,7 +7,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
-	template="/common/default-layout.xhtml">
+	template="/common/save-layout.xhtml">
 
 	<ui:define name="main-form-header-facet">
 		<nelson:outputMessage key="person.creation.title" />
@@ -23,15 +23,6 @@
 			
 			<nelson:outputMessage key="person.creation.birthDate.label" />
 			<p:calendar value="#{personneCreationController.personne.birthDate}" showOn="button" />
-			
-			<f:facet name="footer">
-				<p:commandButton
-					value="#{msgSrc['person.creation.finish.label']}"
-					action="finish" ajax="false" />
-				<p:commandButton
-					value="#{msgSrc['person.creation.cancel.label']}"
-					action="cancel" ajax="false" />
-			</f:facet>
 		</h:panelGrid>
 	</ui:define>
 </ui:composition>
