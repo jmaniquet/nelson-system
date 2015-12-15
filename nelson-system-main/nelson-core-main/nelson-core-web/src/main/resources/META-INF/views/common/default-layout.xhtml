@@ -23,13 +23,18 @@
 			</p:layoutUnit>
 	
 			<p:layoutUnit position="center" resizable="true">
-				<ui:insert name="center-content">
-					<f:facet name="header">
-						<ui:insert name="main-form-header-facet" />
-					</f:facet>
+				<f:facet name="header">
+					<ui:insert name="center-unit-header" />
+				</f:facet>
 				
+				<ui:insert name="center-content">
 					<h:form id="main-form">
-						<ui:insert name="main-form-content" />
+						<p:panel>
+							<ui:insert name="main-form-content" />
+						</p:panel>
+						<p:panel>
+							<ui:insert name="main-form-footer" />
+						</p:panel>
 					</h:form>
 				</ui:insert>
 			</p:layoutUnit>
