@@ -31,9 +31,9 @@
 					<h:form id="main-form">
 						<p:panel>
 							<ui:insert name="main-form-content" />
-						</p:panel>
-						<p:panel>
-							<ui:insert name="main-form-footer" />
+							<f:facet name="footer">
+								<ui:insert name="main-form-footer" />
+							</f:facet>
 						</p:panel>
 					</h:form>
 				</ui:insert>
