@@ -10,8 +10,10 @@
 	template="/common/default-layout.xhtml">
 	
 	<ui:define name="main-form-footer">
-		<p:commandButton
-			value="#{msgSrc['consult.close.label']}"
-			action="close" ajax="false" />
+		<h:panelGrid>
+			<p:commandButton
+				value="#{msgSrc['consult.close.label']}"
+				action="close" ajax="false" />
+		</h:panelGrid>
 	</ui:define>
 </ui:composition>

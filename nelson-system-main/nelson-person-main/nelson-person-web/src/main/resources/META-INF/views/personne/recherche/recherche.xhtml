@@ -27,38 +27,38 @@
 				<p:calendar value="#{personneRechercheController.criteria.birthDateEnd}" showOn="button" />
 			</h:panelGroup>
 			
-			<f:facet name="footer">
-				<p:commandButton
-					value="#{msgSrc['person.recherche.search.label']}"
-					actionListener="#{personneRechercheController.find}"
-					process="@this criteria-panel"
-					update="@this resultTable" />
-			</f:facet>
+			<p:commandButton
+				value="#{msgSrc['person.recherche.search.label']}"
+				actionListener="#{personneRechercheController.find}"
+				process="@this criteria-panel"
+				update="@this resultTable" />
 		</h:panelGrid>
 		
-		<p:dataTable
-			id="resultTable"
-			value="#{personneRechercheController.results}"
-			var="p">
-			
-			<p:column headerText="#{msgSrc['person.recherche.result.name.header']}">
-				<h:outputText value="#{p.name}" />
-			</p:column>
-			
-			<p:column headerText="#{msgSrc['person.recherche.result.givenname.header']}">
-				<h:outputText value="#{p.givenName}" />
-			</p:column>
-			
-			<p:column headerText="#{msgSrc['person.recherche.result.birthdate.header']}">
-				<h:outputText value="#{p.birthDate}" />
-			</p:column>
-			
-			<p:column>
-				<p:link href="consultation?id=#{p.id}" target="_blank" styleClass="ui-icon ui-icon-search" />
-			</p:column>
-			<p:column>
-				<p:link href="modification?id=#{p.id}" target="_blank" styleClass="ui-icon ui-icon-pencil" />
-			</p:column>
-		</p:dataTable>
+		<h:panelGrid>
+			<p:dataTable
+				id="resultTable"
+				value="#{personneRechercheController.results}"
+				var="p">
+				
+				<p:column headerText="#{msgSrc['person.recherche.result.name.header']}">
+					<h:outputText value="#{p.name}" />
+				</p:column>
+				
+				<p:column headerText="#{msgSrc['person.recherche.result.givenname.header']}">
+					<h:outputText value="#{p.givenName}" />
+				</p:column>
+				
+				<p:column headerText="#{msgSrc['person.recherche.result.birthdate.header']}">
+					<h:outputText value="#{p.birthDate}" />
+				</p:column>
+				
+				<p:column>
+					<p:link href="consultation?id=#{p.id}" target="_blank" styleClass="ui-icon ui-icon-search" />
+				</p:column>
+				<p:column>
+					<p:link href="modification?id=#{p.id}" target="_blank" styleClass="ui-icon ui-icon-pencil" />
+				</p:column>
+			</p:dataTable>
+		</h:panelGrid>
 	</ui:define>
 </ui:composition>

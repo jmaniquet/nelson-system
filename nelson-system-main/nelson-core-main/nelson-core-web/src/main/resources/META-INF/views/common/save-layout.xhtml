@@ -10,11 +10,13 @@
 	template="/common/default-layout.xhtml">
 	
 	<ui:define name="main-form-footer">
-		<p:commandButton
-			value="#{msgSrc['save.finish.label']}"
-			action="finish" ajax="false" />
-		<p:commandButton
-			value="#{msgSrc['save.cancel.label']}"
-			action="cancel" ajax="false" />
+		<h:panelGrid columns="2">
+			<p:commandButton
+				value="#{msgSrc['save.finish.label']}"
+				action="finish" ajax="false" />
+			<p:commandButton
+				value="#{msgSrc['save.cancel.label']}"
+				action="cancel" ajax="false" />
+		</h:panelGrid>
 	</ui:define>
 </ui:composition>
