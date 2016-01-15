@@ -14,7 +14,7 @@
 	</ui:define>
 
 	<ui:define name="main-form-content">
-		<h:panelGrid columns="2">
+		<p:panelGrid columns="2">
 			<nelson:outputMessage key="person.modification.name.label" />
 			<p:inputText value="#{personneModificationController.personne.name}" />
 			
@@ -23,6 +23,6 @@
 			
 			<nelson:outputMessage key="person.modification.birthDate.label" />
 			<p:calendar value="#{personneModificationController.personne.birthDate}" showOn="button" />
-		</h:panelGrid>
+		</p:panelGrid>
 	</ui:define>
 </ui:composition>

@@ -14,7 +14,7 @@
 	</ui:define>
 
 	<ui:define name="main-form-content">
-		<h:panelGrid id="criteria-panel" columns="2">
+		<p:panelGrid id="criteria-panel" columns="2">
 			<nelson:outputMessage key="person.recherche.name.label" />
 			<p:inputText value="#{personneRechercheController.criteria.name}" />
 			
@@ -32,9 +32,9 @@
 				actionListener="#{personneRechercheController.find}"
 				process="@this criteria-panel"
 				update="@this resultTable" />
-		</h:panelGrid>
+		</p:panelGrid>
 		
-		<h:panelGrid>
+		<h:panelGrid columns="1">
 			<p:dataTable
 				id="resultTable"
 				value="#{personneRechercheController.results}"

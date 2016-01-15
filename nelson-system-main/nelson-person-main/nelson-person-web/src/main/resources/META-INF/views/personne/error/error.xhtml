@@ -10,7 +10,7 @@
 	template="/common/default-layout.xhtml">
 
 	<ui:define name="main-form-content">
-		<h:panelGrid columns="1">
+		<p:panelGrid columns="1">
 			<h:outputText value="Une erreur est survenue" />
 			<h:outputText value="#{rootCauseException.message}" />
 						
@@ -19,6 +19,6 @@
 					value="#{msgSrc['person.error.close.label']}"
 					action="close" />
 			</f:facet>
-		</h:panelGrid>
+		</p:panelGrid>
 	</ui:define>
 </ui:composition>
