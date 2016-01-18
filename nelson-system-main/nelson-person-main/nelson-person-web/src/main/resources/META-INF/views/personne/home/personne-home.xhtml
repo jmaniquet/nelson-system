@@ -14,7 +14,7 @@
 	</ui:define>
 
 	<ui:define name="main-form-content">
-		<p:panelGrid columns="1">
+		<h:panelGrid class="ui-panelgrid-jsf" columns="1">
 			<p:button
 				value="#{msgSrc['person.home.creation.label']}"
 				href="/app/personne/creation"
@@ -23,6 +23,6 @@
 				value="#{msgSrc['person.home.recherche.label']}"
 				href="/app/personne/recherche"
 				target="_blank" />
-		</p:panelGrid>
+		</h:panelGrid>
 	</ui:define>
 </ui:composition>
