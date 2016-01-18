@@ -10,3 +10,14 @@
 .ui-panelgrid tr.ui-widget-content, .ui-panelgrid tr.ui-widget-header {
 	border: 0px none;
 }
+
+/* Overriding primefaces background with none */
+.ui-panelgrid .ui-panelgrid-content.ui-widget-content,
+.ui-panelgrid .ui-panelgrid-header.ui-widget-header,
+.ui-panelgrid .ui-panelgrid-footer.ui-widget-header,
+.ui-panelgrid .ui-panelgrid-header > tr.ui-widget-header,
+.ui-panelgrid tbody > tr.ui-widget-content,
+.ui-panelgrid tbody > tr.ui-widget-content > td.ui-panelgrid-cell,
+.ui-panelgrid .ui-panelgrid-footer > tr.ui-widget-footer {
+	background: none;
+}
