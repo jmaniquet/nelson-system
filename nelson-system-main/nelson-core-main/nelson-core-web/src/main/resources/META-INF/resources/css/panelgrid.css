@@ -1,7 +1,12 @@
+/* Border on table only, not rows or cell */
+.ui-panelgrid.ui-widget {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #9D9D9D;
+}
 .ui-panelgrid .ui-panelgrid-cell {
 	border: 0px none;
 }
-
 .ui-panelgrid tr.ui-widget-content, .ui-panelgrid tr.ui-widget-header {
 	border: 0px none;
 }
