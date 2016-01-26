@@ -10,23 +10,7 @@
 	template="/common/default-layout.xhtml">
 
 	<ui:define name="optional-styles">
-		<style>		
-			.ui-panel-stacktrace {
-				height: 83%;
-			}
-			
-			.ui-panel-stacktrace .ui-panel-content {
-				height: 80%;
-				overflow-y: scroll;
-				border-width: 1px;
-				border-style: solid;
-				border-color: #9D9D9D;
-			}
-			
-			.ui-dialog .ui-dialog-footer {
-				text-align: center;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/app/javax.faces.resource/css/error-page.css" />
 	</ui:define>
 
 	<ui:define name="center-content" />
@@ -40,18 +24,19 @@
 				modal="true"
 				closable="false"
 				width="900"
-				height="350">
+				height="350"
+				styleClass="ui-error-page">
 				
-				<div id="messages" class="ui-messages ui-widget" aria-live="polite">
+				<div id="messages" class="ui-messages ui-widget">
 					<div class="ui-messages-error ui-corner-all">
 						<span class="ui-messages-error-icon" />
-							<ul>
-								<li>
-									<span class="ui-messages-error-summary">
-										<h:outputText value="#{rootCauseException.message}" />
-									</span>
-								</li>
-							</ul>
+						<ul>
+							<li>
+								<span class="ui-messages-error-summary">
+									<h:outputText value="#{rootCauseException.message}" />
+								</span>
+							</li>
+						</ul>
 					</div>
 				</div>
 				
@@ -60,8 +45,7 @@
 					header="#{msgSrc['person.error.detail.label']}"
 					toggleable="true"
 					collapsed="true"
-					styleClass="ui-panel-stacktrace"
-					style="border: 0px none; padding: 0px;">
+					styleClass="ui-panel-stacktrace">
 					<ui:repeat var="stackTraceElement" value="#{rootCauseException.stackTrace}">
 						<h:outputText value="#{stackTraceElement}" />
 						<br />
@@ -69,7 +53,7 @@
 				</p:panel>
 				
 				<f:facet name="footer">
-					<p:commandButton styleClass="toto"
+					<p:commandButton
 						value="#{msgSrc['person.error.close.label']}"
 						action="close" />
 				</f:facet>
