@@ -9,12 +9,12 @@
 	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
 	template="/common/consult-layout.xhtml">
 
-	<ui:define name="main-form-header-facet">
+	<ui:define name="center-unit-header">
 		<nelson:outputMessage key="person.home.title" />
 	</ui:define>
 
 	<ui:define name="main-form-content">
-		<h:panelGrid columns="1">
+		<h:panelGrid class="ui-panelgrid-jsf" columns="1">
 			<p:button
 				value="#{msgSrc['person.home.creation.label']}"
 				href="/app/personne/creation"

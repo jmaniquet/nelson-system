@@ -1,0 +1,21 @@
+.ui-error-page {
+	
+}
+
+.ui-error-page .ui-panel-stacktrace {
+	height: 83%;
+	border: 0px none;
+	padding: 0px;
+}
+
+.ui-error-page .ui-panel-stacktrace .ui-panel-content {
+	height: 80%;
+	overflow-y: scroll;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #9D9D9D;
+}
+
+.ui-error-page .ui-dialog-footer {
+	text-align: center;
+}

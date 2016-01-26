@@ -1,0 +1,28 @@
+/* Primefaces panelgrid - border on table only, not rows or cell */
+.ui-panelgrid.ui-widget {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #9D9D9D;
+}
+.ui-panelgrid .ui-panelgrid-cell {
+	border: 0px none;
+}
+.ui-panelgrid tr.ui-widget-content, .ui-panelgrid tr.ui-widget-header {
+	border: 0px none;
+}
+
+/* Primefaces panelgrid - Overriding background with none */
+.ui-panelgrid .ui-panelgrid-content.ui-widget-content,
+.ui-panelgrid .ui-panelgrid-header.ui-widget-header,
+.ui-panelgrid .ui-panelgrid-footer.ui-widget-header,
+.ui-panelgrid .ui-panelgrid-header > tr.ui-widget-header,
+.ui-panelgrid tbody > tr.ui-widget-content,
+.ui-panelgrid tbody > tr.ui-widget-content > td.ui-panelgrid-cell,
+.ui-panelgrid .ui-panelgrid-footer > tr.ui-widget-footer {
+	background: none;
+}
+
+/* JSF panelgrid - Thin border to align inner component with other components - otherwise there is a small space on the left */
+.ui-panelgrid-jsf {
+	border-collapse: collapse;
+}

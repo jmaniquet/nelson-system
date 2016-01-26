@@ -9,12 +9,12 @@
 	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
 	template="/common/consult-layout.xhtml">
 
-	<ui:define name="main-form-header-facet">
+	<ui:define name="center-unit-header">
 		<nelson:outputMessage key="person.recherche.title" />
 	</ui:define>
 
 	<ui:define name="main-form-content">
-		<h:panelGrid id="criteria-panel" columns="2">
+		<p:panelGrid id="criteria-panel" columns="2">
 			<nelson:outputMessage key="person.recherche.name.label" />
 			<p:inputText value="#{personneRechercheController.criteria.name}" />
 			
@@ -27,14 +27,14 @@
 				<p:calendar value="#{personneRechercheController.criteria.birthDateEnd}" showOn="button" />
 			</h:panelGroup>
 			
-			<f:facet name="footer">
-				<p:commandButton
-					value="#{msgSrc['person.recherche.search.label']}"
-					actionListener="#{personneRechercheController.find}"
-					process="@this criteria-panel"
-					update="@this resultTable" />
-			</f:facet>
-		</h:panelGrid>
+			<p:commandButton
+				value="#{msgSrc['person.recherche.search.label']}"
+				actionListener="#{personneRechercheController.find}"
+				process="@this criteria-panel"
+				update="@this resultTable" />
+		</p:panelGrid>
+		
+		<p:spacer />
 		
 		<p:dataTable
 			id="resultTable"
@@ -59,6 +59,6 @@
 			<p:column>
 				<p:link href="modification?id=#{p.id}" target="_blank" styleClass="ui-icon ui-icon-pencil" />
 			</p:column>
-		</p:dataTable>
+			</p:dataTable>
 	</ui:define>
 </ui:composition>

@@ -1,6 +1,7 @@
 Improvement : refactoring boiler plate annotation config into meta-annotations when applicable (see : tests)
 Improvement : code completion for facelets in jar
 Improvement : fixing "main title" label in main form
+Improvement : rounded corners on primefaces panelgrid
 Feature : outputmessage - allow use of parameters
 Fix : problème d'encoding sur les accents
 Fix : Dans recherche de personne, syntaxe du "p:link" - lien vers consultation

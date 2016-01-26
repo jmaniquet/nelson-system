@@ -10,9 +10,15 @@
 
 	<h:head>
 		<title><nelson:outputMessage key="page.title" /></title>
-		<h:outputStylesheet name="theme-switch/theme-switch.css" />
+		<f:facet name="last">
+			<link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/app/javax.faces.resource/css/panelgrid.css" />
+			<link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/app/javax.faces.resource/theme-switch/theme-switch.css" />
+			<ui:insert name="optional-styles" />
+		</f:facet>
 	</h:head>
 	<h:body>
+		<ui:insert name="dialogs" />
+		
 		<p:layout fullPage="true" id="default-layout">
 			<p:layoutUnit position="north" size="100" resizable="true">
 				<ui:include src="/common/header.xhtml" />
@@ -23,13 +29,19 @@
 			</p:layoutUnit>
 	
 			<p:layoutUnit position="center" resizable="true">
-				<ui:insert name="center-content">
-					<f:facet name="header">
-						<ui:insert name="main-form-header-facet" />
-					</f:facet>
+				<f:facet name="header">
+					<ui:insert name="center-unit-header" />
+				</f:facet>
 				
+				<ui:insert name="center-content">
 					<h:form id="main-form">
-						<ui:insert name="main-form-content" />
+						<p:panel>
+							<ui:insert name="main-form-content" />
+							
+							<f:facet name="footer">
+								<ui:insert name="main-form-footer" />
+							</f:facet>
+						</p:panel>
 					</h:form>
 				</ui:insert>
 			</p:layoutUnit>

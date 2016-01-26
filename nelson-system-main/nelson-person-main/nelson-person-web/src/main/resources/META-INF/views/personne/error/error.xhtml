@@ -9,16 +9,55 @@
 	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
 	template="/common/default-layout.xhtml">
 
-	<ui:define name="main-form-content">
-		<h:panelGrid columns="1">
-			<h:outputText value="Une erreur est survenue" />
-			<h:outputText value="#{rootCauseException.message}" />
-						
-			<f:facet name="footer">
-				<p:commandButton
-					value="#{msgSrc['person.error.close.label']}"
-					action="close" />
-			</f:facet>
-		</h:panelGrid>
+	<ui:define name="optional-styles">
+		<link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/app/javax.faces.resource/css/error-page.css" />
+	</ui:define>
+
+	<ui:define name="center-content" />
+	
+	<ui:define name="dialogs">
+		<h:form id="dialog-form">
+			<p:dialog
+				id="error-dialog"
+				header="#{msgSrc['person.error.header.label']}"
+				visible="true"
+				modal="true"
+				closable="false"
+				width="900"
+				height="350"
+				styleClass="ui-error-page">
+				
+				<div id="messages" class="ui-messages ui-widget">
+					<div class="ui-messages-error ui-corner-all">
+						<span class="ui-messages-error-icon" />
+						<ul>
+							<li>
+								<span class="ui-messages-error-summary">
+									<h:outputText value="#{rootCauseException.message}" />
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+				<p:panel
+					id="stacktrace"
+					header="#{msgSrc['person.error.detail.label']}"
+					toggleable="true"
+					collapsed="true"
+					styleClass="ui-panel-stacktrace">
+					<ui:repeat var="stackTraceElement" value="#{rootCauseException.stackTrace}">
+						<h:outputText value="#{stackTraceElement}" />
+						<br />
+					</ui:repeat>
+				</p:panel>
+				
+				<f:facet name="footer">
+					<p:commandButton
+						value="#{msgSrc['person.error.close.label']}"
+						action="close" />
+				</f:facet>
+			</p:dialog>
+		</h:form>
 	</ui:define>
 </ui:composition>

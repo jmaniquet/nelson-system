@@ -9,12 +9,12 @@
 	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
 	template="/common/save-layout.xhtml">
 
-	<ui:define name="main-form-header-facet">
+	<ui:define name="center-unit-header">
 		<nelson:outputMessage key="person.creation.title" />
 	</ui:define>
 
 	<ui:define name="main-form-content">
-		<h:panelGrid columns="2">
+		<p:panelGrid columns="2">
 			<nelson:outputMessage key="person.creation.name.label" />
 			<p:inputText value="#{personneCreationController.personne.name}" />
 			
@@ -23,6 +23,6 @@
 			
 			<nelson:outputMessage key="person.creation.birthDate.label" />
 			<p:calendar value="#{personneCreationController.personne.birthDate}" showOn="button" />
-		</h:panelGrid>
+		</p:panelGrid>
 	</ui:define>
 </ui:composition>
