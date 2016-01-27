@@ -53,8 +53,8 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>org.nelson.system.tools</groupId>
-			<artifactId>nelson-tools-test-web</artifactId>
+			<groupId>org.nelson.system.core</groupId>
+			<artifactId>nelson-core-test-web</artifactId>
 		</dependency>
 	</dependencies>
 </project>

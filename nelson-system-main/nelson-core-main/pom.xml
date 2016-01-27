@@ -18,5 +18,6 @@
 		<module>nelson-core-api</module>
 		<module>nelson-core-db</module>
 		<module>nelson-core-web</module>
+		<module>nelson-core-test-web</module>
 	</modules>
 </project>

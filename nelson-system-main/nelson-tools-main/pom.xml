@@ -17,6 +17,5 @@
 	<modules>
 		<module>nelson-tools-mybatis-generator-maven-plugin</module>
 		<module>nelson-tools-test-core</module>
-		<module>nelson-tools-test-web</module>
 	</modules>
 </project>
