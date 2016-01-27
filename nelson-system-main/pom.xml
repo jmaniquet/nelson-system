@@ -76,12 +76,6 @@
 				<version>${project.version}</version>
 				<scope>test</scope>
 			</dependency>
-			<dependency>
-				<groupId>org.nelson.system.tools</groupId>
-				<artifactId>nelson-tools-test-web</artifactId>
-				<version>${project.version}</version>
-				<scope>test</scope>
-			</dependency>
 			
 			<dependency>
 				<groupId>org.nelson.system.core</groupId>
@@ -97,6 +91,12 @@
 				<groupId>org.nelson.system.core</groupId>
 				<artifactId>nelson-core-web</artifactId>
 				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.nelson.system.core</groupId>
+				<artifactId>nelson-core-test-web</artifactId>
+				<version>${project.version}</version>
+				<scope>test</scope>
 			</dependency>
 			
 			<dependency>
