@@ -7,12 +7,12 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 import org.junit.Test;
 import org.mockito.Mock;
+import org.nelson.system.core.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
+import org.nelson.system.core.test.web.flow.MockExtCtxBuilder;
 import org.nelson.system.personne.web.PersonneExceptionConfig;
 import org.nelson.system.personne.web.consultation.states.PersonneConsultationStates;
 import org.nelson.system.personne.web.exception.MissingIdException;
 import org.nelson.system.personne.web.exception.UnknownPersonneException;
-import org.nelson.system.tools.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
-import org.nelson.system.tools.test.web.flow.MockExtCtxBuilder;
 import org.springframework.webflow.config.FlowDefinitionResource;
 import org.springframework.webflow.config.FlowDefinitionResourceFactory;
 import org.springframework.webflow.core.collection.LocalAttributeMap;

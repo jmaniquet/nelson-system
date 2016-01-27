@@ -1,6 +1,6 @@
 package org.nelson.system.personne.web.recherche.states;
 
-import org.nelson.system.tools.test.web.flow.states.ClosedState;
+import org.nelson.system.core.test.web.flow.states.ClosedState;
 
 public class PersonneRechercheStates {
 

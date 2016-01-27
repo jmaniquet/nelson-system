@@ -1,9 +1,9 @@
-package org.nelson.system.tools.test.web;
+package org.nelson.system.core.test.web;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan
-public class ToolsTestWebConfig {
+public class CoreTestWebConfig {
 }

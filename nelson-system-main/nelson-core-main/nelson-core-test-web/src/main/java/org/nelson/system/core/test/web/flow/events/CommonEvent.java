@@ -1,4 +1,4 @@
-package org.nelson.system.tools.test.web.flow.events;
+package org.nelson.system.core.test.web.flow.events;
 
 public enum CommonEvent implements PossibleEvent {
 	CANCEL("cancel"),

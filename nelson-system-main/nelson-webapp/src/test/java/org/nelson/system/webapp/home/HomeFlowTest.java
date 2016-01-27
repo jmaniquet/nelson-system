@@ -1,7 +1,7 @@
 package org.nelson.system.webapp.home;
 
 import org.junit.Test;
-import org.nelson.system.tools.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
+import org.nelson.system.core.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
 import org.springframework.webflow.config.FlowDefinitionResource;
 import org.springframework.webflow.config.FlowDefinitionResourceFactory;
 

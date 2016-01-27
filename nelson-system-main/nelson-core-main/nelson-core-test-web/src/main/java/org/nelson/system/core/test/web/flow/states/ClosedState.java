@@ -1,4 +1,4 @@
-package org.nelson.system.tools.test.web.flow.states;
+package org.nelson.system.core.test.web.flow.states;
 
 public class ClosedState extends AbstractPossibleState {
 	

@@ -1,9 +1,9 @@
 package org.nelson.system.personne.web.recherche.states;
 
-import static org.nelson.system.tools.test.web.flow.events.CommonEvent.CLOSE;
+import static org.nelson.system.core.test.web.flow.events.CommonEvent.CLOSE;
 
-import org.nelson.system.tools.test.web.flow.events.PossibleEvent;
-import org.nelson.system.tools.test.web.flow.states.AbstractPossibleState;
+import org.nelson.system.core.test.web.flow.events.PossibleEvent;
+import org.nelson.system.core.test.web.flow.states.AbstractPossibleState;
 
 public class RechercheState extends AbstractPossibleState {
 

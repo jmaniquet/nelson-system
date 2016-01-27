@@ -3,9 +3,9 @@ package org.nelson.system.personne.web.home;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import org.junit.Test;
+import org.nelson.system.core.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
+import org.nelson.system.core.test.web.flow.MockExtCtxBuilder;
 import org.nelson.system.personne.web.home.states.PersonneHomeStates;
-import org.nelson.system.tools.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
-import org.nelson.system.tools.test.web.flow.MockExtCtxBuilder;
 import org.springframework.webflow.config.FlowDefinitionResource;
 import org.springframework.webflow.config.FlowDefinitionResourceFactory;
 import org.springframework.webflow.test.MockExternalContext;

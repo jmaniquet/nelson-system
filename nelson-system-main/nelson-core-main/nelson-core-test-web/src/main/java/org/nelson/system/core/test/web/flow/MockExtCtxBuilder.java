@@ -1,6 +1,6 @@
-package org.nelson.system.tools.test.web.flow;
+package org.nelson.system.core.test.web.flow;
 
-import org.nelson.system.tools.test.web.flow.events.PossibleEvent;
+import org.nelson.system.core.test.web.flow.events.PossibleEvent;
 import org.springframework.webflow.test.MockExternalContext;
 
 public class MockExtCtxBuilder {
