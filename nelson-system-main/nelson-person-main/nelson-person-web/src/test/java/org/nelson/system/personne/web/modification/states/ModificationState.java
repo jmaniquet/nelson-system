@@ -1,10 +1,10 @@
 package org.nelson.system.personne.web.modification.states;
 
-import static org.nelson.system.core.test.web.flow.events.CommonEvent.CANCEL;
-import static org.nelson.system.core.test.web.flow.events.CommonEvent.FINISH;
+import static org.nelson.system.core.web.flow.events.CommonEvent.CANCEL;
+import static org.nelson.system.core.web.flow.events.CommonEvent.FINISH;
 
-import org.nelson.system.core.test.web.flow.events.PossibleEvent;
-import org.nelson.system.core.test.web.flow.states.AbstractPossibleState;
+import org.nelson.system.core.web.flow.events.PossibleEvent;
+import org.nelson.system.core.web.flow.states.AbstractPossibleState;
 
 public class ModificationState extends AbstractPossibleState {
 

@@ -1,6 +1,6 @@
 package org.nelson.system.core.test.web.flow;
 
-import org.nelson.system.core.test.web.flow.states.PossibleState;
+import org.nelson.system.core.web.flow.states.PossibleState;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.StringUtils;

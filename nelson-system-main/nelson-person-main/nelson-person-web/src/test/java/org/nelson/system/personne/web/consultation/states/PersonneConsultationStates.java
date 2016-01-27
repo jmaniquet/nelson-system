@@ -1,8 +1,8 @@
 package org.nelson.system.personne.web.consultation.states;
 
-import org.nelson.system.core.test.web.flow.states.ClosedState;
-import org.nelson.system.core.test.web.flow.states.ConsultationState;
-import org.nelson.system.core.test.web.flow.states.ErrorState;
+import org.nelson.system.core.web.flow.states.ClosedState;
+import org.nelson.system.core.web.flow.states.ConsultationState;
+import org.nelson.system.core.web.flow.states.ErrorState;
 
 public class PersonneConsultationStates {
 	

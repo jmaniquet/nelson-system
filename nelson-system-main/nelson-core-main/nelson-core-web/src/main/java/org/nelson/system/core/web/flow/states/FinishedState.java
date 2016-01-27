@@ -1,4 +1,4 @@
-package org.nelson.system.core.test.web.flow.states;
+package org.nelson.system.core.web.flow.states;
 
 public class FinishedState extends AbstractPossibleState {
 

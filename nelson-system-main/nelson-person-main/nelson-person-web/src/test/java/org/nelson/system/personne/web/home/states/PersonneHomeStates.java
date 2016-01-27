@@ -1,6 +1,6 @@
 package org.nelson.system.personne.web.home.states;
 
-import org.nelson.system.core.test.web.flow.states.ClosedState;
+import org.nelson.system.core.web.flow.states.ClosedState;
 
 public class PersonneHomeStates {
 
