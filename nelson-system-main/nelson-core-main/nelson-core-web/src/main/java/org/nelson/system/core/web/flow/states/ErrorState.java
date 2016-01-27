@@ -1,6 +1,6 @@
 package org.nelson.system.core.web.flow.states;
 
-import static org.nelson.system.core.web.flow.events.CommonEvent.CLOSE;
+import static org.nelson.system.core.web.flow.events.CommonEvent.CLOSE_ERROR;
 
 import org.nelson.system.core.web.flow.events.PossibleEvent;
 
@@ -10,7 +10,7 @@ public class ErrorState extends AbstractPossibleState {
 		super("error");
 	}
 	
-	public PossibleEvent close() {
-		return CLOSE;
+	public PossibleEvent closeError() {
+		return CLOSE_ERROR;
 	}
 }

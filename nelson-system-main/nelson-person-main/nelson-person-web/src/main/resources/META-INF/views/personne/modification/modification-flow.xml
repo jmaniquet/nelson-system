@@ -18,7 +18,7 @@
 	</view-state>
 	
 	<view-state id="error" view="/personne/error/error.xhtml">
-		<transition on="close" to="canceled"></transition>
+		<transition on="close-error" to="canceled" />
 	</view-state>
 	
 	<end-state id="finished" view="externalRedirect:contextRelative:/app/personne/consultation?id=#{personneModificationController.personne.id}" />

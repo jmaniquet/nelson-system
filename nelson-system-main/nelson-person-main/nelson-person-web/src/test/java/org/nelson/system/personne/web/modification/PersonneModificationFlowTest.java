@@ -84,11 +84,11 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 	}
 	
 	@Test
-	public void testErrorStateAndClose() {
+	public void testErrorStateAndCloseError() {
 		setCurrentState(PersonneModificationStates.error);
 		MockExternalContext context = MockExtCtxBuilder
 				.builder()
-				.withEvent(PersonneModificationStates.error.close())
+				.withEvent(PersonneModificationStates.error.closeError())
 				.build();
 		
 		resumeFlow(context);

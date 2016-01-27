@@ -15,6 +15,7 @@
 	</view-state>
 	
 	<view-state id="error" view="/personne/error/error.xhtml">
+		<transition on="close-error" to="closed" />
 	</view-state>
 	
 	<exception-handler bean="personneExceptionHandler" />
