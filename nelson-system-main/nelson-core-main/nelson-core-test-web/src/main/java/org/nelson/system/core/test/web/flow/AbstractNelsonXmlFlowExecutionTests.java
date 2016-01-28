@@ -46,6 +46,7 @@ public abstract class AbstractNelsonXmlFlowExecutionTests extends AbstractXmlFlo
 	 * Configure elements shared by all flows
 	 */
 	private void configureCoreContextElements(MockFlowBuilderContext builderContext) {
+		registerAnnotatedConfig(builderContext, NelsonExceptionConfig.class);
 	}
 	
 	/**

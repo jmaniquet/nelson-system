@@ -23,6 +23,4 @@
 	
 	<end-state id="finished" view="externalRedirect:contextRelative:/app/personne/consultation?id=#{personneModificationController.personne.id}" />
 	<end-state id="canceled" view="externalRedirect:contextRelative:/close.html" />
-	
-	<exception-handler bean="nelsonExceptionHandler" />
 </flow>
