@@ -36,7 +36,7 @@ public class PersonneConsultationFlowTest extends AbstractNelsonXmlFlowExecution
 	}
 	
 	@Override
-	protected void configureFlowBuilderContext(MockFlowBuilderContext builderContext) {
+	protected void configureCustomContextElements(MockFlowBuilderContext builderContext) {
 		registerAnnotatedConfig(builderContext, NelsonExceptionConfig.class);
 		registerBean(builderContext, personneConsultationController);
 	}
