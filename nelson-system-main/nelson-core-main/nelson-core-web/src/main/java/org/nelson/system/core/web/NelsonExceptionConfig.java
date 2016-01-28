@@ -1,4 +1,4 @@
-package org.nelson.system.personne.web;
+package org.nelson.system.core.web;
 
 import org.nelson.system.core.api.exception.NelsonException;
 import org.springframework.context.annotation.Bean;
@@ -7,10 +7,10 @@ import org.springframework.webflow.engine.FlowExecutionExceptionHandler;
 import org.springframework.webflow.engine.support.TransitionExecutingFlowExecutionExceptionHandler;
 
 @Configuration
-public class PersonneExceptionConfig {
+public class NelsonExceptionConfig {
 
 	@Bean
-	public FlowExecutionExceptionHandler personneExceptionHandler() {
+	public FlowExecutionExceptionHandler nelsonExceptionHandler() {
 		TransitionExecutingFlowExecutionExceptionHandler feeh = new TransitionExecutingFlowExecutionExceptionHandler();
 		feeh.add(NelsonException.class, "error");
 		return feeh;

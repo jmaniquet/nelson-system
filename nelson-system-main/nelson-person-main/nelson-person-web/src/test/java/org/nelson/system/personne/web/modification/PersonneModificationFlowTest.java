@@ -11,7 +11,7 @@ import org.mockito.Mock;
 import org.nelson.system.core.db.personne.domain.Personne;
 import org.nelson.system.core.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
 import org.nelson.system.core.test.web.flow.MockExtCtxBuilder;
-import org.nelson.system.personne.web.PersonneExceptionConfig;
+import org.nelson.system.core.web.NelsonExceptionConfig;
 import org.nelson.system.personne.web.exception.MissingIdException;
 import org.nelson.system.personne.web.exception.UnknownPersonneException;
 import org.nelson.system.personne.web.modification.states.PersonneModificationStates;
@@ -39,7 +39,7 @@ public class PersonneModificationFlowTest extends AbstractNelsonXmlFlowExecution
 	
 	@Override
 	protected void configureFlowBuilderContext(MockFlowBuilderContext builderContext) {
-		registerAnnotatedConfig(builderContext, PersonneExceptionConfig.class);
+		registerAnnotatedConfig(builderContext, NelsonExceptionConfig.class);
 		registerBean(builderContext, personneModificationController);
 	}
 	

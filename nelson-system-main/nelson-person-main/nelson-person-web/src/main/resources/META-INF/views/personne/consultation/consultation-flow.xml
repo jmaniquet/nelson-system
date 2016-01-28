@@ -18,5 +18,5 @@
 		<transition on="close-error" to="closed" />
 	</view-state>
 	
-	<exception-handler bean="personneExceptionHandler" />
+	<exception-handler bean="nelsonExceptionHandler" />
 </flow>
