@@ -19,7 +19,7 @@
 		<h:form id="dialog-form">
 			<p:dialog
 				id="error-dialog"
-				header="#{msgSrc['person.error.header.label']}"
+				header="#{msgSrc['error.header.label']}"
 				visible="true"
 				modal="true"
 				closable="false"
@@ -42,7 +42,7 @@
 				
 				<p:panel
 					id="stacktrace"
-					header="#{msgSrc['person.error.detail.label']}"
+					header="#{msgSrc['error.detail.label']}"
 					toggleable="true"
 					collapsed="true"
 					styleClass="ui-panel-stacktrace">
@@ -54,7 +54,7 @@
 				
 				<f:facet name="footer">
 					<p:commandButton
-						value="#{msgSrc['person.error.close.label']}"
+						value="#{msgSrc['error.close.label']}"
 						action="close-error" />
 				</f:facet>
 			</p:dialog>

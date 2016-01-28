@@ -17,7 +17,7 @@
 		<transition on="cancel" to="canceled" />
 	</view-state>
 	
-	<view-state id="error" view="/personne/error/error.xhtml">
+	<view-state id="error" view="/common/error-page/error-page.xhtml">
 		<transition on="close-error" to="canceled" />
 	</view-state>
 	

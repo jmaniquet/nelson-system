@@ -14,7 +14,7 @@
 	<view-state id="consultation" view="/personne/consultation/consultation.xhtml">
 	</view-state>
 	
-	<view-state id="error" view="/personne/error/error.xhtml">
+	<view-state id="error" view="/common/error-page/error-page.xhtml">
 		<transition on="close-error" to="closed" />
 	</view-state>
 </flow>
