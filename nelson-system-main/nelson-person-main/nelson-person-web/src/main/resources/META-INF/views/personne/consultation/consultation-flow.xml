@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
 						http://www.springframework.org/schema/webflow/spring-webflow.xsd"
-						parent="default">
+						parent="core/consultation">
 
 	<input name="id" />
 
@@ -12,9 +12,5 @@
 	</on-start>
 
 	<view-state id="consultation" view="/personne/consultation/consultation.xhtml">
-	</view-state>
-	
-	<view-state id="error" view="/common/error-page/error-page.xhtml">
-		<transition on="close-error" to="closed" />
 	</view-state>
 </flow>

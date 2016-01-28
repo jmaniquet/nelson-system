@@ -19,7 +19,9 @@ public abstract class AbstractNelsonXmlFlowExecutionTests extends AbstractXmlFlo
 	@Override
 	protected FlowDefinitionResource[] getModelResources(FlowDefinitionResourceFactory resourceFactory) {
 		return new FlowDefinitionResource[] {
-				resourceFactory.createResource("/META-INF/views/default/default-flow.xml", null, "default")
+				resourceFactory.createResource("/META-INF/views/core-flows/default-flow.xml", null, "core/default"),
+				resourceFactory.createResource("/META-INF/views/core-flows/consultation-flow.xml", null, "core/consultation"),
+				resourceFactory.createResource("/META-INF/views/core-flows/modification-flow.xml", null, "core/modification")
 		};
 	}
 	

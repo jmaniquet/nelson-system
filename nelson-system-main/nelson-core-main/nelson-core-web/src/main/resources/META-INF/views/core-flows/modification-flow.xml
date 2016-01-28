@@ -4,10 +4,7 @@
 						http://www.springframework.org/schema/webflow/spring-webflow.xsd"
 						parent="core/default">
 
-	<on-start>
-		<evaluate expression="personneRechercheController.init()" />
-	</on-start>
-
-	<view-state id="recherche" view="/personne/recherche/recherche.xhtml">
+	<view-state id="error" view="/common/error-page/error-page.xhtml">
+		<transition on="close-error" to="canceled" />
 	</view-state>
 </flow>

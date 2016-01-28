@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
 						http://www.springframework.org/schema/webflow/spring-webflow.xsd"
-						parent="default">
+						parent="core/modification">
 
 	<input name="id" />
 
@@ -15,10 +15,6 @@
 			<evaluate expression="personneModificationController.update()" />
 		</transition>
 		<transition on="cancel" to="canceled" />
-	</view-state>
-	
-	<view-state id="error" view="/common/error-page/error-page.xhtml">
-		<transition on="close-error" to="canceled" />
 	</view-state>
 	
 	<end-state id="finished" view="externalRedirect:contextRelative:/app/personne/consultation?id=#{personneModificationController.personne.id}" />

@@ -59,6 +59,17 @@ public class WebappConfig extends AbstractFacesFlowConfiguration {
 		return getFlowDefinitionRegistryBuilder(flowBuilderServices())
 				.setBasePath("classpath*:META-INF/views")
 				.addFlowLocationPattern("/**/*-flow.xml")
+				.setParent(flowRegistryCoreFlows())
+				.build();
+	}
+	
+	@Bean
+	public FlowDefinitionRegistry flowRegistryCoreFlows() {
+		return getFlowDefinitionRegistryBuilder(flowBuilderServices())
+				.setBasePath("classpath:META-INF/views")
+				.addFlowLocation("/core-flows/default-flow.xml", "core/default")
+				.addFlowLocation("/core-flows/consultation-flow.xml", "core/consultation")
+				.addFlowLocation("/core-flows/modification-flow.xml", "core/modification")
 				.build();
 	}
 	
