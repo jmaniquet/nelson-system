@@ -10,4 +10,6 @@
 		<transition on="cancel" to="closed" />
 		<transition on="close" to="closed" />
 	</global-transitions>
+	
+	<exception-handler bean="nelsonExceptionHandler" />
 </flow>

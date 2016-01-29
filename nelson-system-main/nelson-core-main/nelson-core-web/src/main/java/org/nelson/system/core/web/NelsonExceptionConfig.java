@@ -1,20 +1,18 @@
-package org.nelson.system.personne.web;
+package org.nelson.system.core.web;
 
-import org.nelson.system.personne.web.exception.MissingIdException;
-import org.nelson.system.personne.web.exception.UnknownPersonneException;
+import org.nelson.system.core.api.exception.NelsonException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.webflow.engine.FlowExecutionExceptionHandler;
 import org.springframework.webflow.engine.support.TransitionExecutingFlowExecutionExceptionHandler;
 
 @Configuration
-public class PersonneExceptionConfig {
+public class NelsonExceptionConfig {
 
 	@Bean
-	public FlowExecutionExceptionHandler personneExceptionHandler() {
+	public FlowExecutionExceptionHandler nelsonExceptionHandler() {
 		TransitionExecutingFlowExecutionExceptionHandler feeh = new TransitionExecutingFlowExecutionExceptionHandler();
-		feeh.add(MissingIdException.class, "error");
-		feeh.add(UnknownPersonneException.class, "error");
+		feeh.add(NelsonException.class, "error");
 		return feeh;
 	}
 }

@@ -29,7 +29,7 @@ public class PersonneRechercheFlowTest extends AbstractNelsonXmlFlowExecutionTes
 	}
 	
 	@Override
-	protected void configureFlowBuilderContext(MockFlowBuilderContext builderContext) {
+	protected void configureCustomContextElements(MockFlowBuilderContext builderContext) {
 		registerBean(builderContext, personneRechercheController);
 	}
 	

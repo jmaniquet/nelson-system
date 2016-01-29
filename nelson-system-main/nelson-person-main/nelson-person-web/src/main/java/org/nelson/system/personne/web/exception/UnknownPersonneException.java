@@ -1,6 +1,8 @@
 package org.nelson.system.personne.web.exception;
 
-public class UnknownPersonneException extends RuntimeException {
+import org.nelson.system.core.api.exception.NelsonException;
+
+public class UnknownPersonneException extends NelsonException {
 	private static final long serialVersionUID = -4003964122605069298L;
 
 	private Long id;

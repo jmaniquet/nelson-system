@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
 						http://www.springframework.org/schema/webflow/spring-webflow.xsd"
-						parent="default">
+						parent="core/consultation">
 
 	<input name="id" />
 
@@ -13,9 +13,4 @@
 
 	<view-state id="consultation" view="/personne/consultation/consultation.xhtml">
 	</view-state>
-	
-	<view-state id="error" view="/personne/error/error.xhtml">
-	</view-state>
-	
-	<exception-handler bean="personneExceptionHandler" />
 </flow>

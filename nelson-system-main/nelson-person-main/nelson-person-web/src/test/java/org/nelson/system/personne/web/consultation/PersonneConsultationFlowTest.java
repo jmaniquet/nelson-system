@@ -9,7 +9,6 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.nelson.system.core.test.web.flow.AbstractNelsonXmlFlowExecutionTests;
 import org.nelson.system.core.test.web.flow.MockExtCtxBuilder;
-import org.nelson.system.personne.web.PersonneExceptionConfig;
 import org.nelson.system.personne.web.consultation.states.PersonneConsultationStates;
 import org.nelson.system.personne.web.exception.MissingIdException;
 import org.nelson.system.personne.web.exception.UnknownPersonneException;
@@ -36,17 +35,16 @@ public class PersonneConsultationFlowTest extends AbstractNelsonXmlFlowExecution
 	}
 	
 	@Override
-	protected void configureFlowBuilderContext(MockFlowBuilderContext builderContext) {
-		registerAnnotatedConfig(builderContext, PersonneExceptionConfig.class);
+	protected void configureCustomContextElements(MockFlowBuilderContext builderContext) {
 		registerBean(builderContext, personneConsultationController);
 	}
 	
 	@Test
-	public void testErrorStateAndClose() {
+	public void testErrorStateAndCloseError() {
 		setCurrentState(PersonneConsultationStates.error);
 		MockExternalContext context = MockExtCtxBuilder
 				.builder()
-				.withEvent(PersonneConsultationStates.error.close())
+				.withEvent(PersonneConsultationStates.error.closeError())
 				.build();
 		
 		resumeFlow(context);

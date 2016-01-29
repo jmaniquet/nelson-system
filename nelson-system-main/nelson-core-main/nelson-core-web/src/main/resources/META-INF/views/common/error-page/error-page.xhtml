@@ -7,7 +7,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
-	template="/common/default-layout.xhtml">
+	template="/common/layout/default-layout.xhtml">
 
 	<ui:define name="optional-styles">
 		<link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/app/javax.faces.resource/css/error-page.css" />
@@ -19,7 +19,7 @@
 		<h:form id="dialog-form">
 			<p:dialog
 				id="error-dialog"
-				header="#{msgSrc['person.error.header.label']}"
+				header="#{msgSrc['error.header.label']}"
 				visible="true"
 				modal="true"
 				closable="false"
@@ -42,7 +42,7 @@
 				
 				<p:panel
 					id="stacktrace"
-					header="#{msgSrc['person.error.detail.label']}"
+					header="#{msgSrc['error.detail.label']}"
 					toggleable="true"
 					collapsed="true"
 					styleClass="ui-panel-stacktrace">
@@ -54,8 +54,8 @@
 				
 				<f:facet name="footer">
 					<p:commandButton
-						value="#{msgSrc['person.error.close.label']}"
-						action="close" />
+						value="#{msgSrc['error.close.label']}"
+						action="close-error" />
 				</f:facet>
 			</p:dialog>
 		</h:form>

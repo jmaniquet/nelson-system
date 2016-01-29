@@ -7,11 +7,14 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:nelson="http://java.sun.com/jsf/composite/nelson"
-	template="/common/default-layout.xhtml">
+	template="/common/layout/default-layout.xhtml">
 	
 	<ui:define name="main-form-footer">
 		<p:commandButton
-			value="#{msgSrc['consult.close.label']}"
-			action="close" ajax="false" />
+			value="#{msgSrc['save.finish.label']}"
+			action="finish" ajax="false" />
+		<p:commandButton
+			value="#{msgSrc['save.cancel.label']}"
+			action="cancel" ajax="false" />
 	</ui:define>
 </ui:composition>

@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
 						http://www.springframework.org/schema/webflow/spring-webflow.xsd"
-						parent="default">
+						parent="core/default">
 
 	<view-state id="personne-home" view="/personne/home/personne-home.xhtml">
 	</view-state>

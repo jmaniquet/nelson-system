@@ -1,6 +1,8 @@
 package org.nelson.system.personne.web.exception;
 
-public class MissingIdException extends RuntimeException {
+import org.nelson.system.core.api.exception.NelsonException;
+
+public class MissingIdException extends NelsonException {
 	private static final long serialVersionUID = 5153959525584000846L;
 
 	public MissingIdException() {

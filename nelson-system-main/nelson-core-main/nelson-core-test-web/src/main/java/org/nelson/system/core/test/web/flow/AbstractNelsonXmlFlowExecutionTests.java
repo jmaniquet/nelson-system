@@ -1,5 +1,6 @@
 package org.nelson.system.core.test.web.flow;
 
+import org.nelson.system.core.web.NelsonExceptionConfig;
 import org.nelson.system.core.web.flow.states.PossibleState;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.util.ClassUtils;
@@ -18,7 +19,9 @@ public abstract class AbstractNelsonXmlFlowExecutionTests extends AbstractXmlFlo
 	@Override
 	protected FlowDefinitionResource[] getModelResources(FlowDefinitionResourceFactory resourceFactory) {
 		return new FlowDefinitionResource[] {
-				resourceFactory.createResource("/META-INF/views/default/default-flow.xml", null, "default")
+				resourceFactory.createResource("/META-INF/views/core-flows/default-flow.xml", null, "core/default"),
+				resourceFactory.createResource("/META-INF/views/core-flows/consultation-flow.xml", null, "core/consultation"),
+				resourceFactory.createResource("/META-INF/views/core-flows/modification-flow.xml", null, "core/modification")
 		};
 	}
 	
@@ -33,6 +36,26 @@ public abstract class AbstractNelsonXmlFlowExecutionTests extends AbstractXmlFlo
 	
 	protected void assertFlowExecutionOutcomeEquals(PossibleState state) {
 		assertFlowExecutionOutcomeEquals(state.getStateId());
+	}
+	
+	@Override
+	protected final void configureFlowBuilderContext(MockFlowBuilderContext builderContext) {
+		configureCoreContextElements(builderContext);
+		configureCustomContextElements(builderContext);
+	}
+	
+	/**
+	 * Configure elements shared by all flows
+	 */
+	private void configureCoreContextElements(MockFlowBuilderContext builderContext) {
+		registerAnnotatedConfig(builderContext, NelsonExceptionConfig.class);
+	}
+	
+	/**
+	 * Subclasses should override this method to configure elements specific to the feature tested
+	 */
+	protected void configureCustomContextElements(MockFlowBuilderContext builderContext) {
+		
 	}
 	
 	protected FlowDefinitionResource getJarResource(FlowDefinitionResourceFactory resourceFactory, String flowPath) {
