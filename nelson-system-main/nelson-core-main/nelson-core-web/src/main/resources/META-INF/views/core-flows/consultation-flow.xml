@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
 						http://www.springframework.org/schema/webflow/spring-webflow.xsd"
-						parent="core/default">
+	parent="core/default">
 
 	<view-state id="error" view="/common/error-page/error-page.xhtml">
 		<transition on="close-error" to="closed" />
