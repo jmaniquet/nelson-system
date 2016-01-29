@@ -7,4 +7,3 @@ Fix : problème d'encoding sur les accents
 Fix : Dans recherche de personne, syntaxe du "p:link" - lien vers consultation
 Refactoring outillage test de flow
 	- Forcer eclipse à utiliser un encoding défini par maven pour les fichier properties
-	- Déplacer les states dans main/java pour mutualiser les libellés
